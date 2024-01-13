@@ -3,11 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TopMovies.Data
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public class TopMoviesDbContext : IdentityDbContext
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+		public TopMoviesDbContext(DbContextOptions<TopMoviesDbContext> options)
 			: base(options)
 		{
+
 		}
 	}
 }

@@ -3,7 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMovies", "TopMovies\TopMovies.csproj", "{FC1F068A-0136-4CF5-92C0-C56BBC0765F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopMovies.Web", "TopMovies\TopMovies.Web.csproj", "{FC1F068A-0136-4CF5-92C0-C56BBC0765F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopMovies.Web.ViewModels", "TopMovies.Web.ViewModels\TopMovies.Web.ViewModels.csproj", "{5B31A099-50B8-41F6-B9D9-0E6B0893221C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{2DFF458D-E093-4434-A81F-75FE790F5090}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F7CD215E-11D5-4FB5-B67C-17BF29BC8751}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopMovies.Data.Models", "TopMovies.Data.Models\TopMovies.Data.Models.csproj", "{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopMovies.Data.Common", "TopMovies.Data.Common\TopMovies.Data.Common.csproj", "{7B39F01D-3EA7-47E1-AF0B-363805F3D804}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FAA628C0-00DB-44AB-A60B-C43D713107A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AEF04E59-1DCF-407D-8A0A-CA64D3CF0F00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMovies.Data", "TopMovies.Data\TopMovies.Data.csproj", "{9F4A5136-FA57-46F1-8935-09D0300B9509}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +31,32 @@ Global
 		{FC1F068A-0136-4CF5-92C0-C56BBC0765F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC1F068A-0136-4CF5-92C0-C56BBC0765F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC1F068A-0136-4CF5-92C0-C56BBC0765F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B31A099-50B8-41F6-B9D9-0E6B0893221C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B31A099-50B8-41F6-B9D9-0E6B0893221C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B31A099-50B8-41F6-B9D9-0E6B0893221C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B31A099-50B8-41F6-B9D9-0E6B0893221C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B39F01D-3EA7-47E1-AF0B-363805F3D804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B39F01D-3EA7-47E1-AF0B-363805F3D804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B39F01D-3EA7-47E1-AF0B-363805F3D804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B39F01D-3EA7-47E1-AF0B-363805F3D804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4A5136-FA57-46F1-8935-09D0300B9509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4A5136-FA57-46F1-8935-09D0300B9509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4A5136-FA57-46F1-8935-09D0300B9509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4A5136-FA57-46F1-8935-09D0300B9509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC1F068A-0136-4CF5-92C0-C56BBC0765F5} = {2DFF458D-E093-4434-A81F-75FE790F5090}
+		{5B31A099-50B8-41F6-B9D9-0E6B0893221C} = {2DFF458D-E093-4434-A81F-75FE790F5090}
+		{8FE4BE72-57EE-46F4-9362-CD8E29F40EC5} = {F7CD215E-11D5-4FB5-B67C-17BF29BC8751}
+		{7B39F01D-3EA7-47E1-AF0B-363805F3D804} = {F7CD215E-11D5-4FB5-B67C-17BF29BC8751}
+		{9F4A5136-FA57-46F1-8935-09D0300B9509} = {F7CD215E-11D5-4FB5-B67C-17BF29BC8751}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {802BF44B-A552-4B3B-8A8A-02D02FB69A8D}
