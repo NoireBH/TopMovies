@@ -11,6 +11,7 @@ namespace TopMovies.Data.Models
         public Movie()
         {
             Genres = new HashSet<Genre>();
+			UserReviews = new HashSet<UserReview>();
         }
 
         public Guid Id { get; set; }
@@ -26,6 +27,10 @@ namespace TopMovies.Data.Models
 		public IEnumerable<Genre> Genres { get; set; }
 
 		public IEnumerable<UserReview> UserReviews { get; set; }
+
+		public byte[] Image { get; set; } = null!;
+
+		public bool IsActive { get; set; }
 
 	}
 }

@@ -1,3 +1,4 @@
+using TopMovies.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
@@ -11,8 +12,23 @@ builder.Services.AddDbContext<TopMoviesDbContext>(options =>
 	options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-	.AddEntityFrameworkStores<TopMoviesDbContext>();
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+	options.SignIn.RequireConfirmedAccount =
+		builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+	options.Password.RequireLowercase =
+		builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+	options.Password.RequireUppercase =
+		builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+	options.Password.RequireNonAlphanumeric =
+		builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+	options.Password.RequiredLength =
+		builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
+
+})
+ .AddRoles<IdentityRole<Guid>>()
+ .AddEntityFrameworkStores<TopMoviesDbContext>();
+
 builder.Services.AddControllersWithViews();
 
 WebApplication app = builder.Build();

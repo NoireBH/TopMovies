@@ -959,13 +959,27 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
-          "Microsoft.Extensions.Identity.Core": "6.0.20"
+          "Microsoft.Extensions.Identity.Core": "6.0.20",
+          "TopMovies.Data.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TopMovies.Data.dll": {}
         },
         "runtime": {
           "bin/placeholder/TopMovies.Data.dll": {}
+        }
+      },
+      "TopMovies.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20"
+        },
+        "compile": {
+          "bin/placeholder/TopMovies.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Data.Models.dll": {}
         }
       }
     }
@@ -2463,6 +2477,11 @@
       "type": "project",
       "path": "../TopMovies.Data/TopMovies.Data.csproj",
       "msbuildProject": "../TopMovies.Data/TopMovies.Data.csproj"
+    },
+    "TopMovies.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj",
+      "msbuildProject": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {

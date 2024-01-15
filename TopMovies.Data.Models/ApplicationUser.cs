@@ -1,6 +1,6 @@
 ﻿
 
-namespace HouseRenting.Data.Models
+namespace TopMovies.Data.Models
 {
 	using Microsoft.AspNetCore.Identity;
 	/// <summary>

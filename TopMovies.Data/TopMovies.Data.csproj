@@ -21,4 +21,8 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.20" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TopMovies.Data.Models\TopMovies.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,17 @@
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.csproj.AssemblyReference.cache
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.AssemblyInfoInputs.cache
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.AssemblyInfo.cs
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.csproj.CoreCompileInputs.cache
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.deps.json
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.runtimeconfig.json
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.Models.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Data.Models.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.csproj.CopyComplete
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\refint\TopMovies.Data.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.genruntimeconfig.cache
+D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\ref\TopMovies.Data.dll
