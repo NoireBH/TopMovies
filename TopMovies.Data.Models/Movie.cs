@@ -20,7 +20,7 @@ namespace TopMovies.Data.Models
 
 		public string Description { get; set; } = null!;
 
-		public DateTime DateAired { get; set; }
+		public DateTime ReleaseDate { get; set; }
 
 		public string Rating { get; set; } = null!;
 
