@@ -9,7 +9,8 @@ namespace TopMovies.Data.Models
 {
 	public class UserReview
 	{
-		public Guid Id { get; set; } 
+
+        public Guid Id { get; set; } 
 
 		public ApplicationUser User { get; set; } = null!;
 
@@ -18,5 +19,9 @@ namespace TopMovies.Data.Models
 		public int Rating { get; set; }
 
 		public string Comment { get; set; } = null!;
-	}
+
+		public int MovieId { get; set; }
+
+		public Movie Movie { get; set; } = null!;
+    }
 }

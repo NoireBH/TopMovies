@@ -1,15 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
+using static TopMovies.Common.EntityValidationConstants.Genre;
 
 namespace TopMovies.Data.Models
 {
-	public class Genre
+    public class Genre
 	{
-		public int Id { get; set; }
+        public Genre()
+        {
+            Movies = new HashSet<Movie>();
+        }
 
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(NameMaxLength)]
 		public string Name { get; set; } = null!;
+
+		public virtual ICollection<Movie> Movies { get; set; }
 	}
 }

@@ -952,6 +952,16 @@
           }
         }
       },
+      "TopMovies.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TopMovies.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Common.dll": {}
+        }
+      },
       "TopMovies.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -960,6 +970,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
           "Microsoft.Extensions.Identity.Core": "6.0.20",
+          "TopMovies.Common": "1.0.0",
           "TopMovies.Data.Models": "1.0.0"
         },
         "compile": {
@@ -973,7 +984,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
+          "TopMovies.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TopMovies.Data.Models.dll": {}
@@ -2472,6 +2484,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "TopMovies.Common/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Common/TopMovies.Common.csproj",
+      "msbuildProject": "../TopMovies.Common/TopMovies.Common.csproj"
     },
     "TopMovies.Data/1.0.0": {
       "type": "project",
