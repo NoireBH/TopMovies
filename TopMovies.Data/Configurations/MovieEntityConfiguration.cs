@@ -18,6 +18,8 @@ namespace TopMovies.Data.Configurations
 
         private Movie[] SeedMovies()
         {
+            throw new NotImplementedException();
+
             var movies = new HashSet<Movie>();
 
             Movie movie;

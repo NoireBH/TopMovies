@@ -17,6 +17,10 @@ namespace TopMovies.Data.Models
 
         public string Name { get; set; } = null!;
 
+        public string Description { get; set; } = null!;
+
+        public int Age { get; set; }
+
         public virtual ICollection<Movie> Movies { get; set; }
     }
 }

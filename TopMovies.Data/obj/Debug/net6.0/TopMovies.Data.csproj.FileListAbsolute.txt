@@ -15,3 +15,5 @@ D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\refint\TopMov
 D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\TopMovies.Data.genruntimeconfig.cache
 D:\my documents\Projects\TopMovies\TopMovies.Data\obj\Debug\net6.0\ref\TopMovies.Data.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Common.dll
+D:\my documents\Projects\TopMovies\TopMovies.Data\bin\Debug\net6.0\TopMovies.Common.pdb
