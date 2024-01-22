@@ -32,13 +32,13 @@ namespace TopMovies.Data.Models
 		[Range(typeof(double), RatingMin, RatingMax)]
 		public double Rating { get; set; }
 
-		public IEnumerable<Genre> Genres { get; set; }
+		public virtual IEnumerable<Genre> Genres { get; set; }
 
-		public IEnumerable<UserReview> UserReviews { get; set; }
+		public virtual IEnumerable<UserReview> UserReviews { get; set; }
 
-		public IEnumerable<Actor> Actors { get; set; }
+		public virtual IEnumerable<Actor> Actors { get; set; }
 
-		public IEnumerable<MovieCharacter> MovieCharacters { get; set; }
+		public virtual IEnumerable<MovieCharacter> MovieCharacters { get; set; }
 
 		public byte[] Image { get; set; } = null!;
 
