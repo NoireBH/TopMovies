@@ -27,5 +27,27 @@ namespace TopMovies.Common
             public const int NameMinLength = 2;
             public const int NameMaxLength = 20;
         }
-    }
+
+        public class Actor
+        {
+			public const int NameMinLength = 1;
+			public const int NameMaxLength = 30;
+
+			public const int DescriptionMinLength = 10;
+			public const int DescriptionMaxLength = 200;
+
+            public const int AgeMinLength = 1;
+            public const int AgeMaxLength = 120;
+		}
+
+		public class MovieCharacter
+		{
+			public const int NameMinLength = 1;
+			public const int NameMaxLength = 30;
+
+			public const int DescriptionMinLength = 10;
+			public const int DescriptionMaxLength = 200;
+
+		}
+	}
 }
