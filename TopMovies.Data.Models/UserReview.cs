@@ -4,24 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace TopMovies.Data.Models
 {
 	public class UserReview
 	{
 
+		[Key]
         public Guid Id { get; set; } 
+		public int ApplicationUserId { get; set; }
 
-		public ApplicationUser User { get; set; } = null!;
+		public ApplicationUser ApplicationUser { get; set; } = null!;
 
-		public int UserId { get; set; }
 
 		public int Rating { get; set; }
 
 		public string Comment { get; set; } = null!;
 
-		public int MovieId { get; set; }
+		public Guid MovieId { get; set; }
 
-		public Movie Movie { get; set; } = null!;
+		public virtual Movie Movie { get; set; } = null!;
     }
 }

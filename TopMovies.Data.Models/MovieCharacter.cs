@@ -30,7 +30,6 @@ namespace TopMovies.Data.Models
 
 		public virtual ICollection<Movie> Movies { get; set; }
 
-
 		public virtual ICollection<Actor> Actors { get; set; }
 	}
 }

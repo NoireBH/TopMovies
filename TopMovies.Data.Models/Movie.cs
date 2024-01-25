@@ -26,9 +26,8 @@ namespace TopMovies.Data.Models
 		public string Description { get; set; } = null!;
 
 		[Required]
-		public DateTime ReleaseDate { get; set; }
+		public int ReleaseDate { get; set; }
 
-		[Required]
 		[Range(typeof(double), RatingMin, RatingMax)]
 		public double Rating { get; set; }
 
