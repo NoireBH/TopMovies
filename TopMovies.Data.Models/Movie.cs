@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using TopMovies.Data.Models.Enums;
 using static TopMovies.Common.EntityValidationConstants.Movie;
 
 namespace TopMovies.Data.Models
@@ -39,7 +39,8 @@ namespace TopMovies.Data.Models
 
 		public virtual IEnumerable<MovieCharacter> MovieCharacters { get; set; }
 
-		public byte[] Image { get; set; } = null!;
+		[Required]
+		public string ImagePath { get; set; } = null!;
 
 		public bool IsActive { get; set; }
 

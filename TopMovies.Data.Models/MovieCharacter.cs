@@ -24,7 +24,7 @@ namespace TopMovies.Data.Models
 		public string Description { get; set; } = null!;
 
 		[Required]
-		public byte[] Image { get; set; } = null!;
+		public string ImagePath { get; set; } = null!;
 
 		public int Age { get; set; }
 

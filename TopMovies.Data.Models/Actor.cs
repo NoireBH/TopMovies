@@ -24,11 +24,10 @@ namespace TopMovies.Data.Models
 		public string Description { get; set; } = null!;
 
         [Required]
-        public byte[] Image { get; set; } = null!;
+        public string ImagePath { get; set; } = null!;
 
         [Required]
-        [MaxLength(AgeMaxLength)]
-        public int Age { get; set; }
+        public DateTime YearBorn { get; set; }
 
         public virtual ICollection<Movie> Movies { get; set; }
 
