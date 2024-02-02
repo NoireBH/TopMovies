@@ -33,7 +33,7 @@ namespace TopMovies.Common
 			public const int NameMaxLength = 30;
 
 			public const int DescriptionMinLength = 10;
-			public const int DescriptionMaxLength = 1000;
+			public const int DescriptionMaxLength = 3000;
 		}
 
 		public class MovieCharacter
@@ -42,7 +42,7 @@ namespace TopMovies.Common
 			public const int NameMaxLength = 30;
 
 			public const int DescriptionMinLength = 10;
-			public const int DescriptionMaxLength = 1000;
+			public const int DescriptionMaxLength = 2000;
 
 		}
 	}

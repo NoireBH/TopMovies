@@ -78,6 +78,8 @@ namespace TopMovies.Data.Configurations
 			};
 
 			movies.Add(movie);
+
+			return movies.ToArray();
 		}
 	}
 }
