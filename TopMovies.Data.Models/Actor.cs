@@ -24,7 +24,7 @@ namespace TopMovies.Data.Models
 		public string Description { get; set; } = null!;
 
         [Required]
-        public string ImagePath { get; set; } = null!;
+        public string ImageUrl { get; set; } = null!;
 
         [Required]
         public DateTime YearBorn { get; set; }

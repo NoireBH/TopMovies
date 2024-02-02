@@ -19,21 +19,6 @@ namespace TopMovies.Data.Configurations
 
 		private Movie[] SeedMovies()
 		{
-			throw new NotImplementedException();
-
-			var actors = new List<Actor>();
-
-			Actor actor;
-
-			actor = new Actor()
-			{
-				Id = 1,
-				Name = "Tim Robbins",
-				Description = "Born in West Covina, California, but raised in New York City, Tim Robbins is the son of former The Highwaymen singer Gil Robbins and actress Mary Robbins (née Bledsoe). Robbins studied drama at UCLA, where he graduated with honors in 1981. That same year, he formed the Actors' Gang theater group, an experimental ensemble that expressed radical political observations through the European avant-garde form of theater. He started film work in television movies in 1983, but hit the big time in 1988 with his portrayal of dimwitted fastball pitcher \"Nuke\" Laloosh in Bull Durham (1988). Tall with baby-faced looks, he has the ability to play naive and obtuse (Cadillac Man (1990) and The Hudsucker Proxy (1994)) or slick and shrewd (The Player (1992) and Bob Roberts (1992)).",
-				ImagePath = "~Images/jPsLqiYGSofU4s6BjrxnefMfabb",
-				YearBorn = new DateTime(1937, 6, 1)
-
-			};
 
 			var movies = new HashSet<Movie>();
 
@@ -45,10 +30,54 @@ namespace TopMovies.Data.Configurations
 				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
 				ReleaseDate = 1994,
 				Genres = new HashSet<Genre> {Genre.Drama},
-				Actors = actors
-				
-
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
 			};
+
+			movies.Add(movie);
+
+			movie = new Movie()
+			{
+				Name = "The Godfather",
+				Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+				ReleaseDate = 1972,
+				Genres = new HashSet<Genre> { Genre.Drama, Genre.Crime },
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
+			};
+
+			movies.Add(movie);
+
+			movie = new Movie()
+			{
+				Name = "The Shawshank Redemption",
+				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+				ReleaseDate = 1994,
+				Genres = new HashSet<Genre> { Genre.Drama },
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
+			};
+
+			movies.Add(movie);
+
+			movie = new Movie()
+			{
+				Name = "The Dark Knight",
+				Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.\r\n\r\n",
+				ReleaseDate = 2008,
+				Genres = new HashSet<Genre> { Genre.Drama, Genre.Action, Genre.Crime },
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg"
+			};
+
+			movies.Add(movie);
+
+			movie = new Movie()
+			{
+				Name = "Pulp Fiction",
+				Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.\r\n\r\n",
+				ReleaseDate = 1994,
+				Genres = new HashSet<Genre> { Genre.Drama, Genre.Crime },
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg"
+			};
+
+			movies.Add(movie);
 		}
 	}
 }

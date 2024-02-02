@@ -40,7 +40,7 @@ namespace TopMovies.Data.Models
 		public virtual IEnumerable<MovieCharacter> MovieCharacters { get; set; }
 
 		[Required]
-		public string ImagePath { get; set; } = null!;
+		public string ImageUrl { get; set; } = null!;
 
 		public bool IsActive { get; set; }
 
