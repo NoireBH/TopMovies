@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FL1Fq54LDmL9mh5Ioi110nyfJ68RZHED9zHeeLcMWUw=",
+  "Hash": "OXrFfuwwm4QBmaV10XsVek2RhDiuo+Yn0UhG0m4DQ3M=",
   "Source": "TopMovies.Web",
   "BasePath": "_content/TopMovies.Web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\my documents\\Projects\\TopMovies\\TopMovies\\wwwroot\\images\\jPsLqiYGSofU4s6BjrxnefMfabb.jpg",
+      "SourceId": "TopMovies.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\my documents\\Projects\\TopMovies\\TopMovies\\wwwroot\\",
+      "BasePath": "_content/TopMovies.Web",
+      "RelativePath": "images/jPsLqiYGSofU4s6BjrxnefMfabb.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\jPsLqiYGSofU4s6BjrxnefMfabb.jpg"
     },
     {
       "Identity": "D:\\my documents\\Projects\\TopMovies\\TopMovies\\wwwroot\\images\\TopMovies Logo2.png",
