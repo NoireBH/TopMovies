@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using TopMovies.Data.Models.Enums;
 using static TopMovies.Common.EntityValidationConstants.Movie;
 
 namespace TopMovies.Data.Models

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopMovies.Data.Models;
-using TopMovies.Data.Models.Enums;
 
 namespace TopMovies.Data.Configurations
 {
