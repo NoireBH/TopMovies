@@ -13,7 +13,7 @@ namespace TopMovies.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<Movie> builder)
 		{
-			throw new NotImplementedException();
+			builder.HasData(SeedMovies());
 		}
 
 		private Movie[] SeedMovies()
@@ -25,10 +25,10 @@ namespace TopMovies.Data.Configurations
 
 			movie = new Movie()
 			{
+				Id = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD"),
 				Name = "The Shawshank Redemption",
 				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
 				ReleaseDate = 1994,
-				Genres = new HashSet<Genre> {Genre.Drama},
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
 			};
 
@@ -36,10 +36,10 @@ namespace TopMovies.Data.Configurations
 
 			movie = new Movie()
 			{
+				Id = Guid.Parse("30DA4459-9475-404D-92FB-9124CFF7CFA6"),
 				Name = "The Godfather",
 				Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
 				ReleaseDate = 1972,
-				Genres = new HashSet<Genre> { Genre.Drama, Genre.Crime },
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
 			};
 
@@ -47,10 +47,10 @@ namespace TopMovies.Data.Configurations
 
 			movie = new Movie()
 			{
+				Id = Guid.Parse("13B84726-1968-4206-9F4B-856A4BA9998A"),
 				Name = "The Shawshank Redemption",
 				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
 				ReleaseDate = 1994,
-				Genres = new HashSet<Genre> { Genre.Drama },
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
 			};
 
@@ -58,10 +58,10 @@ namespace TopMovies.Data.Configurations
 
 			movie = new Movie()
 			{
+				Id = Guid.Parse("075AF806-FB6F-476D-804F-BAECBD15BDD3"),
 				Name = "The Dark Knight",
 				Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.\r\n\r\n",
 				ReleaseDate = 2008,
-				Genres = new HashSet<Genre> { Genre.Drama, Genre.Action, Genre.Crime },
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg"
 			};
 
@@ -69,10 +69,10 @@ namespace TopMovies.Data.Configurations
 
 			movie = new Movie()
 			{
+				Id = Guid.Parse("1F2E3281-95EA-4E2E-8693-D4983C7907DA"),
 				Name = "Pulp Fiction",
 				Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.\r\n\r\n",
 				ReleaseDate = 1994,
-				Genres = new HashSet<Genre> { Genre.Drama, Genre.Crime },
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg"
 			};
 

@@ -13,7 +13,7 @@ namespace TopMovies.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<Genre> builder)
 		{
-			throw new NotImplementedException();
+			builder.HasData(SeedGenres());
 		}
 
 		private Genre[] SeedGenres()
