@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TopMovies.Data.Models
 {
@@ -12,8 +13,10 @@ namespace TopMovies.Data.Models
 	{
 
 		[Key]
-        public Guid Id { get; set; } 
-		public int ApplicationUserId { get; set; }
+        public Guid Id { get; set; }
+
+		[ForeignKey(nameof(ApplicationUser))]
+		public Guid ApplicationUserId { get; set; }
 
 		public ApplicationUser ApplicationUser { get; set; } = null!;
 

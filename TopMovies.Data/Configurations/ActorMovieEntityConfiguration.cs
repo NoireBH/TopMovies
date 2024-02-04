@@ -16,7 +16,7 @@ namespace TopMovies.Data.Configurations
 			throw new NotImplementedException();
 		}
 
-		private ActorMovie[] SeedActorMovies()
+		private void SeedActorMovies()
 		{
 			var actorMovies = new HashSet<ActorMovie>();
 

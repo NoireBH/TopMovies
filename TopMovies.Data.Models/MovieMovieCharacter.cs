@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace TopMovies.Data.Models
 {
-	public class MovieGenre
+	public class MovieMovieCharacter
 	{
 		[ForeignKey(nameof(Movie))]
 		public Guid MovieId { get; set; }
 
 		public Movie Movie { get; set; } = null!;
 
-		[ForeignKey(nameof(Genre))]
-		public int GenreId { get; set; }
+		[ForeignKey(nameof(MovieCharacter))]
+		public int MovieCharacterId { get; set; }
 
-		public Genre Genre { get; set; } = null!;
+		public MovieCharacter MovieCharacter { get; set; } = null!;
 	}
 }
