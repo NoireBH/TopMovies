@@ -15,6 +15,7 @@ namespace TopMovies.Data
 		public DbSet<MovieCharacter> MovieCharacters { get; set; } = null!;
 
 		public DbSet<UserReview> UserReviews { get; set; } = null!;
+
 		public TopMoviesDbContext(DbContextOptions<TopMoviesDbContext> options)
 			: base(options)
 		{

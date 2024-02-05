@@ -1,28 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopMovies.Data.Models;
-
 namespace TopMovies.Data.Configurations
 {
-	public class ActorMovieEntityConfiguration : IEntityTypeConfiguration<ActorMovie>
+	public class ActorMovieEntityConfiguration : IEntityTypeConfiguration<ActorsMovies>
 	{
-		public void Configure(EntityTypeBuilder<ActorMovie> builder)
+		public void Configure(EntityTypeBuilder<ActorsMovies> builder)
 		{
 			throw new NotImplementedException();
 		}
 
 		private void SeedActorMovies()
 		{
-			var actorMovies = new HashSet<ActorMovie>();
+			var actorMovies = new HashSet<ActorsMovies>();
 
-			ActorMovie actorMovie;
+			ActorsMovies actorMovie;
 
-			actorMovie = new ActorMovie()
+			actorMovie = new ActorsMovies()
 			{
 				
 			};
