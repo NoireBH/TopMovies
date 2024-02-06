@@ -25,8 +25,63 @@ namespace TopMovies.Data.Configurations
 
 			userReview = new UserReview()
 			{
+				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
+				Rating = 10,
+				Comment = "One of the best movies I've ever seen!",
+				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
+				
+			};
+
+			userReviews.Add(userReview);
+
+			userReview = new UserReview()
+			{
+				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
+				Rating = 10,
+				Comment = "One of the best movies I've ever seen!",
+				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
 
 			};
+
+			userReviews.Add(userReview);
+
+			userReview = new UserReview()
+			{
+				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
+				Rating = 10,
+				Comment = "One of the best movies I've ever seen!",
+				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
+
+			};
+
+			userReviews.Add(userReview);
+
+			userReview = new UserReview()
+			{
+				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
+				Rating = 10,
+				Comment = "One of the best movies I've ever seen!",
+				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
+
+			};
+
+			userReviews.Add(userReview);
+
+			userReview = new UserReview()
+			{
+				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
+				Rating = 10,
+				Comment = "One of the best movies I've ever seen!",
+				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
+
+			};
+
+			userReviews.Add(userReview);
 		}
 	}
 

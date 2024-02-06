@@ -45,5 +45,15 @@ namespace TopMovies.Common
 			public const int DescriptionMaxLength = 2000;
 
 		}
+
+        public class UserReview
+        {
+            public const int RatingMin = 1;
+            public const int RatingMax = 10;
+
+            public const int CommentMinLength = 10;
+            public const int CommentMaxLength = 1000;
+
+        }
 	}
 }

@@ -1,11 +1,6 @@
-﻿using TopMovies.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static TopMovies.Common.EntityValidationConstants.UserReview;
 
 namespace TopMovies.Data.Models
 {
@@ -21,8 +16,10 @@ namespace TopMovies.Data.Models
 		public ApplicationUser ApplicationUser { get; set; } = null!;
 
 
+		[Range(RatingMin, RatingMax)]
 		public int Rating { get; set; }
 
+		[MaxLength(CommentMaxLength)]
 		public string Comment { get; set; } = null!;
 
 		public Guid MovieId { get; set; }
