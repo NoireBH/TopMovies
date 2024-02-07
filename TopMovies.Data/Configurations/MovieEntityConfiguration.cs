@@ -29,7 +29,9 @@ namespace TopMovies.Data.Configurations
 				Name = "The Shawshank Redemption",
 				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
 				ReleaseDate = 1994,
+				Rating = 9.3,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
+				
 			};
 
 			movies.Add(movie);
@@ -40,6 +42,7 @@ namespace TopMovies.Data.Configurations
 				Name = "The Godfather",
 				Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
 				ReleaseDate = 1972,
+				Rating = 9.2,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
 			};
 
@@ -48,10 +51,11 @@ namespace TopMovies.Data.Configurations
 			movie = new Movie()
 			{
 				Id = Guid.Parse("13B84726-1968-4206-9F4B-856A4BA9998A"),
-				Name = "The Shawshank Redemption",
-				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
-				ReleaseDate = 1994,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"
+				Name = "Saw",
+				Description = "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.",
+				ReleaseDate = 2004,
+				Rating = 7.6,
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg"
 			};
 
 			movies.Add(movie);
