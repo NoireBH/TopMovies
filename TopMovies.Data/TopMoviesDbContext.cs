@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TopMovies.Data.Configurations;
 
 namespace TopMovies.Data
 {
@@ -20,6 +21,21 @@ namespace TopMovies.Data
 			: base(options)
 		{
 
+		}
+
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+			builder.ApplyConfiguration(new ActorEntityConfiguration());
+			builder.ApplyConfiguration(new GenreEntityConfiguration());
+			builder.ApplyConfiguration(new MovieEntityConfiguration());
+			builder.ApplyConfiguration(new UserReviewEntityConfiguration());
+
+			base.OnModelCreating(builder);
+		}
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			base.OnConfiguring(optionsBuilder);
 		}
 	}
 }

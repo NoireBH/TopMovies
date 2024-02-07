@@ -13,10 +13,10 @@ namespace TopMovies.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<UserReview> builder)
 		{
-			throw new NotImplementedException();
+			builder.HasData(SeedUserReviews());
 		}
 
-		private void SeedUserReviews()
+		private UserReview[] SeedUserReviews()
 		{
 
 			var userReviews = new HashSet<UserReview>();
@@ -61,7 +61,7 @@ namespace TopMovies.Data.Configurations
 
 			userReview = new UserReview()
 			{
-				Id = new Guid("ECD7D309-AA53-44BB-B876-27A6BF213DC5"),
+				Id = new Guid("8EFD4094-5824-434C-9019-EAFB5CCE9510"),
 				ApplicationUserId = Guid.Parse("735B0AD2-82A1-4394-A521-2B1DC921C737"),
 				Rating = 10,
 				Comment = "Peak fiction, they don't make dark batman movies like this anymore...",
@@ -82,6 +82,8 @@ namespace TopMovies.Data.Configurations
 			};
 
 			userReviews.Add(userReview);
+
+			return userReviews.ToArray();
 		}
 	}
 
