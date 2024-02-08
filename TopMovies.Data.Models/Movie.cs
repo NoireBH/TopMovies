@@ -5,18 +5,19 @@ namespace TopMovies.Data.Models
 {
 	public class Movie
 	{
-        public Movie()
-        {
-            Genres = new HashSet<Genre>();
+		public Movie()
+		{
+			Genres = new HashSet<Genre>();
 			UserReviews = new HashSet<UserReview>();
 			Actors = new HashSet<Actor>();
 			MovieCharacters = new HashSet<MovieCharacter>();
 			ActorsMovies = new HashSet<ActorMovie>();
 			MovieGenres = new HashSet<MovieGenre>();
-        }
+			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
+		}
 
 		[Key]
-        public Guid Id { get; set; }
+		public Guid Id { get; set; }
 
 		[Required]
 		[MaxLength(NameMaxLength)]
@@ -48,6 +49,8 @@ namespace TopMovies.Data.Models
 		public virtual ICollection<ActorMovie> ActorsMovies { get; set; }
 
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
+
+		public virtual ICollection<MovieMovieCharacter> MovieMovieCharacters { get; set; }
 
 	}
 }
