@@ -10,6 +10,7 @@ namespace TopMovies.Data.Models
 		{
 			Movies = new HashSet<Movie>();
 			Actors = new HashSet<Actor>();
+			MovieCharacters = new HashSet<MovieCharacter>();
 		}
 
 		[Key]
@@ -31,5 +32,7 @@ namespace TopMovies.Data.Models
 		public virtual ICollection<Movie> Movies { get; set; }
 
 		public virtual ICollection<Actor> Actors { get; set; }
+
+		public virtual ICollection<MovieCharacter> MovieCharacters { get; set; }
 	}
 }

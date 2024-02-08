@@ -3,20 +3,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TopMovies.Data.Models;
 namespace TopMovies.Data.Configurations
 {
-	public class ActorMovieEntityConfiguration : IEntityTypeConfiguration<ActorsMovies>
+	public class ActorMovieEntityConfiguration : IEntityTypeConfiguration<ActorMovie>
 	{
-		public void Configure(EntityTypeBuilder<ActorsMovies> builder)
+		public void Configure(EntityTypeBuilder<ActorMovie> builder)
 		{
 			throw new NotImplementedException();
 		}
 
 		private void SeedActorMovies()
 		{
-			var actorMovies = new HashSet<ActorsMovies>();
+			var actorMovies = new HashSet<ActorMovie>();
 
-			ActorsMovies actorMovie;
+			ActorMovie actorMovie;
 
-			actorMovie = new ActorsMovies()
+			actorMovie = new ActorMovie()
 			{
 				
 			};

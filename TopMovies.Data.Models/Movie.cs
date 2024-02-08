@@ -11,6 +11,8 @@ namespace TopMovies.Data.Models
 			UserReviews = new HashSet<UserReview>();
 			Actors = new HashSet<Actor>();
 			MovieCharacters = new HashSet<MovieCharacter>();
+			ActorsMovies = new HashSet<ActorMovie>();
+			MovieGenres = new HashSet<MovieGenre>();
         }
 
 		[Key]
@@ -30,6 +32,11 @@ namespace TopMovies.Data.Models
 		[Range(typeof(double), RatingMin, RatingMax)]
 		public double Rating { get; set; }
 
+		[Required]
+		public string ImageUrl { get; set; } = null!;
+
+		public bool IsActive { get; set; }
+
 		public virtual IEnumerable<Genre> Genres { get; set; }
 
 		public virtual IEnumerable<UserReview> UserReviews { get; set; }
@@ -38,10 +45,9 @@ namespace TopMovies.Data.Models
 
 		public virtual IEnumerable<MovieCharacter> MovieCharacters { get; set; }
 
-		[Required]
-		public string ImageUrl { get; set; } = null!;
+		public virtual ICollection<ActorMovie> ActorsMovies { get; set; }
 
-		public bool IsActive { get; set; }
+		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
 	}
 }

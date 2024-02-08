@@ -10,12 +10,18 @@ namespace TopMovies.Data
 	{
 
 		public DbSet<Actor> Actors { get; set; } = null!;
-		
+
+		public DbSet<ActorMovie> ActorMovies { get; set; } = null!;
+
+		public DbSet<ActorMovieCharacter> ActorMovieCharacters { get; set; } = null!;
+
 		public DbSet<Movie> Movies { get; set; } = null!;
 
 		public DbSet<MovieCharacter> MovieCharacters { get; set; } = null!;
 
 		public DbSet<UserReview> UserReviews { get; set; } = null!;
+
+		public DbSet<Genre> Genres { get; set; } = null!;
 
 		public TopMoviesDbContext(DbContextOptions<TopMoviesDbContext> options)
 			: base(options)

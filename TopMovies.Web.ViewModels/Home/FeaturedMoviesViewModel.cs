@@ -12,6 +12,6 @@ namespace TopMovies.Web.ViewModels.Home
 
         public string Title { get; set; } = null!;
 
-        public byte[] Image { get; set; } = null!;
+        public string Image { get; set; } = null!;
     }
 }
