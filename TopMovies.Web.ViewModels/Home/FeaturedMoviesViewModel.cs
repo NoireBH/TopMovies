@@ -8,10 +8,10 @@ namespace TopMovies.Web.ViewModels.Home
 {
     public class FeaturedMoviesViewModel
     {
-        public string Id { get; set; } = null!;
+        public Guid Id { get; set; }
 
-        public string Title { get; set; } = null!;
+        public string Name { get; set; } = null!;
 
-        public string Image { get; set; } = null!;
+        public string ImageUrl { get; set; } = null!;
     }
 }
