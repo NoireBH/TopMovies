@@ -15,7 +15,7 @@ namespace TopMovies.Data.Models
 		public Actor Actor { get; set; } = null!;
 
 		[ForeignKey(nameof(Movie))]
-		public int MovieId { get; set; }
+		public Guid MovieId { get; set; }
 
 		public Movie Movie { get; set; } = null!;
 	}

@@ -7,7 +7,6 @@ namespace TopMovies.Data.Models
 	{
 		public Genre()
 		{
-			Movies = new HashSet<Movie>();
 			MovieGenres = new HashSet<MovieGenre>();
 		}
 
@@ -17,8 +16,6 @@ namespace TopMovies.Data.Models
 		[Required]
 		[MaxLength(NameMaxLength)]
 		public string Name { get; set; } = null!;
-
-		public virtual ICollection<Movie> Movies { get; set; }
 
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 	}

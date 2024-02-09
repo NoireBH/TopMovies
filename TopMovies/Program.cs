@@ -2,6 +2,8 @@ using TopMovies.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
+using TopMovies.Services.Data.Interfaces;
+using TopMovies.Services.Data;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ string connectionString = builder.Configuration.GetConnectionString("SqlConnecti
 builder.Services.AddDbContext<TopMoviesDbContext>(options =>
 	options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddScoped<IMovieService,MovieService>();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {

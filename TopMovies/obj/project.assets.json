@@ -4138,6 +4138,30 @@
         "runtime": {
           "bin/placeholder/TopMovies.Data.Models.dll": {}
         }
+      },
+      "TopMovies.Services.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "TopMovies.Data": "1.0.0",
+          "TopMovies.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TopMovies.Services.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Services.Data.dll": {}
+        }
+      },
+      "TopMovies.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TopMovies.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -11538,6 +11562,16 @@
       "type": "project",
       "path": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj",
       "msbuildProject": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj"
+    },
+    "TopMovies.Services.Data/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Services.Data/TopMovies.Services.Data.csproj",
+      "msbuildProject": "../TopMovies.Services.Data/TopMovies.Services.Data.csproj"
+    },
+    "TopMovies.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Web.ViewModels/TopMovies.Web.ViewModels.csproj",
+      "msbuildProject": "../TopMovies.Web.ViewModels/TopMovies.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11549,7 +11583,9 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.26",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.26",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "TopMovies.Data >= 1.0.0"
+      "TopMovies.Data >= 1.0.0",
+      "TopMovies.Services.Data >= 1.0.0",
+      "TopMovies.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11586,6 +11622,12 @@
           "projectReferences": {
             "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data\\TopMovies.Data.csproj": {
               "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data\\TopMovies.Data.csproj"
+            },
+            "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Data\\TopMovies.Services.Data.csproj": {
+              "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Data\\TopMovies.Services.Data.csproj"
+            },
+            "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.ViewModels\\TopMovies.Web.ViewModels.csproj": {
+              "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.ViewModels\\TopMovies.Web.ViewModels.csproj"
             }
           }
         }

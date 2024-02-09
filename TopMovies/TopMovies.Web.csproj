@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TopMovies.Data\TopMovies.Data.csproj" />
+    <ProjectReference Include="..\TopMovies.Services.Data\TopMovies.Services.Data.csproj" />
+    <ProjectReference Include="..\TopMovies.Web.ViewModels\TopMovies.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,7 +12,10 @@ namespace TopMovies.Data.Models
 		public ApplicationUser()
 		{
 			Id = Guid.NewGuid();
+			UserReviews = new HashSet<UserReview>();
 		}
+
+		public virtual ICollection<UserReview> UserReviews { get; set; }
 
 	}
 }

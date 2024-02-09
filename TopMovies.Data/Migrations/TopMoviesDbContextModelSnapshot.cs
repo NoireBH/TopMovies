@@ -22,51 +22,6 @@ namespace TopMovies.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ActorMovie", b =>
-                {
-                    b.Property<int>("ActorsId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("MoviesId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ActorsId", "MoviesId");
-
-                    b.HasIndex("MoviesId");
-
-                    b.ToTable("ActorMovie");
-                });
-
-            modelBuilder.Entity("ActorMovieCharacter", b =>
-                {
-                    b.Property<int>("ActorsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MovieCharactersId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ActorsId", "MovieCharactersId");
-
-                    b.HasIndex("MovieCharactersId");
-
-                    b.ToTable("ActorMovieCharacter");
-                });
-
-            modelBuilder.Entity("GenreMovie", b =>
-                {
-                    b.Property<int>("GenresId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("MoviesId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("GenresId", "MoviesId");
-
-                    b.HasIndex("MoviesId");
-
-                    b.ToTable("GenreMovie");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
                 {
                     b.Property<Guid>("Id")
@@ -202,21 +157,6 @@ namespace TopMovies.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MovieMovieCharacter", b =>
-                {
-                    b.Property<int>("MovieCharactersId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("MoviesId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("MovieCharactersId", "MoviesId");
-
-                    b.HasIndex("MoviesId");
-
-                    b.ToTable("MovieMovieCharacter");
-                });
-
             modelBuilder.Entity("TopMovies.Data.Models.Actor", b =>
                 {
                     b.Property<int>("Id")
@@ -287,6 +227,36 @@ namespace TopMovies.Data.Migrations
                             Name = "Samuel L. Jackson",
                             YearBorn = new DateTime(1948, 12, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.ActorMovie", b =>
+                {
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("ActorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MovieId", "ActorId");
+
+                    b.HasIndex("ActorId");
+
+                    b.ToTable("ActorMovies");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.ActorMovieCharacter", b =>
+                {
+                    b.Property<int>("MovieCharacterId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ActorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MovieCharacterId", "ActorId");
+
+                    b.HasIndex("ActorId");
+
+                    b.ToTable("ActorMovieCharacters");
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.ApplicationUser", b =>
@@ -370,7 +340,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genre");
+                    b.ToTable("Genres");
 
                     b.HasData(
                         new
@@ -466,7 +436,7 @@ namespace TopMovies.Data.Migrations
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg",
                             IsActive = false,
                             Name = "The Shawshank Redemption",
-                            Rating = 0.0,
+                            Rating = 9.3000000000000007,
                             ReleaseDate = 1994
                         },
                         new
@@ -476,18 +446,18 @@ namespace TopMovies.Data.Migrations
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg",
                             IsActive = false,
                             Name = "The Godfather",
-                            Rating = 0.0,
+                            Rating = 9.1999999999999993,
                             ReleaseDate = 1972
                         },
                         new
                         {
                             Id = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
-                            Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
-                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg",
+                            Description = "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg",
                             IsActive = false,
-                            Name = "The Shawshank Redemption",
-                            Rating = 0.0,
-                            ReleaseDate = 1994
+                            Name = "Saw",
+                            Rating = 7.5999999999999996,
+                            ReleaseDate = 2004
                         },
                         new
                         {
@@ -496,7 +466,7 @@ namespace TopMovies.Data.Migrations
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg",
                             IsActive = false,
                             Name = "The Dark Knight",
-                            Rating = 0.0,
+                            Rating = 9.0,
                             ReleaseDate = 2008
                         },
                         new
@@ -506,7 +476,7 @@ namespace TopMovies.Data.Migrations
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg",
                             IsActive = false,
                             Name = "Pulp Fiction",
-                            Rating = 0.0,
+                            Rating = 8.9000000000000004,
                             ReleaseDate = 1994
                         });
                 });
@@ -541,6 +511,36 @@ namespace TopMovies.Data.Migrations
                     b.ToTable("MovieCharacters");
                 });
 
+            modelBuilder.Entity("TopMovies.Data.Models.MovieGenre", b =>
+                {
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("GenreId", "MovieId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("MovieGenres");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.MovieMovieCharacter", b =>
+                {
+                    b.Property<int>("MovieCharacterId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("MovieCharacterId", "MovieId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("MovieMovieCharacters");
+                });
+
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.Property<Guid>("Id")
@@ -568,93 +568,6 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("UserReviews");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ecd7d309-aa53-44bb-b876-27a6bf213dc5"),
-                            ApplicationUserId = new Guid("735b0ad2-82a1-4394-a521-2b1dc921c737"),
-                            Comment = "One of the best movies I've ever seen!",
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
-                            Rating = 10
-                        },
-                        new
-                        {
-                            Id = new Guid("176697c8-9480-447a-9e86-07b70b0a6585"),
-                            ApplicationUserId = new Guid("735b0ad2-82a1-4394-a521-2b1dc921c737"),
-                            Comment = "A classic! My only complaint is that the pacing was too slow for my taste.If you have ADHD like me you're gonna have a hard time watching this movie, but i still think it's worth watching!",
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
-                            Rating = 9
-                        },
-                        new
-                        {
-                            Id = new Guid("fbd5e0af-4c33-411b-a0b3-88d7863f9d6e"),
-                            ApplicationUserId = new Guid("79228dc5-f961-4645-9fd7-e3bc820875e0"),
-                            Comment = "While good it's extremely overrated",
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
-                            Rating = 7
-                        },
-                        new
-                        {
-                            Id = new Guid("8efd4094-5824-434c-9019-eafb5cce9510"),
-                            ApplicationUserId = new Guid("735b0ad2-82a1-4394-a521-2b1dc921c737"),
-                            Comment = "Peak fiction, they don't make dark batman movies like this anymore...",
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
-                            Rating = 10
-                        },
-                        new
-                        {
-                            Id = new Guid("96475262-852c-442f-b88c-8642835ecb30"),
-                            ApplicationUserId = new Guid("79228dc5-f961-4645-9fd7-e3bc820875e0"),
-                            Comment = "Not that great. Didn't remain consistent with Batman Begins and was extremely predictable. The plot and action labors along and never reaches a satisfying conclusion. The best thing about this film is the score.\r\n",
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
-                            Rating = 4
-                        });
-                });
-
-            modelBuilder.Entity("ActorMovie", b =>
-                {
-                    b.HasOne("TopMovies.Data.Models.Actor", null)
-                        .WithMany()
-                        .HasForeignKey("ActorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TopMovies.Data.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MoviesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ActorMovieCharacter", b =>
-                {
-                    b.HasOne("TopMovies.Data.Models.Actor", null)
-                        .WithMany()
-                        .HasForeignKey("ActorsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TopMovies.Data.Models.MovieCharacter", null)
-                        .WithMany()
-                        .HasForeignKey("MovieCharactersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("GenreMovie", b =>
-                {
-                    b.HasOne("TopMovies.Data.Models.Genre", null)
-                        .WithMany()
-                        .HasForeignKey("GenresId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TopMovies.Data.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MoviesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -708,25 +621,86 @@ namespace TopMovies.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MovieMovieCharacter", b =>
+            modelBuilder.Entity("TopMovies.Data.Models.ActorMovie", b =>
                 {
-                    b.HasOne("TopMovies.Data.Models.MovieCharacter", null)
-                        .WithMany()
-                        .HasForeignKey("MovieCharactersId")
+                    b.HasOne("TopMovies.Data.Models.Actor", "Actor")
+                        .WithMany("ActorsMovies")
+                        .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TopMovies.Data.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MoviesId")
+                    b.HasOne("TopMovies.Data.Models.Movie", "Movie")
+                        .WithMany("ActorsMovies")
+                        .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Actor");
+
+                    b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.ActorMovieCharacter", b =>
+                {
+                    b.HasOne("TopMovies.Data.Models.Actor", "Actor")
+                        .WithMany("ActorMovieCharacters")
+                        .HasForeignKey("ActorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TopMovies.Data.Models.MovieCharacter", "MovieCharacter")
+                        .WithMany("ActorMovieCharacters")
+                        .HasForeignKey("MovieCharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Actor");
+
+                    b.Navigation("MovieCharacter");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.MovieGenre", b =>
+                {
+                    b.HasOne("TopMovies.Data.Models.Genre", "Genre")
+                        .WithMany("MovieGenres")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TopMovies.Data.Models.Movie", "Movie")
+                        .WithMany("MovieGenres")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genre");
+
+                    b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.MovieMovieCharacter", b =>
+                {
+                    b.HasOne("TopMovies.Data.Models.MovieCharacter", "MovieCharacter")
+                        .WithMany("MovieMovieCharacters")
+                        .HasForeignKey("MovieCharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TopMovies.Data.Models.Movie", "Movie")
+                        .WithMany("MovieMovieCharacters")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("MovieCharacter");
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.HasOne("TopMovies.Data.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
+                        .WithMany("UserReviews")
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -742,9 +716,39 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.Movie", b =>
+            modelBuilder.Entity("TopMovies.Data.Models.Actor", b =>
+                {
+                    b.Navigation("ActorMovieCharacters");
+
+                    b.Navigation("ActorsMovies");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("UserReviews");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.Genre", b =>
+                {
+                    b.Navigation("MovieGenres");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.Movie", b =>
+                {
+                    b.Navigation("ActorsMovies");
+
+                    b.Navigation("MovieGenres");
+
+                    b.Navigation("MovieMovieCharacters");
+
+                    b.Navigation("UserReviews");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.MovieCharacter", b =>
+                {
+                    b.Navigation("ActorMovieCharacters");
+
+                    b.Navigation("MovieMovieCharacters");
                 });
 #pragma warning restore 612, 618
         }

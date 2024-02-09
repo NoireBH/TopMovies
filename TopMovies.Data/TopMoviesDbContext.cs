@@ -9,6 +9,12 @@ namespace TopMovies.Data
 	public class TopMoviesDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 	{
 
+		public TopMoviesDbContext(DbContextOptions<TopMoviesDbContext> options)
+			: base(options)
+		{
+
+		}
+
 		public DbSet<Actor> Actors { get; set; } = null!;
 
 		public DbSet<ActorMovie> ActorMovies { get; set; } = null!;
@@ -25,20 +31,22 @@ namespace TopMovies.Data
 
 		public DbSet<UserReview> UserReviews { get; set; } = null!;
 
-		public DbSet<Genre> Genres { get; set; } = null!;
-
-		public TopMoviesDbContext(DbContextOptions<TopMoviesDbContext> options)
-			: base(options)
-		{
-
-		}
+		public DbSet<Genre> Genres { get; set; } = null!;		
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
+
+			builder.Entity<ActorMovie>().HasKey(x => new { x.MovieId, x.ActorId });
+			builder.Entity<ActorMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.ActorId });
+			builder.Entity<MovieMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.MovieId });
+			builder.Entity<MovieGenre>().HasKey(x => new { x.GenreId, x.MovieId });
+
 			builder.ApplyConfiguration(new ActorEntityConfiguration());
 			builder.ApplyConfiguration(new GenreEntityConfiguration());
 			builder.ApplyConfiguration(new MovieEntityConfiguration());
-			builder.ApplyConfiguration(new UserReviewEntityConfiguration());
+			//builder.ApplyConfiguration(new UserReviewEntityConfiguration());
+
+			
 
 			base.OnModelCreating(builder);
 		}

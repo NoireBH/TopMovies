@@ -15,7 +15,9 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.26",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.26",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
-          "TopMovies.Data": "1.0.0"
+          "TopMovies.Data": "1.0.0",
+          "TopMovies.Services.Data": "1.0.0",
+          "TopMovies.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "TopMovies.Web.dll": {}
@@ -2782,6 +2784,20 @@
         "runtime": {
           "TopMovies.Data.Models.dll": {}
         }
+      },
+      "TopMovies.Services.Data/1.0.0": {
+        "dependencies": {
+          "TopMovies.Data": "1.0.0",
+          "TopMovies.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "TopMovies.Services.Data.dll": {}
+        }
+      },
+      "TopMovies.Web.ViewModels/1.0.0": {
+        "runtime": {
+          "TopMovies.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -4426,6 +4442,16 @@
       "sha512": ""
     },
     "TopMovies.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TopMovies.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TopMovies.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -7,10 +7,7 @@ namespace TopMovies.Data.Models
 	{
 		public Movie()
 		{
-			Genres = new HashSet<Genre>();
 			UserReviews = new HashSet<UserReview>();
-			Actors = new HashSet<Actor>();
-			MovieCharacters = new HashSet<MovieCharacter>();
 			ActorsMovies = new HashSet<ActorMovie>();
 			MovieGenres = new HashSet<MovieGenre>();
 			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
@@ -38,17 +35,11 @@ namespace TopMovies.Data.Models
 
 		public bool IsActive { get; set; }
 
-		public virtual IEnumerable<Genre> Genres { get; set; }
+		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
 		public virtual IEnumerable<UserReview> UserReviews { get; set; }
 
-		public virtual IEnumerable<Actor> Actors { get; set; }
-
-		public virtual IEnumerable<MovieCharacter> MovieCharacters { get; set; }
-
 		public virtual ICollection<ActorMovie> ActorsMovies { get; set; }
-
-		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
 		public virtual ICollection<MovieMovieCharacter> MovieMovieCharacters { get; set; }
 
