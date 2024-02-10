@@ -22,8 +22,7 @@ namespace TopMovies.Services.Data
 
 		public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
 		{
-			Movie[] allMovies = await dbContext.Movies.AsNoTracking().ToArrayAsync();
-			allMovies.OrderBy(_ => Guid.NewGuid()).Take(3);
+			Movie[] allMovies = await dbContext.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
 
 			FeaturedMoviesViewModel [] featuredMovies = allMovies
 				.Select(m => new FeaturedMoviesViewModel
