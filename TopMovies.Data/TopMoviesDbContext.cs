@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TopMovies.Data.Configurations;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TopMovies.Data
 {
@@ -41,6 +42,7 @@ namespace TopMovies.Data
 			builder.Entity<MovieMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.MovieId });
 			builder.Entity<MovieGenre>().HasKey(x => new { x.GenreId, x.MovieId });
 
+			builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 			builder.ApplyConfiguration(new ActorEntityConfiguration());
 			builder.ApplyConfiguration(new GenreEntityConfiguration());
 			builder.ApplyConfiguration(new MovieEntityConfiguration());
