@@ -27,7 +27,7 @@ namespace TopMovies.Data.Models
         public string ImageUrl { get; set; } = null!;
 
         [Required]
-        public DateTime YearBorn { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<ActorMovie> ActorsMovies { get; set;}
 

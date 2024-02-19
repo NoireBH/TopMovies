@@ -18,7 +18,7 @@ namespace TopMovies.Data.Configurations
 
 			actorMovie = new ActorMovie()
 			{
-				
+				ActorId
 			};
 		}
 	}
