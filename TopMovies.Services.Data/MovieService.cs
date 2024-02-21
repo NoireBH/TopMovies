@@ -8,21 +8,34 @@ using TopMovies.Data;
 using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.ViewModels.Home;
+using TopMovies.Web.ViewModels.Movie;
 
 namespace TopMovies.Services.Data
 {
 	public class MovieService : IMovieService
 	{
-		private readonly TopMoviesDbContext dbContext;
+		private readonly TopMoviesDbContext context;
 
-		public MovieService(TopMoviesDbContext dbContext)
+		public MovieService(TopMoviesDbContext context)
 		{
-			this.dbContext = dbContext;
+			this.context = context;
 		}
 
-		public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
+        public async Task<bool> ExistsByIdAsync(string id)
+        {
+            var exists = await context.Movies.FirstOrDefaultAsync(m => m.Equals(id));
+
+			if (exists == null)
+			{
+				return false;
+			}
+
+			return true;
+        }
+
+        public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
 		{
-			Movie[] allMovies = await dbContext.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
+			Movie[] allMovies = await context.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
 
 			FeaturedMoviesViewModel [] featuredMovies = allMovies
 				.Select(m => new FeaturedMoviesViewModel
@@ -34,5 +47,10 @@ namespace TopMovies.Services.Data
 
 			return featuredMovies;
 		}
-	}
+
+        public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
+        {
+            var movie = await context.Movies
+        }
+    }
 }

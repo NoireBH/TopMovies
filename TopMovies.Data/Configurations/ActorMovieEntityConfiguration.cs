@@ -16,10 +16,10 @@ namespace TopMovies.Data.Configurations
 
 			ActorMovie actorMovie;
 
-			actorMovie = new ActorMovie()
-			{
-				ActorId
-			};
+			//actorMovie = new ActorMovie()
+			//{
+			//	ActorId
+			//};
 		}
 	}
 }
