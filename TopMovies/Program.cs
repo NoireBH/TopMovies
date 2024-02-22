@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Data;
+using System.Reflection;
+using AspNetCoreTemplate.Services.Mapping;
+using TopMovies.Web.ViewModels;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +39,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 builder.Services.AddControllersWithViews();
 
 WebApplication app = builder.Build();
+
+AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
 
 if (app.Environment.IsDevelopment())

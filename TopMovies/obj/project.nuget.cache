@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mRwiG0Z3xRs94Nf2wPAqYVBInoCohdQEyaUv8tOTaoQhFyc12zPdJKMN6G+lAa+O/gQRR/eV452gL31aoWR5UQ==",
+  "dgSpecHash": "Mj1bOdMbta/qee3aHKErtqgelQ+7fEmsoCR2i2w4sWRQrNK6R7XrEngsC/yoog2dfgtGOfecJD+haHS5wWiUAA==",
   "success": true,
   "projectFilePath": "D:\\my documents\\Projects\\TopMovies\\TopMovies\\TopMovies.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elmir\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

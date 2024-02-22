@@ -23,14 +23,7 @@ namespace TopMovies.Services.Data
 
         public async Task<bool> ExistsByIdAsync(string id)
         {
-            var exists = await context.Movies.FirstOrDefaultAsync(m => m.Equals(id));
-
-			if (exists == null)
-			{
-				return false;
-			}
-
-			return true;
+            return await context.Movies.AnyAsync(m => m.Id.ToString() == id);
         }
 
         public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
@@ -50,7 +43,7 @@ namespace TopMovies.Services.Data
 
         public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
-            var movie = await context.Movies
+			var movie = await context.Movies.FirstOrDefaultAsync(m => m.Id.ToString() == id);
         }
     }
 }

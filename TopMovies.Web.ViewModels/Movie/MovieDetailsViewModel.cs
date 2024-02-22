@@ -10,7 +10,7 @@ namespace TopMovies.Web.ViewModels.Movie
 {
     public class MovieDetailsViewModel
     {
-        public Movie()
+        public MovieDetailsViewModel()
         {
             UserReviews = new HashSet<UserReview>();
             ActorsMovies = new HashSet<ActorMovie>();
