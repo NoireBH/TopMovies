@@ -13,14 +13,14 @@ using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Services.Data
 {
-	public class MovieService : IMovieService
-	{
-		private readonly TopMoviesDbContext context;
+    public class MovieService : IMovieService
+    {
+        private readonly TopMoviesDbContext context;
 
-		public MovieService(TopMoviesDbContext context)
-		{
-			this.context = context;
-		}
+        public MovieService(TopMoviesDbContext context)
+        {
+            this.context = context;
+        }
 
         public async Task<bool> ExistsByIdAsync(string id)
         {
@@ -28,36 +28,28 @@ namespace TopMovies.Services.Data
         }
 
         public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
-		{
-			Movie[] allMovies = await context.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
+        {
+            Movie[] allMovies = await context.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
 
-			FeaturedMoviesViewModel [] featuredMovies = allMovies
-				.Select(m => new FeaturedMoviesViewModel
-				{
-					Id = m.Id,
-					Name = m.Name,
-					ImageUrl = m.ImageUrl
-				}).ToArray();
+            FeaturedMoviesViewModel[] featuredMovies = allMovies
+                .Select(m => new FeaturedMoviesViewModel
+                {
+                    Id = m.Id,
+                    Name = m.Name,
+                    ImageUrl = m.ImageUrl
+                }).ToArray();
 
-			return featuredMovies;
-		}
+            return featuredMovies;
+        }
 
         public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
-			var movie = await context.Movies
-				.Where(m => m.Id.ToString() == id)
-				.Select(m => new MovieDetailsViewModel
-				{
-					Id = m.Id,
-					Name = m.Name,
-					Description = m.Description,
-					ReleaseDateYear = m.ReleaseDate.Year,
-					Rating = m.Rating,
-					ImageUrl = m.ImageUrl,
-					
-				})
-				.FirstOrDefaultAsync();
+            var movie = await context.Movies
+                .Where(m => m.Id.ToString() == id)
+                .To<MovieDetailsViewModel>()
+                .FirstOrDefaultAsync();
 
+            return movie!;
 
         }
     }
