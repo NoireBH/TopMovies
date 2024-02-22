@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Services.Mapping
+﻿namespace TopMovies.Services.Mapping
 {
     using System;
     using System.Collections.Generic;
@@ -86,21 +86,23 @@
 
         private static IEnumerable<IHaveCustomMappings> GetCustomMappings(IEnumerable<Type> types)
         {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             var customMaps = from t in types
                              from i in t.GetTypeInfo().GetInterfaces()
                              where typeof(IHaveCustomMappings).GetTypeInfo().IsAssignableFrom(t) &&
                                    !t.GetTypeInfo().IsAbstract &&
                                    !t.GetTypeInfo().IsInterface
                              select (IHaveCustomMappings)Activator.CreateInstance(t);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
             return customMaps;
         }
 
         private class TypesMap
         {
-            public Type Source { get; set; }
+            public Type Source { get; set; } = null!;
 
-            public Type Destination { get; set; }
+            public Type Destination { get; set; } = null!;
         }
     }
 }

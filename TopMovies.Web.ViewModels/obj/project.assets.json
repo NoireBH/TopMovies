@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.20": {
         "type": "package",
         "compile": {
@@ -385,10 +401,38 @@
         "runtime": {
           "bin/placeholder/TopMovies.Data.Models.dll": {}
         }
+      },
+      "TopMovies.Services.Mapping/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/TopMovies.Services.Mapping.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Services.Mapping.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.20": {
       "sha512": "IGVRIIWJ0qWHmyT+dCx+yfBxlLr8KtQ1hFeAAyETmyVucjxzvS0foplKERL2Zj4ptNUyF4jYnUZy3ZjpjHnzPQ==",
       "type": "package",
@@ -845,11 +889,17 @@
       "type": "project",
       "path": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj",
       "msbuildProject": "../TopMovies.Data.Models/TopMovies.Data.Models.csproj"
+    },
+    "TopMovies.Services.Mapping/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Services.Mapping/TopMovies.Services.Mapping.csproj",
+      "msbuildProject": "../TopMovies.Services.Mapping/TopMovies.Services.Mapping.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "TopMovies.Data.Models >= 1.0.0"
+      "TopMovies.Data.Models >= 1.0.0",
+      "TopMovies.Services.Mapping >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -886,6 +936,9 @@
           "projectReferences": {
             "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data.Models\\TopMovies.Data.Models.csproj": {
               "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data.Models\\TopMovies.Data.Models.csproj"
+            },
+            "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj": {
+              "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj"
             }
           }
         }

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Home;
-using TopMovies.Web.ViewModels.Movie;
+using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Services.Data
 {
@@ -43,7 +44,21 @@ namespace TopMovies.Services.Data
 
         public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
-			var movie = await context.Movies.FirstOrDefaultAsync(m => m.Id.ToString() == id);
+			var movie = await context.Movies
+				.Where(m => m.Id.ToString() == id)
+				.Select(m => new MovieDetailsViewModel
+				{
+					Id = m.Id,
+					Name = m.Name,
+					Description = m.Description,
+					ReleaseDateYear = m.ReleaseDate.Year,
+					Rating = m.Rating,
+					ImageUrl = m.ImageUrl,
+					
+				})
+				.FirstOrDefaultAsync();
+
+
         }
     }
 }

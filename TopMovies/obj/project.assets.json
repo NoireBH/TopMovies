@@ -4186,7 +4186,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "TopMovies.Data.Models": "1.0.0"
+          "TopMovies.Data.Models": "1.0.0",
+          "TopMovies.Services.Mapping": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TopMovies.Web.ViewModels.dll": {}

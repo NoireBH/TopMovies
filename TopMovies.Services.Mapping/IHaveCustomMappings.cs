@@ -1,4 +1,4 @@
-﻿namespace AspNetCoreTemplate.Services.Mapping
+﻿namespace TopMovies.Services.Mapping
 {
     using AutoMapper;
 

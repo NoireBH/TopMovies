@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopMovies.Web.ViewModels.Home;
-using TopMovies.Web.ViewModels.Movie;
+using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Services.Data.Interfaces
 {

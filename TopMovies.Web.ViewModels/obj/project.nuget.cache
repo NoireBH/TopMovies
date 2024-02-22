@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5HkOSY0EmRjJbJ+hiWO57112verXujcRo/5pPQi18T+DXF6JwVo+PcoGz4dDXnKuupthMd2+vb66KV4veLRE9w==",
+  "dgSpecHash": "fPNmckPmTRSTzwBeGHJV1IQO6FO7/3wF/Q1gbp0qgzQsw/hLmUtecIxiAZQ7oLE3Wrq6g6NzMg0VUy3MnsHGUg==",
   "success": true,
   "projectFilePath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.ViewModels\\TopMovies.Web.ViewModels.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elmir\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.20\\microsoft.aspnetcore.cryptography.internal.6.0.20.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.20\\microsoft.aspnetcore.cryptography.keyderivation.6.0.20.nupkg.sha512",
     "C:\\Users\\Elmir\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.20\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.20.nupkg.sha512",

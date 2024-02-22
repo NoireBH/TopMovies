@@ -383,6 +383,9 @@
             "projectReferences": {
               "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data.Models\\TopMovies.Data.Models.csproj": {
                 "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Data.Models\\TopMovies.Data.Models.csproj"
+              },
+              "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj": {
+                "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj"
               }
             }
           }

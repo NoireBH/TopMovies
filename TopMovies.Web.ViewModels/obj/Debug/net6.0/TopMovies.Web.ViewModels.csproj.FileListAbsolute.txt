@@ -9,3 +9,4 @@ D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\Top
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\refint\TopMovies.Web.ViewModels.dll
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\ref\TopMovies.Web.ViewModels.dll
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.csproj.AssemblyReference.cache
