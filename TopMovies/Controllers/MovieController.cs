@@ -3,7 +3,7 @@ using TopMovies.Services.Data.Interfaces;
 
 namespace TopMovies.Web.Controllers
 {
-    public class MovieController : Controller
+    public class MovieController : BaseController
     {
         private IMovieService movieService;
 
@@ -21,6 +21,8 @@ namespace TopMovies.Web.Controllers
             {
                 return NotFound();
             }
+
+
 
             return View();
         }

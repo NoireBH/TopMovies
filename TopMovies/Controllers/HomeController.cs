@@ -1,21 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using TopMovies.Services.Data;
+using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.Controllers;
 using TopMovies.Web.ViewModels;
+using TopMovies.Web.ViewModels.Home;
 
 namespace TopMovies.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
 	{
-		private readonly ILogger<HomeController> _logger;
+		private readonly ILogger<HomeController> logger;
+		private readonly IMovieService movieService;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(
+			ILogger<HomeController> logger,
+			IMovieService movieService
+			)
 		{
-			_logger = logger;
-		}
+			this.logger = logger;
+			this.movieService = movieService;
+        }
 
-		public IActionResult Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
 		{
-			return View();
+            FeaturedMoviesViewModel[] featuredMovies = await movieService.GetFeaturedMoviesAsync();
+
+            return View(featuredMovies);
 		}
 
 		public IActionResult Privacy()

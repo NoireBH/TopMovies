@@ -298,3 +298,5 @@ D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.View
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\AutoMapper.dll
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Services.Mapping.dll
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Services.Mapping.pdb
+D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.Infrastructure.dll
+D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.Infrastructure.pdb
