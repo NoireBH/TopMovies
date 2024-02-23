@@ -19,3 +19,5 @@ D:\my documents\Projects\TopMovies\TopMovies.Services.Data\obj\Debug\net6.0\TopM
 D:\my documents\Projects\TopMovies\TopMovies.Services.Data\obj\Debug\net6.0\refint\TopMovies.Services.Data.dll
 D:\my documents\Projects\TopMovies\TopMovies.Services.Data\obj\Debug\net6.0\TopMovies.Services.Data.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Services.Data\obj\Debug\net6.0\ref\TopMovies.Services.Data.dll
+D:\my documents\Projects\TopMovies\TopMovies.Services.Data\bin\Debug\net6.0\TopMovies.Services.Mapping.dll
+D:\my documents\Projects\TopMovies\TopMovies.Services.Data\bin\Debug\net6.0\TopMovies.Services.Mapping.pdb

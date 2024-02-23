@@ -10,3 +10,10 @@ D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\ref
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\ref\TopMovies.Web.ViewModels.dll
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.csproj.AssemblyReference.cache
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Common.dll
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Data.Models.dll
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Services.Mapping.dll
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Data.Models.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Services.Mapping.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Common.pdb
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.csproj.CopyComplete

@@ -4182,6 +4182,19 @@
           "bin/placeholder/TopMovies.Services.Mapping.dll": {}
         }
       },
+      "TopMovies.Web.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.1"
+        },
+        "compile": {
+          "bin/placeholder/TopMovies.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TopMovies.Web.Infrastructure.dll": {}
+        }
+      },
       "TopMovies.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -11621,6 +11634,11 @@
       "path": "../TopMovies.Services.Mapping/TopMovies.Services.Mapping.csproj",
       "msbuildProject": "../TopMovies.Services.Mapping/TopMovies.Services.Mapping.csproj"
     },
+    "TopMovies.Web.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../TopMovies.Web.Infrastructure/TopMovies.Web.Infrastructure.csproj",
+      "msbuildProject": "../TopMovies.Web.Infrastructure/TopMovies.Web.Infrastructure.csproj"
+    },
     "TopMovies.Web.ViewModels/1.0.0": {
       "type": "project",
       "path": "../TopMovies.Web.ViewModels/TopMovies.Web.ViewModels.csproj",
@@ -11639,6 +11657,7 @@
       "TopMovies.Data >= 1.0.0",
       "TopMovies.Services.Data >= 1.0.0",
       "TopMovies.Services.Mapping >= 1.0.0",
+      "TopMovies.Web.Infrastructure >= 1.0.0",
       "TopMovies.Web.ViewModels >= 1.0.0"
     ]
   },
@@ -11682,6 +11701,9 @@
             },
             "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj": {
               "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Services.Mapping\\TopMovies.Services.Mapping.csproj"
+            },
+            "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.Infrastructure\\TopMovies.Web.Infrastructure.csproj": {
+              "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.Infrastructure\\TopMovies.Web.Infrastructure.csproj"
             },
             "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.ViewModels\\TopMovies.Web.ViewModels.csproj": {
               "projectPath": "D:\\my documents\\Projects\\TopMovies\\TopMovies.Web.ViewModels\\TopMovies.Web.ViewModels.csproj"

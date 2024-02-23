@@ -5,8 +5,9 @@ using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Data;
 using System.Reflection;
-using AspNetCoreTemplate.Services.Mapping;
 using TopMovies.Web.ViewModels;
+using TopMovies.Services.Mapping;
+using TopMovies.Web.Infrastructure.Extensions;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,8 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 })
  .AddRoles<IdentityRole<Guid>>()
  .AddEntityFrameworkStores<TopMoviesDbContext>();
+
+builder.Services.AddApplicationServices(typeof(IMovieService));
 
 builder.Services.AddControllersWithViews();
 
