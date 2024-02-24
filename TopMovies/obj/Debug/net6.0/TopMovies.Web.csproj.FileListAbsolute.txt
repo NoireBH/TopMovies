@@ -300,3 +300,4 @@ D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Services
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Services.Mapping.pdb
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.Infrastructure.dll
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.Infrastructure.pdb
+D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\libman.json

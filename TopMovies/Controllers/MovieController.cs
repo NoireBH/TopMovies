@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Web.Controllers
 {
     public class MovieController : BaseController
     {
-        private IMovieService movieService;
+        private readonly IMovieService movieService;
 
         public MovieController(IMovieService movieService)
         {
@@ -13,18 +15,31 @@ namespace TopMovies.Web.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Details(string id)
         {
             var movieExists = await movieService.ExistsByIdAsync(id);
 
+            MovieDetailsViewModel movie;
+
             if (!movieExists)
             {
-                return NotFound();
-            }
+				return Redirect(Request.Headers["Referer"].ToString());
+			}
 
+			try
+			{
+				 movie = await movieService.GetMovieDetailsByIdAsync(id);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
+				return Redirect(Request.Headers["Referer"].ToString());
 
-            return View();
+			}
+
+			return View(movie);
         }
     }
 }

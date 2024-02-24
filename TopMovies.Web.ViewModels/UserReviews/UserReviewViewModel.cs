@@ -11,7 +11,7 @@ namespace TopMovies.Web.ViewModels.UserReviews
 {
     public class UserReviewViewModel : IMapFrom<UserReview>
     {
-        public ApplicationUser ApplicationUserUserName { get; set; } = null!;
+        public string ApplicationUserUserName { get; set; } = null!;
 
         public int Rating { get; set; }
 

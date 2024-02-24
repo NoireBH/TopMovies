@@ -34,7 +34,7 @@ namespace TopMovies.Services.Data
             FeaturedMoviesViewModel[] featuredMovies = allMovies
                 .Select(m => new FeaturedMoviesViewModel
                 {
-                    Id = m.Id,
+                    Id = m.Id.ToString(),
                     Name = m.Name,
                     ImageUrl = m.ImageUrl
                 }).ToArray();

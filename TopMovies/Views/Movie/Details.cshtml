@@ -1,0 +1,56 @@
+﻿@model MovieDetailsViewModel
+
+<div>
+	@*
+	Main Details
+	*@
+	<section class="container-fluid">
+		<header class="row">
+			<div class="col-3">
+				<h1>@Model.Name (@Model.ReleaseDateYear)</h1>
+			</div>
+			<div class="col-3 offset-6">
+				<div class="d-flex justify-content-between">
+					<div>
+						<h4>Rating</h4>
+						<p><i class="fa-solid fa-star me-1" style="color: #FFD43B;"></i>@Model.Rating/10</p>
+					</div>
+					<div>
+						<h4>Rate this movie</h4>
+						<p class="text-center"><i class="fa-regular fa-star me-1" style="color: #FFD43B;"></i>Rate</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="container-fluid">
+			<div class="row" style="height:420px">
+				<div class="col-4" style="">
+					<img src="@Model.ImageUrl" class="img-fluid" style="max-height:420px" />
+				</div>
+				<div class="col-6">
+					<div class="ratio ratio-16x9">
+						<iframe src="https://www.youtube.com/embed/FnCdOQsX5kc" title="YouTube video" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="col-2">
+					<div class="d-flex flex-col">
+						<a src="" class="text-center">
+							<i class="fa-solid fa-image" style="color: #1056b1;"></i>
+							<p>Photos</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</section>
+	@*
+	Actors
+	*@
+	<section>
+	</section>
+	@*
+	User Reviews
+	*@
+	<section>
+	</section>
+</div>

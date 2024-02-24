@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using TopMovies.Data.Models;
 using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.MoviesMovieCharacters
 {
-    public class MovieMovieCharacterViewModel : IMapFrom<MovieMovieCharacterViewModel>
+	public class MovieMovieCharacterViewModel : IMapFrom<MovieMovieCharacter>
     {
         public int MovieCharacterId { get; set; }
 
