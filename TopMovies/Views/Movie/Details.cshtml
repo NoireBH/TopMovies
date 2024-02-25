@@ -1,15 +1,15 @@
 ﻿@model MovieDetailsViewModel
 
-<div>
+<div class="container-fluid">
 	@*
 	Main Details
 	*@
 	<section class="container-fluid">
 		<header class="row">
-			<div class="col-3">
+			<div class="col-5">
 				<h1>@Model.Name (@Model.ReleaseDateYear)</h1>
 			</div>
-			<div class="col-3 offset-6">
+			<div class="col-3 offset-4">
 				<div class="d-flex justify-content-between">
 					<div>
 						<h4>Rating</h4>
@@ -23,8 +23,8 @@
 			</div>
 		</header>
 		<main class="container-fluid">
-			<div class="row" style="height:420px">
-				<div class="col-4" style="">
+			<div class="row bg-dark" style="height:420px">
+				<div class="col-4">
 					<img src="@Model.ImageUrl" class="img-fluid" style="max-height:420px" />
 				</div>
 				<div class="col-6">
@@ -34,7 +34,7 @@
 				</div>
 				<div class="col-2">
 					<div class="d-flex flex-col">
-						<a src="" class="text-center">
+						<a src="" class="text-center display-3">
 							<i class="fa-solid fa-image" style="color: #1056b1;"></i>
 							<p>Photos</p>
 						</a>

@@ -15,27 +15,27 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-2">
-            <div class="container-fluid bg-dark" style="height:100px">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/TopMovies Logo2.png" style="max-width:100px;height:100px"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <div class="input-group">                        
-                        <input type="search" class="form-control rounded" placeholder="Search for movie..." aria-label="Search" aria-describedby="search-addon" />
-                        <input type="submit" value="Search" class="btn btn-primary" />
-                        <div class="container mt-2 d-flex justify-content-center">
-                            <a class="text-light">Advanced Search</a>
-                        </div>
-                    </div>                
-                    <partial name="_LoginPartial"/>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/TopMovies Logo2.png" style="max-width:100px;height:100px" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex flex-grow-1">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success text-light" type="submit">Search</button>
+                        </form>
+                        <div>
+                            <partial name="_LoginPartial" />
+                        </div>                        
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
