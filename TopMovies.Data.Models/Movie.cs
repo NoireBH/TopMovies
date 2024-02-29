@@ -34,6 +34,9 @@ namespace TopMovies.Data.Models
 
 		public bool IsActive { get; set; }
 
+		[Required]
+		public string TrailerUrl = null!;
+
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
 		public virtual IEnumerable<UserReview> UserReviews { get; set; }

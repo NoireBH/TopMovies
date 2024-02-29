@@ -12,8 +12,8 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    [Migration("20240220131148_Initial")]
-    partial class Initial
+    [Migration("20240229154510_InitialFixedDb")]
+    partial class InitialFixedDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
