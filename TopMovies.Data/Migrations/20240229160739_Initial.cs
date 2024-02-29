@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TopMovies.Data.Migrations
 {
-    public partial class InitialFixedDb : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -103,7 +103,8 @@ namespace TopMovies.Data.Migrations
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Rating = table.Column<double>(type: "float", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    TrailerUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -390,32 +391,32 @@ namespace TopMovies.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Movies",
-                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate" },
+                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate", "TrailerUrl" },
                 values: new object[,]
                 {
-                    { new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"), "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.", "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg", false, "The Dark Knight", 9.0, new DateTime(2008, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"), "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.", "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg", false, "Saw", 7.5999999999999996, new DateTime(2004, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"), "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg", false, "Pulp Fiction", 8.9000000000000004, new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"), "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.", "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg", false, "The Shawshank Redemption", 9.3000000000000007, new DateTime(1994, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"), "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg", false, "The Godfather", 9.1999999999999993, new DateTime(1972, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"), "A mysterious Hollywood action film stuntman gets in trouble with gangsters when he tries to help his neighbor's husband rob a pawn shop while serving as his getaway driver.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg", false, "Drive", 7.7999999999999998, new DateTime(2011, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("506f4021-595b-4637-bba0-e2b88377549e"), "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg", false, "It", 7.2999999999999998, new DateTime(2017, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"), "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.", "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg", false, "The Dark Knight", 9.0, new DateTime(2008, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/EXeTwQWrcwY" },
+                    { new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"), "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.", "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg", false, "Saw", 7.5999999999999996, new DateTime(2004, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/S-1QgOMQ-ls" },
+                    { new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"), "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.", "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg", false, "Pulp Fiction", 8.9000000000000004, new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/s7EdQ4FqbhY" },
+                    { new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"), "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.", "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg", false, "The Shawshank Redemption", 9.3000000000000007, new DateTime(1994, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/NmzuHjWmXOc" },
+                    { new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"), "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.", "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg", false, "The Godfather", 9.1999999999999993, new DateTime(1972, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/sY1S34973zA" },
+                    { new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"), "A mysterious Hollywood action film stuntman gets in trouble with gangsters when he tries to help his neighbor's husband rob a pawn shop while serving as his getaway driver.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg", false, "Drive", 7.7999999999999998, new DateTime(2011, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/KBiOF3y1W0Y" },
+                    { new Guid("506f4021-595b-4637-bba0-e2b88377549e"), "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg", false, "It", 7.2999999999999998, new DateTime(2017, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/FnCdOQsX5kc" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Movies",
-                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate" },
-                values: new object[] { new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"), "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.", "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg", false, "Blade Runner 2049", 8.0, new DateTime(2017, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate", "TrailerUrl" },
+                values: new object[] { new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"), "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.", "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg", false, "Blade Runner 2049", 8.0, new DateTime(2017, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/gCcx85zbxz4" });
 
             migrationBuilder.InsertData(
                 table: "Movies",
-                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate" },
-                values: new object[] { new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"), "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg", false, "Barbie", 6.9000000000000004, new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate", "TrailerUrl" },
+                values: new object[] { new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"), "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.\r\n\r\n", "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg", false, "Barbie", 6.9000000000000004, new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/pBk4NYhWNMM" });
 
             migrationBuilder.InsertData(
                 table: "Movies",
-                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate" },
-                values: new object[] { new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"), "A troubled security guard begins working at Freddy Fazbear's Pizza. During his first night on the job, he realizes that the night shift won't be so easy to get through. Pretty soon he will unveil what actually happened at Freddy's.", "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg", false, "Five Nights at Freddy's", 5.5, new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "Description", "ImageUrl", "IsActive", "Name", "Rating", "ReleaseDate", "TrailerUrl" },
+                values: new object[] { new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"), "A troubled security guard begins working at Freddy Fazbear's Pizza. During his first night on the job, he realizes that the night shift won't be so easy to get through. Pretty soon he will unveil what actually happened at Freddy's.", "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg", false, "Five Nights at Freddy's", 5.5, new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "https://www.youtube.com/embed/0VH9WCFV6XQ" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ActorMovieCharacters_ActorId",

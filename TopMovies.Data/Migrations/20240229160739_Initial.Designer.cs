@@ -12,8 +12,8 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    [Migration("20240229154510_InitialFixedDb")]
-    partial class InitialFixedDb
+    [Migration("20240229160739_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -586,6 +586,10 @@ namespace TopMovies.Data.Migrations
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("TrailerUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
@@ -599,7 +603,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "The Shawshank Redemption",
                             Rating = 9.3000000000000007,
-                            ReleaseDate = new DateTime(1994, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(1994, 9, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/NmzuHjWmXOc"
                         },
                         new
                         {
@@ -609,7 +614,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "The Godfather",
                             Rating = 9.1999999999999993,
-                            ReleaseDate = new DateTime(1972, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(1972, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/sY1S34973zA"
                         },
                         new
                         {
@@ -619,7 +625,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Saw",
                             Rating = 7.5999999999999996,
-                            ReleaseDate = new DateTime(2004, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2004, 1, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/S-1QgOMQ-ls"
                         },
                         new
                         {
@@ -629,7 +636,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "The Dark Knight",
                             Rating = 9.0,
-                            ReleaseDate = new DateTime(2008, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2008, 7, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/EXeTwQWrcwY"
                         },
                         new
                         {
@@ -639,7 +647,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Pulp Fiction",
                             Rating = 8.9000000000000004,
-                            ReleaseDate = new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/s7EdQ4FqbhY"
                         },
                         new
                         {
@@ -649,7 +658,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Five Nights at Freddy's",
                             Rating = 5.5,
-                            ReleaseDate = new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(1994, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/0VH9WCFV6XQ"
                         },
                         new
                         {
@@ -659,7 +669,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "It",
                             Rating = 7.2999999999999998,
-                            ReleaseDate = new DateTime(2017, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2017, 9, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/FnCdOQsX5kc"
                         },
                         new
                         {
@@ -669,7 +680,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Drive",
                             Rating = 7.7999999999999998,
-                            ReleaseDate = new DateTime(2011, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2011, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/KBiOF3y1W0Y"
                         },
                         new
                         {
@@ -679,7 +691,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Barbie",
                             Rating = 6.9000000000000004,
-                            ReleaseDate = new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2023, 7, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/pBk4NYhWNMM"
                         },
                         new
                         {
@@ -689,7 +702,8 @@ namespace TopMovies.Data.Migrations
                             IsActive = false,
                             Name = "Blade Runner 2049",
                             Rating = 8.0,
-                            ReleaseDate = new DateTime(2017, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            ReleaseDate = new DateTime(2017, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TrailerUrl = "https://www.youtube.com/embed/gCcx85zbxz4"
                         });
                 });
 
