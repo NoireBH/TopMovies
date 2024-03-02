@@ -32,7 +32,11 @@ namespace TopMovies.Data
 
 		public DbSet<UserReview> UserReviews { get; set; } = null!;
 
-		public DbSet<Genre> Genres { get; set; } = null!;		
+		public DbSet<Genre> Genres { get; set; } = null!;
+
+		public DbSet<Photo> Photos { get; set; } = null!;
+
+		public DbSet<MoviePhoto> MoviePhotos { get; set; } = null!;
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
@@ -41,6 +45,7 @@ namespace TopMovies.Data
 			builder.Entity<ActorMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.ActorId });
 			builder.Entity<MovieMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.MovieId });
 			builder.Entity<MovieGenre>().HasKey(x => new { x.GenreId, x.MovieId });
+			builder.Entity<MoviePhoto>().HasKey(x => new { x.PhotoId, x.MovieId });
 
 			//builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 			builder.ApplyConfiguration(new ActorEntityConfiguration());

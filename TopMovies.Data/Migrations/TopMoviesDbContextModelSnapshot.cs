@@ -765,6 +765,38 @@ namespace TopMovies.Data.Migrations
                     b.ToTable("MovieMovieCharacters");
                 });
 
+            modelBuilder.Entity("TopMovies.Data.Models.MoviePhoto", b =>
+                {
+                    b.Property<int>("PhotoId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("PhotoId", "MovieId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("MoviePhotos");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ImageURl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Photos");
+                });
+
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.Property<Guid>("Id")
@@ -921,6 +953,25 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("MovieCharacter");
                 });
 
+            modelBuilder.Entity("TopMovies.Data.Models.MoviePhoto", b =>
+                {
+                    b.HasOne("TopMovies.Data.Models.Movie", "Movie")
+                        .WithMany("MoviePhotos")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TopMovies.Data.Models.Photo", "Photo")
+                        .WithMany("MoviePhotos")
+                        .HasForeignKey("PhotoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("Photo");
+                });
+
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.HasOne("TopMovies.Data.Models.ApplicationUser", "ApplicationUser")
@@ -965,6 +1016,8 @@ namespace TopMovies.Data.Migrations
 
                     b.Navigation("MovieMovieCharacters");
 
+                    b.Navigation("MoviePhotos");
+
                     b.Navigation("UserReviews");
                 });
 
@@ -973,6 +1026,11 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("ActorMovieCharacters");
 
                     b.Navigation("MovieMovieCharacters");
+                });
+
+            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
+                {
+                    b.Navigation("MoviePhotos");
                 });
 #pragma warning restore 612, 618
         }

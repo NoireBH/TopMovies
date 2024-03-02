@@ -11,6 +11,7 @@ namespace TopMovies.Data.Models
 			ActorsMovies = new HashSet<ActorMovie>();
 			MovieGenres = new HashSet<MovieGenre>();
 			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
+			MoviePhotos = new HashSet<MoviePhoto>();
 		}
 
 		[Key]
@@ -36,6 +37,8 @@ namespace TopMovies.Data.Models
 
 		[Required]
 		public string TrailerUrl { get; set; } = null!;
+
+		public ICollection<MoviePhoto> MoviePhotos {  get; set; }
 
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 
