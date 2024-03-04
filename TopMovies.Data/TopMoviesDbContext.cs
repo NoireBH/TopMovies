@@ -51,9 +51,11 @@ namespace TopMovies.Data
 			builder.ApplyConfiguration(new ActorEntityConfiguration());
 			builder.ApplyConfiguration(new GenreEntityConfiguration());
 			builder.ApplyConfiguration(new MovieEntityConfiguration());
+
+			builder.ApplyConfiguration(new ActorMovieEntityConfiguration());
 			//builder.ApplyConfiguration(new UserReviewEntityConfiguration());
 
-			
+
 
 			base.OnModelCreating(builder);
 		}

@@ -386,6 +386,14 @@ namespace TopMovies.Data.Migrations
                             Description = "David Michael Bautista, Jr. was born on January 18, 1969 in Washington, D.C., to Donna Raye (Mullins) and David Michael Bautista, a hairdresser. He has Filipino and Greek ancestry.\r\n\r\nWhen WCW officials told him he'd never make it in sports entertainment, Bautista pushed himself to achieve his dream of being a Superstar. In May 2002, he made his debut on SmackDown using the ring name Batista, but it wasn't until a move to Raw and two victories over Kane that \"The Animal\" began to make noise in the WWE Universe. The wins impressed Ric Flair and Triple H, who were looking to align themselves with the industry's brightest new stars. After a lengthy search, they identified Randy Orton and Batista. Collectively the four Superstars became known as Evolution.\r\n\r\nBatista earned his first championship alongside \"The Nature Boy\" when the duo captured the WWE Tag Team Championships in December 2003. As Evolution dominated WWE, Batista started to emerge from the shadows of Triple H and Ric Flair. By the time Batista won the 2005 Royal Rumble Match, World Heavyweight Champion Triple H viewed him as a serious threat to his title.\r\n\r\nAfter a triceps injury at the hands of Mark Henry forced Batista to relinquish the title in January 2006, he vowed to return. Batista successfully regained the World Heavyweight Championship at Survivor Series in 2006. Four months into his second reign, Batista faced the Undertaker at WrestleMania 23. \"The Animal\" took Undertaker to the limit, but was unable to stop the streak of \"The Deadman\" at WrestleMania. Though disappointed, Batista stayed hungry and always managed to keep himself in the championship hunt for the rest of his career.\r\n\r\nAt Bragging Rights in 2009, Batista shocked the world when he blamed Rey Mysterio for a loss to Undertaker, then attacked his former tag team partner. \"The Animal\" then became locked in a tense rivalry with another former friend, John Cena, over the WWE Championship. The grueling match at Over the Limit led to a wheelchair-bound Batista declaring \"I quit!\" the following night on Raw before fading from the WWE Universe in May 2010. Following his departure from WWE, Bautista appeared opposite Vin Diesel in the Universal film Riddick (2013) and RZA's feature directorial debut The Man with the Iron Fists (2012), in which he played the villainous Brass Body and starred opposite Russell Crowe and Lucy Liu. His other film credits include The Scorpion King 3: Battle for Redemption (2012), where he played Argomael; the action film House of the Rising Sun (2011); and Wrong Side of Town (2010) opposite rapper Ja Rule.\r\n\r\nTwo years later, he joined MMA and won his first professional MMA fight. In January 2014, he made his long awaited return to the WWE, before quitting a second time in June of that same year. He did this in order to promote Guardians of the Galaxy (2014), which was released on August 1, 2014, and starred Chris Pratt, Benicio Del Toro, Zoe Saldana, and Djimon Hounsou, alongside Bautista.\r\n\r\nHe will shoot Kickboxer: Vengeance (2016), directed by John Stockwell, and co-starring martial artist Alain Moussi and UFC fighter Georges St-Pierre. The remake of the 1989 Jean-Claude Van Damme film, Kickboxer (1989) is about two brothers David and Kurt Sloan; When David wins the Karate World Championship, a promoter lures him to Hong Kong, despite his brother's protestations that the man is a crook. When Kurt travels to Thailand to meet his brother, he discovers he has died and seeks his revenge.\r\n\r\nAfter starring in films such as, Guardians of the Galaxy: Vol. 2 (2017), Blade Runner 2049 (2017), Avengers: Infinity War (2018), Hotel Artemis (2018), Escape Plan II (2018), and Final Score (2018), he made a special guest appearance on WWF SmackDown! (1999) for it's 1000 episode reuniting with his former Evolution members Triple H, Randy Orton, and Ric Flair on October 16, 2018. The following year on February 25, 2019, he made his return to WWE Monday Night RAW (1993) when he attacked Ric Flair on his 70th birthday at the end of the episode sending a message to Triple H that would ultimately lead to a No Holds Barred match for WWE WrestleMania 35 (2019). Batista added the stipulation that if he wins the match, Triple H will have to retire from in-ring competition. As a result, Triple H was finally able to beat Batista for the first time and won the match, which ultimately led to Batista announcing his official retirement from wrestling in the WWE. Following his retirement, he will continue with his career as an actor in Hollywood.\r\n\r\nHis next films scheduled for release will be; Stuber (2019), Avengers: Endgame (2019), Escape Plan 3 (2019), and My Spy (2020). He is one of many professional wrestlers to make the smooth transition from wrestling into the entertainment world.",
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BNTZkYzU0ZGUtZTk1MC00MzJjLWFmMzItY2M0ODY1ZmI2OGQ0XkEyXkFqcGdeQXVyMjI0MjgwNjc@._V1_.jpg",
                             Name = "Dave Bautista"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DateOfBirth = new DateTime(1948, 11, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Samuel L. Jackson is an American producer and highly prolific actor, having appeared in over 100 films, including Die Hard: With a Vengeance (1995), Unbreakable (2000), Shaft (2000), The 51st State (2001), Black Snake Moan (2006), Snakes on a Plane (2006), and the Star Wars prequel trilogy (1999-2005), as well as the Marvel Cinematic Universe.\r\n\r\nSamuel Leroy Jackson was born in Washington, D.C., to Elizabeth (Montgomery) and Roy Henry Jackson. He was raised by his mother, a factory worker, and his grandparents. At Morehouse College, Jackson was active in the black student movement. In the seventies, he joined the Negro Ensemble Company (together with Morgan Freeman). In the eighties, he became well-known after three movies made by Spike Lee: Do the Right Thing (1989), Mo' Better Blues (1990) and Jungle Fever (1991). He achieved prominence and critical acclaim in the early 1990s with films such as Patriot Games (1992), Amos & Andrew (1993), True Romance (1993), Jurassic Park (1993), and his collaborations with director Quentin Tarantino, including Pulp Fiction (1994), Jackie Brown (1997), and later Django Unchained (2012). Going from supporting player to leading man, his performance in Pulp Fiction (1994) gave him an Oscar nomination for his character Jules Winnfield, and he received a Silver Berlin Bear for his part as Ordell Robbi in Jackie Brown (1997). Jackson usually played bad guys and drug addicts before becoming an action hero, co-starring with Bruce Willis in Die Hard: With a Vengeance (1995) and Geena Davis in The Long Kiss Goodnight (1996).\r\n\r\nWith Jackson's permission, his likeness was used for the Ultimate version of the Marvel Comics character, Nick Fury. He later did a cameo as the character in a post-credits scene from Iron Man (2008), and went on to sign a nine-film commitment to reprise this role in future films, including major roles in Iron Man 2 (2010), Avengers Assemble (2012), Captain America: The Winter Soldier (2014) and Avengers: Age of Ultron (2015) and minor roles in Thor (2011) and Captain America: The First Avenger (2011). He has also portrayed the character in the second and final episodes of the first season of the TV show, Marvel's Agents of S.H.I.E.L.D. (2013). He has provided his voice to several animated films, television series and video games, including the roles of Lucius Best / Frozone in Pixar's film The Incredibles (2004), Mace Windu in Star Wars: The Clone Wars (2008), Afro Samurai in the anime television series Afro Samurai (2007), and Frank Tenpenny in the video game Grand Theft Auto: San Andreas (2004).",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTQ1NTQwMTYxNl5BMl5BanBnXkFtZTYwMjA1MzY1._V1_FMjpg_UX1000_.jpg",
+                            Name = "Samuel Jackson"
                         });
                 });
 
@@ -402,6 +410,158 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("ActorId");
 
                     b.ToTable("ActorMovies");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
+                            ActorId = 1
+                        },
+                        new
+                        {
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
+                            ActorId = 2
+                        },
+                        new
+                        {
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
+                            ActorId = 3
+                        },
+                        new
+                        {
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
+                            ActorId = 4
+                        },
+                        new
+                        {
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
+                            ActorId = 5
+                        },
+                        new
+                        {
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
+                            ActorId = 6
+                        },
+                        new
+                        {
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
+                            ActorId = 7
+                        },
+                        new
+                        {
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
+                            ActorId = 8
+                        },
+                        new
+                        {
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
+                            ActorId = 9
+                        },
+                        new
+                        {
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
+                            ActorId = 10
+                        },
+                        new
+                        {
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
+                            ActorId = 11
+                        },
+                        new
+                        {
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
+                            ActorId = 12
+                        },
+                        new
+                        {
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
+                            ActorId = 13
+                        },
+                        new
+                        {
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
+                            ActorId = 14
+                        },
+                        new
+                        {
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
+                            ActorId = 28
+                        },
+                        new
+                        {
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
+                            ActorId = 15
+                        },
+                        new
+                        {
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
+                            ActorId = 16
+                        },
+                        new
+                        {
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
+                            ActorId = 17
+                        },
+                        new
+                        {
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
+                            ActorId = 18
+                        },
+                        new
+                        {
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
+                            ActorId = 19
+                        },
+                        new
+                        {
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
+                            ActorId = 20
+                        },
+                        new
+                        {
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
+                            ActorId = 22
+                        },
+                        new
+                        {
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
+                            ActorId = 23
+                        },
+                        new
+                        {
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            ActorId = 24
+                        },
+                        new
+                        {
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            ActorId = 25
+                        },
+                        new
+                        {
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
+                            ActorId = 26
+                        },
+                        new
+                        {
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
+                            ActorId = 27
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.ActorMovieCharacter", b =>
