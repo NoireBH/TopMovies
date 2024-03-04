@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TopMovies.Data;
 
@@ -11,9 +12,10 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    partial class TopMoviesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240304191724_AddRemainingDataForActorMovieSeeder")]
+    partial class AddRemainingDataForActorMovieSeeder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

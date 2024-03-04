@@ -32,6 +32,8 @@ namespace TopMovies.Data.Configurations
                 DateOfBirth = new DateTime(1997, 6, 1)
             };
 
+            actors.Add(actor);
+
             actor = new Actor()
             {
                 Id = 2,
@@ -54,8 +56,6 @@ namespace TopMovies.Data.Configurations
 
             actors.Add(actor);
 
-            actors.Add(actor);
-
             actor = new Actor()
             {
                 Id = 4,
@@ -64,6 +64,7 @@ namespace TopMovies.Data.Configurations
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Al_Pacino_2016_%2830401544240%29.jpg/640px-Al_Pacino_2016_%2830401544240%29.jpg",
                 DateOfBirth = new DateTime(1940, 4, 25)
             };
+
             actors.Add(actor);
 
             actor = new Actor()
@@ -86,7 +87,9 @@ namespace TopMovies.Data.Configurations
                 DateOfBirth = new DateTime(1943, 9, 12)
             };
 
-            actor = new Actor()
+			actors.Add(actor);
+
+			actor = new Actor()
             {
                 Id = 7,
                 Name = "Christian Bale",

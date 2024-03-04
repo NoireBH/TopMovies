@@ -12,8 +12,8 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    [Migration("20240304183613_AddedActorMovieSeeder")]
-    partial class AddedActorMovieSeeder
+    [Migration("20240304191356_AddedActorMovieSeederAndFixedActorError")]
+    partial class AddedActorMovieSeederAndFixedActorError
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -189,6 +189,14 @@ namespace TopMovies.Data.Migrations
                     b.ToTable("Actors");
 
                     b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateOfBirth = new DateTime(1997, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "With an authoritative voice and calm demeanor, this ever popular American actor has grown into one of the most respected figures in modern US cinema. Morgan was born on June 1, 1937 in Memphis, Tennessee, to Mayme Edna (Revere), a teacher, and Morgan Porterfield Freeman, a barber. The young Freeman attended Los Angeles City College before serving several years in the US Air Force as a mechanic between 1955 and 1959. His first dramatic arts exposure was on the stage including appearing in an all-African American production of the exuberant musical Hello, Dolly!.",
+                            ImageUrl = "https://image.tmdb.org/t/p/w500/jPsLqiYGSofU4s6BjrxnefMfabb.jpg",
+                            Name = "Morgan Freeman"
+                        },
                         new
                         {
                             Id = 2,
@@ -418,151 +426,6 @@ namespace TopMovies.Data.Migrations
                         {
                             MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
                             ActorId = 1
-                        },
-                        new
-                        {
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
-                            ActorId = 2
-                        },
-                        new
-                        {
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad"),
-                            ActorId = 3
-                        },
-                        new
-                        {
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
-                            ActorId = 4
-                        },
-                        new
-                        {
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
-                            ActorId = 5
-                        },
-                        new
-                        {
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6"),
-                            ActorId = 6
-                        },
-                        new
-                        {
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
-                            ActorId = 7
-                        },
-                        new
-                        {
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
-                            ActorId = 8
-                        },
-                        new
-                        {
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
-                            ActorId = 9
-                        },
-                        new
-                        {
-                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
-                            ActorId = 10
-                        },
-                        new
-                        {
-                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
-                            ActorId = 11
-                        },
-                        new
-                        {
-                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a"),
-                            ActorId = 12
-                        },
-                        new
-                        {
-                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
-                            ActorId = 13
-                        },
-                        new
-                        {
-                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
-                            ActorId = 14
-                        },
-                        new
-                        {
-                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da"),
-                            ActorId = 28
-                        },
-                        new
-                        {
-                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
-                            ActorId = 15
-                        },
-                        new
-                        {
-                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
-                            ActorId = 16
-                        },
-                        new
-                        {
-                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6"),
-                            ActorId = 17
-                        },
-                        new
-                        {
-                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
-                            ActorId = 18
-                        },
-                        new
-                        {
-                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
-                            ActorId = 19
-                        },
-                        new
-                        {
-                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e"),
-                            ActorId = 20
-                        },
-                        new
-                        {
-                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
-                            ActorId = 21
-                        },
-                        new
-                        {
-                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
-                            ActorId = 22
-                        },
-                        new
-                        {
-                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173"),
-                            ActorId = 23
-                        },
-                        new
-                        {
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
-                            ActorId = 21
-                        },
-                        new
-                        {
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
-                            ActorId = 24
-                        },
-                        new
-                        {
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
-                            ActorId = 25
-                        },
-                        new
-                        {
-                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
-                            ActorId = 21
-                        },
-                        new
-                        {
-                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
-                            ActorId = 26
-                        },
-                        new
-                        {
-                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
-                            ActorId = 27
                         });
                 });
 
