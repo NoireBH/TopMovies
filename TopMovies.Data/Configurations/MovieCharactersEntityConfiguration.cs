@@ -25,8 +25,7 @@ namespace TopMovies.Data.Configurations
 			movieCharacter = new MovieCharacter()
 			{
 				Id = 1,
-				Name = "Test",
-				Description = "Test",
+				Name = "Andy Dufresne",
 				ImageUrl = ""
 			};
 

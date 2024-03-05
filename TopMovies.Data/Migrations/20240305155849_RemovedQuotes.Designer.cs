@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TopMovies.Data;
 
@@ -11,9 +12,10 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    partial class TopMoviesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240305155849_RemovedQuotes")]
+    partial class RemovedQuotes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -968,28 +970,6 @@ namespace TopMovies.Data.Migrations
                     b.ToTable("Photos");
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MovieCharacterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieCharacterId");
-
-                    b.ToTable("Quotes");
-                });
-
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1165,17 +1145,6 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("Photo");
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
-                {
-                    b.HasOne("TopMovies.Data.Models.MovieCharacter", "MovieCharacter")
-                        .WithMany("Quotes")
-                        .HasForeignKey("MovieCharacterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MovieCharacter");
-                });
-
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
                 {
                     b.HasOne("TopMovies.Data.Models.ApplicationUser", "ApplicationUser")
@@ -1230,8 +1199,6 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("ActorMovieCharacters");
 
                     b.Navigation("MovieMovieCharacters");
-
-                    b.Navigation("Quotes");
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>

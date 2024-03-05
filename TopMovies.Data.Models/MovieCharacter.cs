@@ -10,6 +10,7 @@ namespace TopMovies.Data.Models
 		{
 			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
 			ActorMovieCharacters = new HashSet<ActorMovieCharacter>();
+			Quotes = new HashSet<Quote>();
 		}
 
 		[Key]
@@ -20,13 +21,11 @@ namespace TopMovies.Data.Models
 		public string Name { get; set; } = null!;
 
 		[Required]
-		[MaxLength(DescriptionMaxLength)]
-		public string Description { get; set; } = null!;
-
-		[Required]
 		public string ImageUrl { get; set; } = null!;
 
 		public int Age { get; set; }
+
+		public virtual ICollection<Quote> Quotes { get; set; }
 
 		public virtual ICollection<MovieMovieCharacter> MovieMovieCharacters { get; set; }
 
