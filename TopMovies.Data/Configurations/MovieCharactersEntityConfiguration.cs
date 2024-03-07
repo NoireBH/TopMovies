@@ -13,10 +13,10 @@ namespace TopMovies.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<MovieCharacter> builder)
 		{
-			throw new NotImplementedException();
+			builder.HasData(SeedMovieCharacters());
 		}
 
-		private void SeedMovieCharacters()
+		private MovieCharacter[] SeedMovieCharacters()
 		{
 			var movieCharacters = new HashSet<MovieCharacter>();
 
@@ -291,6 +291,8 @@ namespace TopMovies.Data.Configurations
 			};
 
 			movieCharacters.Add(movieCharacter);
+
+			return movieCharacters.ToArray();
 		}
 	}
 }

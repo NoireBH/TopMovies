@@ -898,12 +898,224 @@ namespace TopMovies.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
                     b.ToTable("MovieCharacters");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZTZlNGQ5MjAtZmE3OC00MWFlLWE2MWItYWY2ZTIwOTZlNDYxXkEyXkFqcGdeQXVyMzQ3Nzk5MTU@._V1_.jpg",
+                            Name = "Andy Dufresne"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZGVmZjg5NTEtMjJhNS00OWJjLThjOTYtZTk0NjUwMjA3MjkyXkEyXkFqcGdeQXVyMzQ3Nzk5MTU@._V1_.jpg",
+                            Name = "Ellis Boyd 'Red' Redding"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BODUzYTVhM2EtODVjOS00ODFkLWFjNjItNGEzOWFmNTgyZDI2XkEyXkFqcGdeQXVyOTc5MDI5NjE@._V1_FMjpg_UX600_.jpg",
+                            Name = "Captain Hadley"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYjhiMGExMmYtM2RlOC00OTFmLWFmODQtMjkxMjZkNjk0ZTIzXkEyXkFqcGdeQXVyMTIwODk1NTQ@._V1_FMjpg_UX600_.jpg",
+                            Name = "Carlo Rizzi"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMDhkYzhiYjEtMTQwYy00MTdmLTlkOTAtYTk1YmMyYmE5NDVmXkEyXkFqcGdeQXVyMDc2NTEzMw@@._V1_FMjpg_UY337_.jpg",
+                            Name = "Michael Corleone"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYmMyZTNiZjItMjZkOC00NDRkLTg5YTEtZDFjODBlODliYjYxXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
+                            Name = "Kay Adams"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYmMyZTNiZjItMjZkOC00NDRkLTg5YTEtZDFjODBlODliYjYxXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
+                            Name = "Bruce Wayne, Batman"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjA5ODU3NTI0Ml5BMl5BanBnXkFtZTcwODczMTk2Mw@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Joker"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BY2FkYmExNTMtYTkxNS00NzA0LTliYTktOTNjNjEwZmRlMTU2XkEyXkFqcGdeQXVyNDIyNjA2MTk@._V1_.jpgg",
+                            Name = "Scarecrow"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTUxMDgyMTg3N15BMl5BanBnXkFtZTcwMDY2OTYwNA@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Adam"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZDdmMDA3NzItYmNlYi00NjU3LWJlZGYtMDYxNzg0OWUzNDJjXkEyXkFqcGdeQXVyNjQ4ODE4MzQ@._V1_FMjpg_UX1280_.jpg",
+                            Name = "Dr. Lawrence Gordon"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTM0MzIwMTI5OV5BMl5BanBnXkFtZTcwOTg1NjAxNQ@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Jigsaw"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYTMzOWFiMTEtZGFjOS00OWEyLTlhYmEtOGRlZmNkZjhhNmJhXkEyXkFqcGdeQXVyNDIyNjA2MTk@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Vincent Vega"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzg1MTgwMTUzM15BMl5BanBnXkFtZTcwNjA0MzU5Ng@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Mia Wallace"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjIwNTg0Mjc4Nl5BMl5BanBnXkFtZTcwODAzNDY3Mw@@._V1_FMjpg_UX660_.jpg",
+                            Name = "Jules Winnfield"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjkwZTllMzgtMDAyOC00MDgzLWE4NmUtOTZmNzQ5NTY1NGIzXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1920_.jpg",
+                            Name = "Mike"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzdkNjBmYzItMDZjMC00ZTFkLThmYWYtNDY5OWNiNTZlZjViXkEyXkFqcGdeQXVyMTY2MDI5OTg3._V1_FMjpg_UX1170_.jpg",
+                            Name = "Vanessa"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMzc1N2M0MWQtZTQ3NS00MmVmLWE1NDctOTg5MWQ0ZmEyMjk2XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1920_.jpg",
+                            Name = "William Afton"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTg1NTU5NTgwOV5BMl5BanBnXkFtZTgwMTQ1NzMzMzI@._V1_FMjpg_UX1280_.jpg",
+                            Name = "Pennywise"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTk2Nzg4NzUyMF5BMl5BanBnXkFtZTgwNDM1NzMzMzI@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Richie Tozier"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjE2MTg2OTM0Nl5BMl5BanBnXkFtZTgwNTM1NzMzMzI@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Bill Denbrough"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNTM1NDk2OTE3M15BMl5BanBnXkFtZTcwMTM1NTgxNQ@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Driver"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDgwMDMxMzQ5MF5BMl5BanBnXkFtZTcwMTEwMDk3NQ@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Shannon"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTc2NTI1MzU5NF5BMl5BanBnXkFtZTcwMDAwMDk3NQ@@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Irene"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZTM1NzVmZTItYmU0Zi00ODVmLWE4MWQtZTFlMzRiZmMxN2I4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UY5791_.jpg",
+                            Name = "Barbie"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMmY1NjBlNWEtZjNlZS00YmY3LWE5MTAtOWE3ZjAzYmQ3OTJjXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UY4976_.jpg",
+                            Name = "Ken"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMDE1ZjJmMTMtYmJlZi00N2VjLWFkMmMtZTNjMDdjMGQ1NzU5XkEyXkFqcGdeQXVyMjY1OTQ0MDA@._V1_FMjpg_UX2160_.jpg",
+                            Name = "Weird Barbie"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTA0MzA5MjU4ODFeQTJeQWpwZ15BbWU4MDYzOTI2NjMy._V1_FMjpg_UX1280_.jpg",
+                            Name = "'K'"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjQ1MzQ2NTM3Ml5BMl5BanBnXkFtZTgwMzI5MjY2MzI@._V1_FMjpg_UX2048_.jpg",
+                            Name = "Rick Deckard"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Age = 0,
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjE4MzcyMzMtZDM0ZS00ZWQ4LTg2N2MtMGEwZDE1OTBkNTYxXkEyXkFqcGdeQXVyNzg2ODI2OTU@._V1_FMjpg_UX2160_.jpg",
+                            Name = "Sapper Morton"
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.MovieGenre", b =>
@@ -934,21 +1146,158 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("MovieMovieCharacters");
-                });
 
-            modelBuilder.Entity("TopMovies.Data.Models.MoviePhoto", b =>
-                {
-                    b.Property<int>("PhotoId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("MovieId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("PhotoId", "MovieId");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("MoviePhotos");
+                    b.HasData(
+                        new
+                        {
+                            MovieCharacterId = 1,
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 2,
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 3,
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 4,
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 5,
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 6,
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 7,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 8,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 9,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 10,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 11,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 12,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 13,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 14,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 15,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 16,
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 17,
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 18,
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 10,
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 20,
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 21,
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 22,
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 23,
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 24,
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 25,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 26,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 27,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 28,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 29,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        },
+                        new
+                        {
+                            MovieCharacterId = 30,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
@@ -963,7 +1312,12 @@ namespace TopMovies.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
 
                     b.ToTable("Photos");
                 });
@@ -1146,23 +1500,15 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("MovieCharacter");
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.MoviePhoto", b =>
+            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
                 {
                     b.HasOne("TopMovies.Data.Models.Movie", "Movie")
-                        .WithMany("MoviePhotos")
+                        .WithMany("Photos")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TopMovies.Data.Models.Photo", "Photo")
-                        .WithMany("MoviePhotos")
-                        .HasForeignKey("PhotoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Movie");
-
-                    b.Navigation("Photo");
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
@@ -1220,7 +1566,7 @@ namespace TopMovies.Data.Migrations
 
                     b.Navigation("MovieMovieCharacters");
 
-                    b.Navigation("MoviePhotos");
+                    b.Navigation("Photos");
 
                     b.Navigation("UserReviews");
                 });
@@ -1232,11 +1578,6 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("MovieMovieCharacters");
 
                     b.Navigation("Quotes");
-                });
-
-            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
-                {
-                    b.Navigation("MoviePhotos");
                 });
 #pragma warning restore 612, 618
         }
