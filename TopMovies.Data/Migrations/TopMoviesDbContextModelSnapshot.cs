@@ -184,7 +184,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actors");
+                    b.ToTable("Actors", (string)null);
 
                     b.HasData(
                         new
@@ -425,7 +425,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("ActorId");
 
-                    b.ToTable("ActorMovies");
+                    b.ToTable("ActorMovies", (string)null);
 
                     b.HasData(
                         new
@@ -592,7 +592,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("ActorId");
 
-                    b.ToTable("ActorMovieCharacters");
+                    b.ToTable("ActorMovieCharacters", (string)null);
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.ApplicationUser", b =>
@@ -676,7 +676,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
 
                     b.HasData(
                         new
@@ -766,7 +766,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
 
                     b.HasData(
                         new
@@ -903,7 +903,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MovieCharacters");
+                    b.ToTable("MovieCharacters", (string)null);
 
                     b.HasData(
                         new
@@ -1130,7 +1130,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("MovieGenres");
+                    b.ToTable("MovieGenres", (string)null);
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.MovieMovieCharacter", b =>
@@ -1145,7 +1145,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("MovieMovieCharacters");
+                    b.ToTable("MovieMovieCharacters", (string)null);
 
                     b.HasData(
                         new
@@ -1319,7 +1319,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("Photos");
+                    b.ToTable("Photos", (string)null);
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
@@ -1341,7 +1341,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieCharacterId");
 
-                    b.ToTable("Quotes");
+                    b.ToTable("Quotes", (string)null);
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.UserReview", b =>
@@ -1370,7 +1370,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("UserReviews");
+                    b.ToTable("UserReviews", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

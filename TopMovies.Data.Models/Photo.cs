@@ -16,10 +16,10 @@ namespace TopMovies.Data.Models
 		[Required]
 		public string ImageURl { get; set; } = null!;
 
-		[Required]
-		[ForeignKey(nameof(Movie))]
+		[Required]		
 		public Guid MovieId { get; set; }
 
+		[ForeignKey(nameof(MovieId))]
 		public Movie Movie { get; set; } = null!;
 	}
 }
