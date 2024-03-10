@@ -50,6 +50,7 @@ namespace TopMovies.Data
 			//builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 			builder.ApplyConfiguration(new ActorEntityConfiguration());
 			builder.ApplyConfiguration(new GenreEntityConfiguration());
+			builder.ApplyConfiguration(new PhotoEntityConfiguration());
 			builder.ApplyConfiguration(new MovieEntityConfiguration());
 
 			builder.ApplyConfiguration(new ActorMovieEntityConfiguration());
