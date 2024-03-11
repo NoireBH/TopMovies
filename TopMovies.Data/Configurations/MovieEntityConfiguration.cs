@@ -23,6 +23,8 @@ namespace TopMovies.Data.Configurations
 
 			Movie movie;
 
+			int photoIdCounter = 1;
+
 			movie = new Movie()
 			{
 				Id = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD"),
@@ -32,17 +34,11 @@ namespace TopMovies.Data.Configurations
 				TrailerUrl = "https://www.youtube.com/embed/NmzuHjWmXOc",
 				Rating = 9.3,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg",
-				Photos = new List<Photo>()
-				{
-					new Photo()
-					{
-						MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD"),
-
-					}
-				}
+				Photos = new HashSet<int>() {photoIdCounter, photoIdCounter + 1, photoIdCounter +2}
 				
 			};
 
+			photoIdCounter += 3;
 			movies.Add(movie);
 
 			movie = new Movie()
@@ -53,9 +49,11 @@ namespace TopMovies.Data.Configurations
 				ReleaseDate = new DateTime(1972, 3, 14),
 				TrailerUrl = "https://www.youtube.com/embed/sY1S34973zA",
 				Rating = 9.2,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
 			};
 
+			photoIdCounter += 3;
 			movies.Add(movie);
 
 			movie = new Movie()
@@ -66,9 +64,11 @@ namespace TopMovies.Data.Configurations
 				ReleaseDate = new DateTime(2004, 1, 19),
 				TrailerUrl = "https://www.youtube.com/embed/S-1QgOMQ-ls",
 				Rating = 7.6,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg"
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
 			};
 
+			photoIdCounter += 3;
 			movies.Add(movie);
 
 			movie = new Movie()
@@ -79,9 +79,11 @@ namespace TopMovies.Data.Configurations
 				ReleaseDate = new DateTime(2008, 7, 14),
 				TrailerUrl = "https://www.youtube.com/embed/EXeTwQWrcwY",
 				Rating = 9.0,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg"
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
 			};
 
+			photoIdCounter += 3;
 			movies.Add(movie);
 
 			movie = new Movie()
@@ -92,9 +94,11 @@ namespace TopMovies.Data.Configurations
 				ReleaseDate = new DateTime(1994, 5, 21),
 				TrailerUrl = "https://www.youtube.com/embed/s7EdQ4FqbhY",
 				Rating = 8.9,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg"
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
 			};
 
+			photoIdCounter += 3;
 			movies.Add(movie);
 
             movie = new Movie()
@@ -105,10 +109,12 @@ namespace TopMovies.Data.Configurations
                 ReleaseDate = new DateTime(1994, 5, 21),
 				TrailerUrl = "https://www.youtube.com/embed/0VH9WCFV6XQ",
 				Rating = 5.5,
-                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg"
-            };
+                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
+			};
 
-            movies.Add(movie);
+			photoIdCounter += 3;
+			movies.Add(movie);
 
             movie = new Movie()
             {
@@ -118,10 +124,12 @@ namespace TopMovies.Data.Configurations
                 ReleaseDate = new DateTime(2017, 9, 5),
 				TrailerUrl = "https://www.youtube.com/embed/FnCdOQsX5kc",
 				Rating = 7.3,
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg"
-            };
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
+			};
 
-            movies.Add(movie);
+			photoIdCounter += 3;
+			movies.Add(movie);
 
             movie = new Movie()
             {
@@ -131,10 +139,12 @@ namespace TopMovies.Data.Configurations
                 ReleaseDate = new DateTime(2011, 5, 20),
 				TrailerUrl = "https://www.youtube.com/embed/KBiOF3y1W0Y",
 				Rating = 7.8,
-                ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg"
-            };
+                ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
+			};
 
-            movies.Add(movie);
+			photoIdCounter += 3;
+			movies.Add(movie);
 
             movie = new Movie()
             {
@@ -144,10 +154,12 @@ namespace TopMovies.Data.Configurations
                 ReleaseDate = new DateTime(2023, 7, 9),
 				TrailerUrl = "https://www.youtube.com/embed/pBk4NYhWNMM",
 				Rating = 6.9,
-                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg"
-            };
+                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
+			};
 
-            movies.Add(movie);
+			photoIdCounter += 3;
+			movies.Add(movie);
 
             movie = new Movie()
             {
@@ -157,10 +169,12 @@ namespace TopMovies.Data.Configurations
                 ReleaseDate = new DateTime(2017, 10, 3),
 				TrailerUrl = "https://www.youtube.com/embed/gCcx85zbxz4",
 				Rating = 8.0,
-                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg"
-            };
+                ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg",
+				Photos = new HashSet<int>() { photoIdCounter, photoIdCounter + 1, photoIdCounter + 2 }
+			};
 
-            movies.Add(movie);
+			photoIdCounter += 3;
+			movies.Add(movie);
 
             return movies.ToArray();
 		}

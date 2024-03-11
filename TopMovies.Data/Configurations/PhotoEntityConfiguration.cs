@@ -27,7 +27,7 @@ namespace TopMovies.Data.Configurations
 				Id = 1,
 				ImageURl = "https://m.media-amazon.com/images/M/MV5BMTM0NjUxMDk5MF5BMl5BanBnXkFtZTcwNDMxNDY3Mw@@._V1_FMjpg_UX1800_.jpg",
 				MovieId = Guid.Parse("2CA61990-FE17-483C-863D-442EE4C0ACAD")
-
+				
 			};
 
 			photos.Add(photo);
