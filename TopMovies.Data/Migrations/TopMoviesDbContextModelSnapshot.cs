@@ -728,6 +728,31 @@ namespace TopMovies.Data.Migrations
                         {
                             Id = 10,
                             Name = "History"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Mystery"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Thriller"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Adventure"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Documentary"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Musical"
                         });
                 });
 
@@ -1131,6 +1156,123 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("MovieGenres");
+
+                    b.HasData(
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
+                        },
+                        new
+                        {
+                            GenreId = 4,
+                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
+                        },
+                        new
+                        {
+                            GenreId = 8,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            GenreId = 11,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            GenreId = 12,
+                            MovieId = new Guid("13b84726-1968-4206-9f4b-856a4ba9998a")
+                        },
+                        new
+                        {
+                            GenreId = 1,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            GenreId = 4,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
+                        },
+                        new
+                        {
+                            GenreId = 4,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            GenreId = 8,
+                            MovieId = new Guid("fea8731c-71a3-4980-b1ee-aa44500953a6")
+                        },
+                        new
+                        {
+                            GenreId = 11,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            GenreId = 12,
+                            MovieId = new Guid("1f2e3281-95ea-4e2e-8693-d4983c7907da")
+                        },
+                        new
+                        {
+                            GenreId = 8,
+                            MovieId = new Guid("506f4021-595b-4637-bba0-e2b88377549e")
+                        },
+                        new
+                        {
+                            GenreId = 1,
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173")
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("3d777bdc-ded7-42d2-b0a6-fc378eb32173")
+                        },
+                        new
+                        {
+                            GenreId = 3,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            GenreId = 6,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            GenreId = 13,
+                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef")
+                        },
+                        new
+                        {
+                            GenreId = 1,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        },
+                        new
+                        {
+                            GenreId = 5,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        },
+                        new
+                        {
+                            GenreId = 11,
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4")
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.MovieMovieCharacter", b =>
