@@ -23,7 +23,7 @@
 			</div>
 		</header>
 		<main class="container-fluid">
-			<div class="row bg-dark g-0" style="min-height:420px">
+			<div class="row bg-dark g-1" style="min-height:420px">
 				<div class="col-4">
 					<img src="@Model.ImageUrl" class="img-fluid w-100" style="height:420px" />
 				</div>
@@ -42,6 +42,12 @@
 				</div>
 			</div>
 		</main>
+		<footer>
+			@for (int i = 0; i < Model.ActorsMovies.Count; i++)
+			{
+				
+			}
+		</footer>
 	</section>
 	@*
 	Actors
