@@ -100,6 +100,18 @@ namespace TopMovies.Data.Configurations
 				Name = "History"
 			};
 
+			genre = new Genre()
+			{
+				Id = 11,
+				Name = "Mystery"
+			};
+
+			genre = new Genre()
+			{
+				Id = 12,
+				Name = "Thriller"
+			};
+
 			genres.Add(genre);
 
 			return genres.ToArray();
