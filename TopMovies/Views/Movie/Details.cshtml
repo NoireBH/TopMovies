@@ -1,4 +1,9 @@
 ﻿@model MovieDetailsViewModel
+@inject IGenreService genreService;
+
+@{
+	var movieGenres = await genreService.GetMovieGenresByMovieIdAsync(Model.Id.ToString());
+}
 
 <div class="container-fluid">
 	@*
@@ -42,11 +47,15 @@
 				</div>
 			</div>
 		</main>
-		<footer>
-			@for (int i = 0; i < Model.ActorsMovies.Count; i++)
+		<footer class="d-flex">
+
+			@for (int i = 0; i < movieGenres.Length; i++)
 			{
-				
+				<div>
+					<p>@movieGenres[i].GenreGenreName;</p>
+				</div>
 			}
+
 		</footer>
 	</section>
 	@*
