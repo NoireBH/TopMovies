@@ -1,18 +1,32 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.genreButton {
+    display: inline-block;
+    color: #444;
+    border: 1px solid #CCC;
+    border-radius: 16px;
+    background: yellow;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    max-width: 100px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 500;
 }

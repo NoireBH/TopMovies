@@ -14,9 +14,9 @@ namespace TopMovies.Services.Data
             this.context = context;
         }
 
-        public Task<MovieGenreViewModel[]> GetAllGenresAsync()
+        public async Task<MovieGenreViewModel[]> GetAllGenresAsync()
 		{
-			var genres = context.Genres
+			var genres = await context.Genres
 				.Select(g => new MovieGenreViewModel()
 			{
 				GenreId = g.Id,
@@ -26,9 +26,9 @@ namespace TopMovies.Services.Data
 			return genres;
 		}
 
-		public Task<MovieGenreViewModel[]> GetMovieGenresByMovieIdAsync(string id)
+		public async Task<MovieGenreViewModel[]> GetMovieGenresByMovieIdAsync(string id)
 		{
-			var movieGenres = context.MovieGenres
+			var movieGenres = await context.MovieGenres
 				.Where(x => x.MovieId.ToString() == id)
 				.Select(x => new MovieGenreViewModel()
 				{
