@@ -9,15 +9,15 @@
 	@*
 	Main Details
 	*@
-	<section class="container-fluid">
-		<header class="row mb-1">
+	<section class="container-fluid no-padding details-main-content">
+		<header class="row mb-1 ps-2 pe-2">
 			<div class="col-4">
 				<h1>@Model.Name (@Model.ReleaseDateYear)</h1>
 			</div>
 			<div class="col-4 offset-4">
-				<div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-end">
 					<div>
-						<h4>Rating</h4>
+						<h4 class="me-5">Rating</h4>
 						<p><i class="fa-solid fa-star me-1" style="color: #FFD43B;"></i>@Model.Rating/10</p>
 					</div>
 					<div>
@@ -27,8 +27,8 @@
 				</div>
 			</div>
 		</header>
-		<main class="container-fluid mb-2">
-			<div class="row bg-dark g-1" style="min-height:420px">
+		<main class="container-fluid no-padding">
+			<div class="row bg-dark g-0" style="min-height:420px">
 				<div class="col-4">
 					<img src="@Model.ImageUrl" class="img-fluid w-100" style="height:420px" />
 				</div>
@@ -47,12 +47,16 @@
 				</div>
 			</div>
 		</main>
-		<footer class="d-flex">
+		<footer class="p-2">
 
 			@for (int i = 0; i < movieGenres.Length; i++)
 			{
-				<div class="genreButton me-1">@movieGenres[i].GenreGenreName</div>
+				<div class="genreButton me-1 mb-1">@movieGenres[i].GenreGenreName</div>
 			}
+
+			<div>
+				<p>@Model.Description</p>
+			</div>
 
 		</footer>
 	</section>

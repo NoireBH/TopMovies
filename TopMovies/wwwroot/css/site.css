@@ -26,7 +26,16 @@ body {
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     vertical-align: middle;
     max-width: 100px;
-    padding: 5px;
+    padding: 4px 8px;
     text-align: center;
     font-weight: 500;
+}
+
+.details-main-content {
+    background: rgb(31,31,31); 
+    color: white;
+}
+
+.no-padding {
+    padding: 0 !important;
 }
