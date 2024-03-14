@@ -19,25 +19,23 @@ body {
 
 .site-logo {
     display: inline-block;
-    color: #444;
     border: 1px solid #CCC;
-    border-radius: 12px;
-    background: yellow;
+    border-radius: 4px;
+    background: #f5c518;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    vertical-align: middle;
-    max-width: 100px;
-    padding: 4px 8px;
+    padding: 4px 24px;
     text-align: center;
+    max-width:200px;
     font-weight: 900;
-    color:black;
+    color: black;
+    font-size:24px;
 }
 
 .search-btn-nav {
     display: inline-block;
-    color: #444;
     border: 1px solid #CCC;
     border-radius: 12px;
-    background: yellow;
+    background: #f5c518;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     vertical-align: middle;
     max-width: 100px;
@@ -77,4 +75,26 @@ iframe {
 
 a{
     text-decoration:none;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+
+    .login {
+        flex-direction:column;
+    }
+
+    .site-logo {
+        display: inline-block;
+        border: 1px solid #CCC;
+        border-radius: 12px;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+        vertical-align: middle;
+        padding: 4px 8px;
+        text-align: center;
+        font-weight: 900;
+        color: black;
+        margin-bottom:16px;
+    }
 }
