@@ -1,8 +1,10 @@
 ﻿@model MovieDetailsViewModel
 @inject IGenreService genreService;
+@inject IActorService actorService;
 
 @{
 	var movieGenres = await genreService.GetMovieGenresByMovieIdAsync(Model.Id.ToString());
+	var MovieActors = await actorService.GetAllMovieActorsByMovieIdAsync(Model.Id.ToString());
 }
 
 <div class="container-fluid p-0">
@@ -65,6 +67,9 @@
 	Actors
 	*@
 	<section>
+		<h1>Movie Cast:</h1>
+
+
 	</section>
 	@*
 	User Reviews
