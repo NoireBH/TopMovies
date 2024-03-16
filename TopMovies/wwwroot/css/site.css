@@ -47,7 +47,7 @@ body {
 
 .genreButton {
     display: inline-block;
-    color: #444;
+    color: black;
     border: 1px solid #CCC;
     border-radius: 16px;
     background: yellow;
@@ -56,7 +56,7 @@ body {
     max-width: 100px;
     padding: 4px 8px;
     text-align: center;
-    font-weight: 500;
+    font-weight: bolder;
 }
 
 .details-main-content {
