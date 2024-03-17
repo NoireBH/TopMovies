@@ -28,7 +28,8 @@ namespace TopMovies.Services.Data
 				{
 					MovieCharacterId = mc.MovieCharacterId,
 					Name = mc.MovieCharacter.Name,
-					ImageUrl = mc.MovieCharacter.ImageUrl
+					ImageUrl = mc.MovieCharacter.ImageUrl,
+					MovieId = mc.MovieId.ToString()
 
 				})
 				.ToArrayAsync();

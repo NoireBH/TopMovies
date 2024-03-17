@@ -8,6 +8,8 @@ namespace TopMovies.Web.ViewModels.MoviesMovieCharacters
     {
         public int MovieCharacterId { get; set; }
 
+        public string MovieId { get; set; } = null!;
+
         public string Name { get; set; } = null!;
 
         [Required]

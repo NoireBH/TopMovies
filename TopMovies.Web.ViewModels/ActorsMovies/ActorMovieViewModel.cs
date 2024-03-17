@@ -13,6 +13,8 @@ namespace TopMovies.Web.ViewModels.ActorsMovies
     {
         public int ActorId { get; set; }
 
+        public string MovieId { get; set; } = null!;
+
         public string ActorName { get; set; } = null!;
 
         public string ActorImageUrl { get; set; } = null!;

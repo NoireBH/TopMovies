@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.ViewModels.ActorsMovies;
+using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
 namespace TopMovies.Services.Data
 {
@@ -19,15 +20,24 @@ namespace TopMovies.Services.Data
 			this.context = context;
 		}
 
-		public Task<ActorMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
+		public Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id)
 		{
-			var actors = context.ActorMovies
+			var actorsAndCharacters = new Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>();
+
+
+
+		}
+
+		public async Task<ActorMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
+		{
+			var actors = await context.ActorMovies
 				.Where((x => x.MovieId.ToString() == id))
 				.Select(am => new ActorMovieViewModel
 				{
 					ActorId = am.ActorId,
 					ActorName = am.Actor.Name,
-					ActorImageUrl = am.Actor.ImageUrl
+					ActorImageUrl = am.Actor.ImageUrl,
+					MovieId = am.MovieId.ToString()
 
 				})
 				.ToArrayAsync();
