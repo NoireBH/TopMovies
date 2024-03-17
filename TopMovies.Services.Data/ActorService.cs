@@ -14,17 +14,18 @@ namespace TopMovies.Services.Data
 	public class ActorService : IActorService
 	{
 		private readonly TopMoviesDbContext context;
+		private readonly IMovieCharacterService movieCharacterService;
 
-		public ActorService(TopMoviesDbContext context)
+		public ActorService(TopMoviesDbContext context, IMovieCharacterService movieCharacterService)
 		{
 			this.context = context;
+			this.movieCharacterService = movieCharacterService;
 		}
 
-		public Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id)
+		public async Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id)
 		{
-			var actorsAndCharacters = new Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>();
-
-
+			var actorsAndCharacters = await context.ActorMovieCharacters
+				.Where(amc => amc.Actor.ActorsMovies.Where(am => am.MovieId.ToString() == id))
 
 		}
 
