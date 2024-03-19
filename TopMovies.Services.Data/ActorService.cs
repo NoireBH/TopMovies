@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.ViewModels.ActorMovieCharacters;
 using TopMovies.Web.ViewModels.ActorsMovies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
@@ -24,9 +25,23 @@ namespace TopMovies.Services.Data
 
 		public async Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id)
 		{
-			var actorsAndCharacters = await context.ActorMovieCharacters
-				.Where(amc => amc.Actor.ActorsMovies.Where(am => am.MovieId.ToString() == id))
+			var movieInfo = (from movie in context.Movies
+							 where movie.Id.ToString() == id
+							 select new
+							 {
+								 Actors = from movieActor in movie.ActorsMovies
+										  select new
+										  {
+											  ActorName = movieActor.Actor.Name
+										  },
+								 Characters = from movieCharacter in movie.MovieMovieCharacters
+											  select new
+											  {
+												  CharacterName = movieCharacter.MovieCharacter.Name
+											  }
+							 }).FirstOrDefault();
 
+			return movieInfo;
 		}
 
 		public async Task<ActorMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
