@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TopMovies.Web.ViewModels.ActorsMovies;
-using TopMovies.Web.ViewModels.MoviesMovieCharacters;
+﻿using TopMovies.Web.ViewModels.Actors;
+using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IActorService
 	{
-		Task<ActorMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id);
+		Task<MovieActorsAndCharactersViewModel> GetActorsWithTheirCharactersByMovieId(string id);
 
-		Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id);
+		Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id);
 	}
 }

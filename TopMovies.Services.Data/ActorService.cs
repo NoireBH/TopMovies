@@ -9,6 +9,7 @@ using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.ViewModels.ActorMovieCharacters;
 using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.ActorsMovies;
+using TopMovies.Web.ViewModels.Movies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
 namespace TopMovies.Services.Data
@@ -24,26 +25,29 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public  Task<> GetActorsWithTheirCharactersByMovieIdAsync(string id)
+		public  async Task<MovieActorsAndCharactersViewModel> GetActorsWithTheirCharactersByMovieId(string id)
 		{
-			var movieInfo = (from m in context.Movies
+			var movieInfo = await (from m in context.Movies
 							 where m.Id.ToString() == id
-							 select new
+							 select new MovieActorsAndCharactersViewModel
 							 {
 								 Actors = from ma in m.ActorsMovies
 										  select new ActorInMovieViewModel()
 										  {
+											  ActorId = ma.ActorId,
 											  ActorName = ma.Actor.Name,
-											  ActorId = ma.ActorId
+											  ActorImageUrl = ma.Actor.ImageUrl
 										  },
 								 Characters = from mc in m.MovieMovieCharacters
-											  select new
+											  select new MovieMovieCharacterViewModel()
 											  {
-												  CharacterName = mc.MovieCharacter.Name
+												  MovieCharacterId = mc.MovieCharacterId,
+												  Name = mc.MovieCharacter.Name,
+												  ImageUrl = mc.MovieCharacter.ImageUrl
 											  }
-							 }).FirstOrDefault();
+							 }).FirstOrDefaultAsync();
 
-			return movieInfo;
+			return movieInfo!;
 		}
 
 		public async Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
@@ -54,8 +58,7 @@ namespace TopMovies.Services.Data
 				{
 					ActorId = am.ActorId,
 					ActorName = am.Actor.Name,
-					ActorImageUrl = am.Actor.ImageUrl,
-					MovieId = am.MovieId.ToString()
+					ActorImageUrl = am.Actor.ImageUrl
 
 				})
 				.ToArrayAsync();
