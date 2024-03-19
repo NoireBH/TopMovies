@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.ViewModels.ActorMovieCharacters;
+using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.ActorsMovies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
@@ -23,32 +24,33 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public async Task<Dictionary<ActorMovieViewModel, MovieMovieCharacterViewModel>> GetActorsWithTheirCharactersByMovieIdAsync(string id)
+		public  Task<> GetActorsWithTheirCharactersByMovieIdAsync(string id)
 		{
-			var movieInfo = (from movie in context.Movies
-							 where movie.Id.ToString() == id
+			var movieInfo = (from m in context.Movies
+							 where m.Id.ToString() == id
 							 select new
 							 {
-								 Actors = from movieActor in movie.ActorsMovies
-										  select new
+								 Actors = from ma in m.ActorsMovies
+										  select new ActorInMovieViewModel()
 										  {
-											  ActorName = movieActor.Actor.Name
+											  ActorName = ma.Actor.Name,
+											  ActorId = ma.ActorId
 										  },
-								 Characters = from movieCharacter in movie.MovieMovieCharacters
+								 Characters = from mc in m.MovieMovieCharacters
 											  select new
 											  {
-												  CharacterName = movieCharacter.MovieCharacter.Name
+												  CharacterName = mc.MovieCharacter.Name
 											  }
 							 }).FirstOrDefault();
 
 			return movieInfo;
 		}
 
-		public async Task<ActorMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
+		public async Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
 		{
 			var actors = await context.ActorMovies
 				.Where((x => x.MovieId.ToString() == id))
-				.Select(am => new ActorMovieViewModel
+				.Select(am => new ActorInMovieViewModel
 				{
 					ActorId = am.ActorId,
 					ActorName = am.Actor.Name,
