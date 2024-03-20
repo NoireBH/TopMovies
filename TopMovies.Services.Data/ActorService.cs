@@ -18,29 +18,29 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public  async Task<MovieActorsAndCharactersViewModel> GetActorsWithTheirCharactersByMovieId(string id)
+		public async Task<MovieActorsAndCharactersViewModel[]> GetActorsWithTheirCharactersByMovieId(string id)
 		{
-			var movieInfo = await (from m in context.Movies
-							 where m.Id.ToString() == id
-							 select new MovieActorsAndCharactersViewModel
-							 {
-								 Actors = from ma in m.ActorsMovies
-										  select new ActorInMovieViewModel()
-										  {
-											  ActorId = ma.ActorId,
-											  ActorName = ma.Actor.Name,
-											  ActorImageUrl = ma.Actor.ImageUrl
-										  },
-								 Characters = from mc in m.MovieMovieCharacters
-											  select new MovieMovieCharacterViewModel()
-											  {
-												  MovieCharacterId = mc.MovieCharacterId,
-												  Name = mc.MovieCharacter.Name,
-												  ImageUrl = mc.MovieCharacter.ImageUrl
-											  }
-							 }).FirstOrDefaultAsync();
+			var actorsAndTheirCharacters = await (from m in context.Movies
+												  where m.Id.ToString() == id
+												  select new MovieActorsAndCharactersViewModel
+												  {
+													  Actors = from ma in m.ActorsMovies
+															   select new ActorInMovieViewModel()
+															   {
+																   ActorId = ma.ActorId,
+																   ActorName = ma.Actor.Name,
+																   ActorImageUrl = ma.Actor.ImageUrl
+															   },
+													  Characters = from mc in m.MovieMovieCharacters
+																   select new MovieMovieCharacterViewModel()
+																   {
+																	   MovieCharacterId = mc.MovieCharacterId,
+																	   Name = mc.MovieCharacter.Name,
+																	   ImageUrl = mc.MovieCharacter.ImageUrl
+																   }
+												  }).ToArrayAsync();
 
-			return movieInfo!;
+			return actorsAndTheirCharacters!;
 		}
 
 		public async Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)

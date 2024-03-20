@@ -4,7 +4,8 @@
 
 @{
 	var movieGenres = await genreService.GetMovieGenresByMovieIdAsync(Model.Id.ToString());
-	var MovieActors = await actorService.GetAllMovieActorsByMovieIdAsync(Model.Id.ToString());
+	var movieActors = await actorService.GetAllMovieActorsByMovieIdAsync(Model.Id.ToString());
+	var actorsAndCharacters = await actorService.GetActorsWithTheirCharactersByMovieId(Model.Id.ToString());
 }
 
 <div class="container-fluid p-0">
@@ -68,7 +69,12 @@
 	*@
 	<section>
 		<h1 class="text-center">Movie Cast:</h1>
-
+		<div>
+			@foreach (var actorsCharacters in actorsAndCharacters)
+			{
+				
+			}
+		</div>
 
 	</section>
 	@*
