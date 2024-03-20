@@ -8,16 +8,6 @@ namespace TopMovies.Web.ViewModels.ActorMovieCharacter
 {
 	public class ActorAndMovieCharacterViewModel
 	{
-		public int ActorId { get; set; }
-
-		public string ActorName { get; set; } = null!;
-
-		public string ActorImageUrl { get; set; } = null!;
-
-		public int MovieCharacterId { get; set; }
-
-		public string MovieCharacterName { get; set; } = null!;
-
-		public string MovieCharacterImageUrl { get; set; } = null!;
+		public IEnumerable<ActorAndMovieCharacterInfoViewModel> ActorsAndCharacters { get; set; } = null!;
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
+using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.ViewModels.ActorMovieCharacter;
 using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.Movies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
@@ -18,27 +20,25 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public async Task<MovieActorsAndCharactersViewModel[]> GetActorsWithTheirCharactersByMovieId(string id)
+		public async Task<ActorAndMovieCharacterViewModel[]> GetActorsWithTheirCharactersByMovieId(string id)
 		{
-			var actorsAndTheirCharacters = await (from m in context.Movies
-												  where m.Id.ToString() == id
-												  select new MovieActorsAndCharactersViewModel
-												  {
-													  Actors = from ma in m.ActorsMovies
-															   select new ActorInMovieViewModel()
-															   {
-																   ActorId = ma.ActorId,
-																   ActorName = ma.Actor.Name,
-																   ActorImageUrl = ma.Actor.ImageUrl
-															   },
-													  Characters = from mc in m.MovieMovieCharacters
-																   select new MovieMovieCharacterViewModel()
-																   {
-																	   MovieCharacterId = mc.MovieCharacterId,
-																	   Name = mc.MovieCharacter.Name,
-																	   ImageUrl = mc.MovieCharacter.ImageUrl
-																   }
-												  }).ToArrayAsync();
+			var actorsAndTheirCharacters = await (from movie in context.Movies
+							 where movie.Id.ToString() == id
+							 select new ActorAndMovieCharacterViewModel()
+							 {
+								 ActorsAndCharacters = from movieActor in movie.ActorsMovies
+										  join actorCharacter in context.ActorMovieCharacters
+										  on movieActor.ActorId equals actorCharacter.ActorId
+										  select new ActorAndMovieCharacterInfoViewModel()
+										  {
+											  ActorId = movieActor.ActorId,
+											  ActorName = movieActor.Actor.Name,
+											  ActorImageUrl = movieActor.Actor.ImageUrl,
+											  MovieCharacterId = actorCharacter.MovieCharacter.Id,
+											  MovieCharacterName = actorCharacter.MovieCharacter.Name,
+
+										  }
+							 }).ToArrayAsync();
 
 			return actorsAndTheirCharacters!;
 		}

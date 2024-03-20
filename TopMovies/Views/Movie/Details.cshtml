@@ -70,7 +70,16 @@
 	<section>
 		<h1 class="text-center">Movie Cast:</h1>
 		<div>
-			
+			@foreach (var ac in actorsAndCharacters)
+			{
+				foreach (var amc in ac.ActorsAndCharacters)
+				{
+					<h1>@amc.ActorName</h1>
+					<h1>@amc.ActorImageUrl</h1>
+					<h1>@amc.MovieCharacterName</h1>
+					<h1>@amc.MovieCharacterImageUrl</h1>
+				}
+			}
 		</div>
 
 	</section>
