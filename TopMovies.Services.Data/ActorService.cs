@@ -1,14 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
-using TopMovies.Web.ViewModels.ActorMovieCharacters;
 using TopMovies.Web.ViewModels.Actors;
-using TopMovies.Web.ViewModels.ActorsMovies;
 using TopMovies.Web.ViewModels.Movies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 

@@ -3,17 +3,17 @@ using TopMovies.Data.Models;
 using AutoMapper;
 using TopMovies.Web.ViewModels.MoviesGenres;
 using TopMovies.Web.ViewModels.UserReviews;
-using TopMovies.Web.ViewModels.ActorsMovies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
+using TopMovies.Web.ViewModels.Actors;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-    public class MovieDetailsViewModel : IMapFrom<Movie>, IHaveCustomMappings
+	public class MovieDetailsViewModel : IMapFrom<Movie>, IHaveCustomMappings
     {
         public MovieDetailsViewModel()
         {
             UserReviews = new HashSet<UserReviewViewModel>();
-            ActorsMovies = new HashSet<ActorMovieViewModel>();
+            ActorsMovies = new HashSet<ActorInMovieViewModel>();
             MovieGenres = new HashSet<MovieGenreViewModel>();
             MovieMovieCharacters = new HashSet<MovieMovieCharacterViewModel>();
         }
@@ -36,7 +36,7 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public virtual IEnumerable<UserReviewViewModel> UserReviews { get; set; }
 
-        public virtual ICollection<ActorMovieViewModel> ActorsMovies { get; set; }
+        public virtual ICollection<ActorInMovieViewModel> ActorsMovies { get; set; }
 
         public virtual ICollection<MovieMovieCharacterViewModel> MovieMovieCharacters { get; set; }
 

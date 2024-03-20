@@ -11,8 +11,4 @@
     <ProjectReference Include="..\TopMovies.Services.Mapping\TopMovies.Services.Mapping.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Movies\" />
-  </ItemGroup>
-
 </Project>

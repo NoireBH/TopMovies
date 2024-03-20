@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
-using TopMovies.Web.ViewModels.ActorsMovies;
 using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
 namespace TopMovies.Services.Data
@@ -28,8 +22,7 @@ namespace TopMovies.Services.Data
 				{
 					MovieCharacterId = mc.MovieCharacterId,
 					Name = mc.MovieCharacter.Name,
-					ImageUrl = mc.MovieCharacter.ImageUrl,
-					MovieId = mc.MovieId.ToString()
+					ImageUrl = mc.MovieCharacter.ImageUrl
 
 				})
 				.ToArrayAsync();
