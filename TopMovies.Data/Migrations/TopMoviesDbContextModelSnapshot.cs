@@ -593,6 +593,158 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("ActorId");
 
                     b.ToTable("ActorMovieCharacters");
+
+                    b.HasData(
+                        new
+                        {
+                            MovieCharacterId = 2,
+                            ActorId = 1
+                        },
+                        new
+                        {
+                            MovieCharacterId = 1,
+                            ActorId = 2
+                        },
+                        new
+                        {
+                            MovieCharacterId = 3,
+                            ActorId = 3
+                        },
+                        new
+                        {
+                            MovieCharacterId = 5,
+                            ActorId = 4
+                        },
+                        new
+                        {
+                            MovieCharacterId = 6,
+                            ActorId = 5
+                        },
+                        new
+                        {
+                            MovieCharacterId = 4,
+                            ActorId = 6
+                        },
+                        new
+                        {
+                            MovieCharacterId = 7,
+                            ActorId = 7
+                        },
+                        new
+                        {
+                            MovieCharacterId = 8,
+                            ActorId = 8
+                        },
+                        new
+                        {
+                            MovieCharacterId = 9,
+                            ActorId = 9
+                        },
+                        new
+                        {
+                            MovieCharacterId = 10,
+                            ActorId = 10
+                        },
+                        new
+                        {
+                            MovieCharacterId = 11,
+                            ActorId = 11
+                        },
+                        new
+                        {
+                            MovieCharacterId = 12,
+                            ActorId = 12
+                        },
+                        new
+                        {
+                            MovieCharacterId = 13,
+                            ActorId = 13
+                        },
+                        new
+                        {
+                            MovieCharacterId = 14,
+                            ActorId = 14
+                        },
+                        new
+                        {
+                            MovieCharacterId = 16,
+                            ActorId = 15
+                        },
+                        new
+                        {
+                            MovieCharacterId = 17,
+                            ActorId = 16
+                        },
+                        new
+                        {
+                            MovieCharacterId = 18,
+                            ActorId = 17
+                        },
+                        new
+                        {
+                            MovieCharacterId = 19,
+                            ActorId = 18
+                        },
+                        new
+                        {
+                            MovieCharacterId = 20,
+                            ActorId = 19
+                        },
+                        new
+                        {
+                            MovieCharacterId = 21,
+                            ActorId = 20
+                        },
+                        new
+                        {
+                            MovieCharacterId = 22,
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieCharacterId = 23,
+                            ActorId = 22
+                        },
+                        new
+                        {
+                            MovieCharacterId = 24,
+                            ActorId = 23
+                        },
+                        new
+                        {
+                            MovieCharacterId = 25,
+                            ActorId = 24
+                        },
+                        new
+                        {
+                            MovieCharacterId = 26,
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieCharacterId = 27,
+                            ActorId = 25
+                        },
+                        new
+                        {
+                            MovieCharacterId = 29,
+                            ActorId = 26
+                        },
+                        new
+                        {
+                            MovieCharacterId = 28,
+                            ActorId = 21
+                        },
+                        new
+                        {
+                            MovieCharacterId = 30,
+                            ActorId = 27
+                        },
+                        new
+                        {
+                            MovieCharacterId = 15,
+                            ActorId = 28
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.ApplicationUser", b =>
