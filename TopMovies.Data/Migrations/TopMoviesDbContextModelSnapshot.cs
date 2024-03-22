@@ -232,7 +232,7 @@ namespace TopMovies.Data.Migrations
                             Id = 6,
                             DateOfBirth = new DateTime(1943, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "With a singularly nebulous background, which, by his account, included stints as a Las Vegas nightclub emcee, radio personality and jewelry tycoon, and with comparatively little acting experience, Gianni Russo won the role of Carlo Rizzi in The Godfather (1972) on the basis of his screen test. Since then, Russo has remained busy as an actor, mostly playing assorted \"wiseguys\" and Mafia types. He appeared again with Marlon Brando in a small role in The Freshman (1990) where Brando parodied his Don Corleone role to good effect.",
-                            ImageUrl = "Gianni Russo",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNTgyMTgxODM4MV5BMl5BanBnXkFtZTcwNDg5NDYwOA@@._V1_FMjpg_UX1000_.jpg",
                             Name = "Gianni Russo"
                         },
                         new
