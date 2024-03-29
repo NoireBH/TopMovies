@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using TopMovies.Data.Models;
@@ -13,6 +14,16 @@ namespace TopMovies.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<MovieCharacter> builder)
 		{
+			builder
+			.HasOne(m => m.Actor)
+			.WithMany()
+			.OnDelete(DeleteBehavior.NoAction);
+
+			builder
+			.HasOne(m => m.Movie)
+			.WithMany()
+			.OnDelete(DeleteBehavior.NoAction);
+
 			builder.HasData(SeedMovieCharacters());
 		}
 
