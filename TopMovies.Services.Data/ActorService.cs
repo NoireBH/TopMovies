@@ -26,7 +26,8 @@ namespace TopMovies.Services.Data
 												  where movie.Id.ToString() == id
 												  select new ActorAndMovieCharacterViewModel()
 												  {
-													  ActorsAndCharacters = from movieActor in movie.ActorsMovies																			
+													  ActorsAndCharacters = from movieActor in movie.ActorsMovies
+																			where movieActor.MovieId.ToString() == id
 																			join actorCharacter in context.ActorMovieCharacters
 																			on movieActor.ActorId equals actorCharacter.ActorId
 																			select new ActorAndMovieCharacterInfoViewModel()
@@ -35,8 +36,7 @@ namespace TopMovies.Services.Data
 																				ActorName = movieActor.Actor.Name,
 																				ActorImageUrl = movieActor.Actor.ImageUrl,
 																				MovieCharacterId = actorCharacter.MovieCharacter.Id,
-																				MovieCharacterName = actorCharacter.MovieCharacter.Name,
-
+																				MovieCharacterName = actorCharacter.MovieCharacter.Name
 																			}
 												  }).ToArrayAsync();
 

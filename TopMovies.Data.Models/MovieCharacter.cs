@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 using static TopMovies.Common.EntityValidationConstants.MovieCharacter;
 
 namespace TopMovies.Data.Models
@@ -8,8 +8,6 @@ namespace TopMovies.Data.Models
 	{
 		public MovieCharacter()
 		{
-			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
-			ActorMovieCharacters = new HashSet<ActorMovieCharacter>();
 			Quotes = new HashSet<Quote>();
 		}
 
@@ -25,10 +23,19 @@ namespace TopMovies.Data.Models
 
 		public int Age { get; set; }
 
+		[Required]
+		[ForeignKey(nameof(Actor))]
+		public int ActorId { get; set; }
+
+		public Actor Actor { get; set; } = null!;
+
+		[Required]
+		[ForeignKey(nameof(Movie))]
+		public Guid MovieId { get; set; }
+
+		public Movie Movie { get; set; } = null!;
+
 		public virtual ICollection<Quote> Quotes { get; set; }
 
-		public virtual ICollection<MovieMovieCharacter> MovieMovieCharacters { get; set; }
-
-		public virtual ICollection<ActorMovieCharacter> ActorMovieCharacters { get; set; }
 	}
 }
