@@ -42,11 +42,14 @@ namespace TopMovies.Services.Data
             return featuredMovies;
         }
 
-		public Task<MovieDetailsViewModel> GetMovieActorsAndCharactersByIdAsync(string id)
+		public async Task<MovieActorsAndCharactersViewModel> GetMovieActorsAndCharactersByMovieIdAsync(string id)
 		{
-			var movieActorsAndCharacters = context.MovieCharacters
-				.Where(mc => mc.MovieId.ToString() == id)
-				.Select(new )
+            var movieActorsAndCharacters = await context.MovieCharacters
+                .Where(mc => mc.MovieId.ToString() == id)
+				.To<MovieActorsAndCharactersViewModel>()
+				.FirstOrDefaultAsync();
+
+            return movieActorsAndCharacters!;
 		}
 
 		public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)

@@ -13,9 +13,8 @@ namespace TopMovies.Web.ViewModels.Movies
         public MovieDetailsViewModel()
         {
             UserReviews = new HashSet<UserReviewViewModel>();
-            ActorsMovies = new HashSet<ActorInMovieViewModel>();
+			ActorsAndCharacters = new HashSet<MovieActorsAndCharactersViewModel>();
             MovieGenres = new HashSet<MovieGenreViewModel>();
-            MovieMovieCharacters = new HashSet<MovieMovieCharacterViewModel>();
         }
 
         public Guid Id { get; set; }
@@ -36,9 +35,7 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public virtual IEnumerable<UserReviewViewModel> UserReviews { get; set; }
 
-        public virtual ICollection<ActorInMovieViewModel> ActorsMovies { get; set; }
-
-        public virtual ICollection<MovieMovieCharacterViewModel> MovieMovieCharacters { get; set; }
+        public virtual IEnumerable<MovieActorsAndCharactersViewModel> ActorsAndCharacters { get; set; }
 
         public void CreateMappings(IProfileExpression configuration)
         {

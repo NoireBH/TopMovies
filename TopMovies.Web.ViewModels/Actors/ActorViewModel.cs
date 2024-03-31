@@ -3,7 +3,7 @@ using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.Actors
 {
-	public class ActorInMovieViewModel : IMapFrom<ActorMovie>
+	public class ActorViewModel : IMapFrom<ActorMovie>
     {
         public int ActorId { get; set; }
 

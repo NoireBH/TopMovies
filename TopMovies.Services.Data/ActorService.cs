@@ -20,11 +20,11 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public async Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
+		public async Task<ActorViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
 		{
 			var actors = await context.ActorMovies
 				.Where((x => x.MovieId.ToString() == id))
-				.Select(am => new ActorInMovieViewModel
+				.Select(am => new ActorViewModel
 				{
 					ActorId = am.ActorId,
 					ActorName = am.Actor.Name,

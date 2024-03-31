@@ -6,6 +6,6 @@ namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IActorService
 	{
-		Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id);
+		Task<ActorViewModel[]> GetAllMovieActorsByMovieIdAsync(string id);
 	}
 }
