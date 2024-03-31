@@ -16,6 +16,6 @@ namespace TopMovies.Services.Data.Interfaces
 
 		Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id);
 
-		Task<MovieCharacter> GetMovieActorsAndCharactersByMovieIdAsync(string id);
+		Task<MovieActorsAndCharactersViewModel[]> GetMovieActorsAndCharactersByMovieIdAsync(string id);
 	}
 }

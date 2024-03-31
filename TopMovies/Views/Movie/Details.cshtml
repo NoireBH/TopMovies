@@ -1,11 +1,11 @@
 ﻿@model MovieDetailsViewModel
 @inject IGenreService genreService;
-@inject IActorService actorService;
+@inject IMovieService movieService; 
 
 @{
 	var movieGenres = await genreService.GetMovieGenresByMovieIdAsync(Model.Id.ToString());
-	var movieActors = await actorService.GetAllMovieActorsByMovieIdAsync(Model.Id.ToString());
-	var actorsAndCharacters = await actorService.GetActorsWithTheirCharactersByMovieId(Model.Id.ToString());
+	var movieActorsAndTheirCharacters = await movieService.GetMovieActorsAndCharactersByMovieIdAsync(Model.Id.ToString());
+
 }
 
 <div class="container-fluid p-0">
@@ -70,15 +70,9 @@
 	<section>
 		<h1 class="text-center">Movie Cast:</h1>
 		<div>
-			@foreach (var ac in actorsAndCharacters)
+			@foreach (var actorsCharacters in movieActorsAndTheirCharacters)
 			{
-				foreach (var amc in ac.ActorsAndCharacters)
-				{
-					<h1>@amc.ActorName</h1>
-					<h1>@amc.ActorImageUrl</h1>
-					<h1>@amc.MovieCharacterName</h1>
-					<h1>@amc.MovieCharacterImageUrl</h1>
-				}
+				
 			}
 		</div>
 

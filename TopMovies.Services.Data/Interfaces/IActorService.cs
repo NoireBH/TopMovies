@@ -1,6 +1,4 @@
-﻿using TopMovies.Web.ViewModels.ActorMovieCharacter;
-using TopMovies.Web.ViewModels.Actors;
-using TopMovies.Web.ViewModels.Movies;
+﻿using TopMovies.Web.ViewModels.Actors;
 
 namespace TopMovies.Services.Data.Interfaces
 {

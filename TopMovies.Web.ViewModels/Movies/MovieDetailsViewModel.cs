@@ -3,8 +3,8 @@ using TopMovies.Data.Models;
 using AutoMapper;
 using TopMovies.Web.ViewModels.MoviesGenres;
 using TopMovies.Web.ViewModels.UserReviews;
-using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 using TopMovies.Web.ViewModels.Actors;
+using TopMovies.Web.ViewModels.MovieCharacters;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
@@ -13,7 +13,8 @@ namespace TopMovies.Web.ViewModels.Movies
         public MovieDetailsViewModel()
         {
             UserReviews = new HashSet<UserReviewViewModel>();
-			ActorsAndCharacters = new HashSet<MovieActorsAndCharactersViewModel>();
+			Actors = new HashSet<ActorViewModel>();
+			Characters = new HashSet<MovieCharacterViewModel>();
             MovieGenres = new HashSet<MovieGenreViewModel>();
         }
 
@@ -35,9 +36,11 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public virtual IEnumerable<UserReviewViewModel> UserReviews { get; set; }
 
-        public virtual IEnumerable<MovieActorsAndCharactersViewModel> ActorsAndCharacters { get; set; }
+        public virtual IEnumerable<ActorViewModel> Actors { get; set; }
 
-        public void CreateMappings(IProfileExpression configuration)
+		public virtual IEnumerable<MovieCharacterViewModel> Characters { get; set; }
+
+		public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<Movie, MovieDetailsViewModel>()
                 .ForMember(m => m.ReleaseDateYear, cfg => cfg
