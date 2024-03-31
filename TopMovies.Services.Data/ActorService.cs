@@ -20,29 +20,6 @@ namespace TopMovies.Services.Data
 			this.movieCharacterService = movieCharacterService;
 		}
 
-		public async Task<ActorAndMovieCharacterViewModel[]> GetActorsWithTheirCharactersByMovieId(string id)
-		{
-			var actorsAndTheirCharacters = await (from movie in context.Movies
-												  where movie.Id.ToString() == id
-												  select new ActorAndMovieCharacterViewModel()
-												  {
-													  ActorsAndCharacters = from movieActor in movie.ActorsMovies
-																			where movieActor.MovieId.ToString() == id
-																			join actorCharacter in context.ActorMovieCharacters
-																			on movieActor.ActorId equals actorCharacter.ActorId
-																			select new ActorAndMovieCharacterInfoViewModel()
-																			{
-																				ActorId = movieActor.ActorId,
-																				ActorName = movieActor.Actor.Name,
-																				ActorImageUrl = movieActor.Actor.ImageUrl,
-																				MovieCharacterId = actorCharacter.MovieCharacter.Id,
-																				MovieCharacterName = actorCharacter.MovieCharacter.Name
-																			}
-												  }).ToArrayAsync();
-
-			return actorsAndTheirCharacters!;
-		}
-
 		public async Task<ActorInMovieViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
 		{
 			var actors = await context.ActorMovies

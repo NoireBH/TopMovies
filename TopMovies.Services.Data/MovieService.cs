@@ -42,7 +42,9 @@ namespace TopMovies.Services.Data
             return featuredMovies;
         }
 
-        public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
+		
+
+		public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
             var movie = await context.Movies
                 .Where(m => m.Id.ToString() == id)

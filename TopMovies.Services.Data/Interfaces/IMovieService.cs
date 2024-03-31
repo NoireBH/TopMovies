@@ -15,5 +15,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<bool> ExistsByIdAsync(string  id);
 
 		Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id);
+
+		Task<MovieDetailsViewModel> GetMovieActorsAndCharactersByIdAsync(string id);
 	}
 }
