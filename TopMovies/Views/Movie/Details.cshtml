@@ -72,7 +72,9 @@
 		<div>
 			@foreach (var actorsCharacters in movieActorsAndTheirCharacters)
 			{
-				
+				<p>@actorsCharacters.ActorName</p>
+				<img src="@actorsCharacters.ActorImageUrl" />
+				<p>@actorsCharacters.MovieCharacterName</p>
 			}
 		</div>
 

@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
-using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
-using TopMovies.Web.ViewModels.ActorMovieCharacter;
 using TopMovies.Web.ViewModels.Actors;
-using TopMovies.Web.ViewModels.Movies;
-using TopMovies.Web.ViewModels.MoviesMovieCharacters;
 
 namespace TopMovies.Services.Data
 {

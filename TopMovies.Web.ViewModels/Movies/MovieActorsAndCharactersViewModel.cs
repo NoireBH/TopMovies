@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using TopMovies.Data.Models;
+using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-	public class MovieActorsAndCharactersViewModel
+	public class MovieActorsAndCharactersViewModel : IMapFrom<MovieCharacter>, IHaveCustomMappings
 	{
 		public int ActorId { get; set; }
 
@@ -18,6 +16,13 @@ namespace TopMovies.Web.ViewModels.Movies
 
 		public string MovieCharacterName { get; set; } = null!;
 
-		public string MovieCharacterImageUrl { get; set; } = null!;
+		public void CreateMappings(IProfileExpression configuration)
+		{
+			configuration.CreateMap<MovieCharacter, MovieActorsAndCharactersViewModel>()
+				.ForMember(mac => mac.MovieCharacterId, cgf => cgf
+					.MapFrom(mc => mc.Id))
+				.ForMember(mac => mac.MovieCharacterName, cgf => cgf
+					.MapFrom(mc => mc.Name));
+		}
 	}
 }
