@@ -24,15 +24,15 @@ namespace TopMovies.Data.Models
 		public int Age { get; set; }
 
 		[Required]
-		[ForeignKey(nameof(Actor))]
 		public int ActorId { get; set; }
-
+		
+		[ForeignKey(nameof(ActorId))]
 		public Actor Actor { get; set; } = null!;
 
 		[Required]
-		[ForeignKey(nameof(Movie))]
 		public Guid MovieId { get; set; }
-
+		
+		[ForeignKey(nameof(MovieId))]
 		public Movie Movie { get; set; } = null!;
 
 		public virtual ICollection<Quote> Quotes { get; set; }

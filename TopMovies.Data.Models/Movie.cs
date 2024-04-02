@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static TopMovies.Common.EntityValidationConstants;
 using static TopMovies.Common.EntityValidationConstants.Movie;
 

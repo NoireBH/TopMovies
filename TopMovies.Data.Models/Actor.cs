@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 using static TopMovies.Common.EntityValidationConstants.Actor;
 
 namespace TopMovies.Data.Models
@@ -30,6 +30,7 @@ namespace TopMovies.Data.Models
         public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<ActorMovie> ActorsMovies { get; set;}
+
 		public virtual ICollection<MovieCharacter> MovieCharacters { get; set; }
     }
 }

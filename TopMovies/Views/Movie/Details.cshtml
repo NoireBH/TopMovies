@@ -68,30 +68,23 @@
 	Actors
 	*@
 	<section>
-		<h1 class="text-center">Movie Cast:</h1>
-		<div>
-			@for (int i = 0; i < movieActorsAndTheirCharacters.Length - 1; i++)
-			{
-				<div class="container">
-					<div class="row">
-						<div class="col-6 actor-img-container">
-							<img src="@movieActorsAndTheirCharacters[i].ActorImageUrl" class="img-fluid">
-						</div>
-						<div class="d-flex flex-column">
-							<h4>@movieActorsAndTheirCharacters[i].ActorName</h4>
-							<p>@movieActorsAndTheirCharacters[i].MovieCharacterName</p>
-						</div>
-						<div class="col-6 actor-img-container">
-							<img src="@movieActorsAndTheirCharacters[i + 1].ActorImageUrl" class="img-fluid">
-						</div>
-						<div class="d-flex flex-column">
-							<h4>@movieActorsAndTheirCharacters[i + 1].ActorName</h4>
-							<p>@movieActorsAndTheirCharacters[i + 1].MovieCharacterName</p>
-						</div>
+		<h1 class="text-center mb-5">Movie Cast:</h1>
+
+		<div class="d-flex flex-row justify-content-around  text-center">
+				@foreach (var mac in movieActorsAndTheirCharacters)
+				{
+				<div class="actor-img-container">
+					<img src="@mac.ActorImageUrl" class="img-fluid rounded-circle">
+					<div class="d-flex flex-column actor-character-names">
+						<h4>@mac.ActorName</h4>
+						<p>@mac.MovieCharacterName</p>
 					</div>
-				</div>				
-			}
-		</div>
+				</div>
+						
+					
+				}
+			</div>
+		
 
 	</section>
 	@*

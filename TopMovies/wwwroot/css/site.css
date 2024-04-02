@@ -99,7 +99,17 @@ a{
     }
 }
 
-.actor-img-container > img {
+.actor-img-container {
     
+    max-width: 120px;
+}
 
+    .actor-img-container > img {
+        width: 120px; 
+        height: 100px;
+        object-fit: cover;
+    }
+
+.actor-character-names {
+    max-width: 120px;
 }
