@@ -1342,7 +1342,7 @@ namespace TopMovies.Data.Migrations
                             ActorId = 21,
                             Age = 0,
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTA0MzA5MjU4ODFeQTJeQWpwZ15BbWU4MDYzOTI2NjMy._V1_FMjpg_UX1280_.jpg",
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
                             Name = "'K'"
                         },
                         new
@@ -1351,7 +1351,7 @@ namespace TopMovies.Data.Migrations
                             ActorId = 26,
                             Age = 0,
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjQ1MzQ2NTM3Ml5BMl5BanBnXkFtZTgwMzI5MjY2MzI@._V1_FMjpg_UX2048_.jpg",
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
                             Name = "Rick Deckard"
                         },
                         new
@@ -1360,7 +1360,7 @@ namespace TopMovies.Data.Migrations
                             ActorId = 27,
                             Age = 0,
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjE4MzcyMzMtZDM0ZS00ZWQ4LTg2N2MtMGEwZDE1OTBkNTYxXkEyXkFqcGdeQXVyNzg2ODI2OTU@._V1_FMjpg_UX2160_.jpg",
-                            MovieId = new Guid("e054427d-ca00-4bfc-921e-ae86fbf621ef"),
+                            MovieId = new Guid("75cc9cfd-225c-4f69-8870-3986e74a88a4"),
                             Name = "Sapper Morton"
                         });
                 });

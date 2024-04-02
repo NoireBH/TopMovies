@@ -335,7 +335,7 @@ namespace TopMovies.Data.Configurations
 				Id = 28,
 				Name = "'K'",
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTA0MzA5MjU4ODFeQTJeQWpwZ15BbWU4MDYzOTI2NjMy._V1_FMjpg_UX1280_.jpg",
-				MovieId = Guid.Parse("E054427D-CA00-4BFC-921E-AE86FBF621EF"),
+				MovieId = Guid.Parse("75CC9CFD-225C-4F69-8870-3986E74A88A4"),
 				ActorId = 21
 			};
 
@@ -346,7 +346,7 @@ namespace TopMovies.Data.Configurations
 				Id = 29,
 				Name = "Rick Deckard",
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjQ1MzQ2NTM3Ml5BMl5BanBnXkFtZTgwMzI5MjY2MzI@._V1_FMjpg_UX2048_.jpg",
-				MovieId = Guid.Parse("E054427D-CA00-4BFC-921E-AE86FBF621EF"),
+				MovieId = Guid.Parse("75CC9CFD-225C-4F69-8870-3986E74A88A4"),
 				ActorId = 26
 			};
 
@@ -357,7 +357,7 @@ namespace TopMovies.Data.Configurations
 				Id = 30,
 				Name = "Sapper Morton",
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjE4MzcyMzMtZDM0ZS00ZWQ4LTg2N2MtMGEwZDE1OTBkNTYxXkEyXkFqcGdeQXVyNzg2ODI2OTU@._V1_FMjpg_UX2160_.jpg",
-				MovieId = Guid.Parse("E054427D-CA00-4BFC-921E-AE86FBF621EF"),
+				MovieId = Guid.Parse("75CC9CFD-225C-4F69-8870-3986E74A88A4"),
 				ActorId = 27
 			};
 
