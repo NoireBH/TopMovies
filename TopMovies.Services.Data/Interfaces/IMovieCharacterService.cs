@@ -1,10 +1,10 @@
-﻿using TopMovies.Web.ViewModels.MoviesMovieCharacters;
+﻿using TopMovies.Web.ViewModels.MovieCharacters;
 
 namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IMovieCharacterService
 	{
-		Task<MovieMovieCharacterViewModel[]> GetAllMovieCharactersByMovieIdAsync(string id);
+		Task<MovieCharacterViewModel[]> GetAllMovieCharactersByMovieIdAsync(string id);
 
 	}
 }

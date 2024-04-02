@@ -20,8 +20,6 @@ namespace TopMovies.Data
 
 		public DbSet<ActorMovie> ActorMovies { get; set; } = null!;
 
-		public DbSet<ActorMovieCharacter> ActorMovieCharacters { get; set; } = null!;
-
 		public DbSet<Movie> Movies { get; set; } = null!;
 
 		public DbSet<MovieCharacter> MovieCharacters { get; set; } = null!;
@@ -30,7 +28,6 @@ namespace TopMovies.Data
 
 		public DbSet<MovieGenre> MovieGenres { get; set; } = null!;
 
-		public DbSet<MovieMovieCharacter> MovieMovieCharacters { get; set; } = null!;
 
 		public DbSet<UserReview> UserReviews { get; set; } = null!;
 
@@ -43,8 +40,6 @@ namespace TopMovies.Data
 		{
 
 			builder.Entity<ActorMovie>().HasKey(x => new { x.MovieId, x.ActorId });
-			builder.Entity<ActorMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.ActorId });
-			builder.Entity<MovieMovieCharacter>().HasKey(x => new { x.MovieCharacterId, x.MovieId });
 			builder.Entity<MovieGenre>().HasKey(x => new { x.GenreId, x.MovieId });
 
 			//builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
@@ -55,9 +50,7 @@ namespace TopMovies.Data
 			builder.ApplyConfiguration(new MovieCharactersEntityConfiguration());
 
 			builder.ApplyConfiguration(new ActorMovieEntityConfiguration());
-			builder.ApplyConfiguration(new MovieMovieCharacterEntityConfiguration());
 			builder.ApplyConfiguration(new MovieGenreEntityConfiguration());
-			builder.ApplyConfiguration(new ActorMovieCharacterEntityConfiguration());
 			//builder.ApplyConfiguration(new UserReviewEntityConfiguration());
 
 

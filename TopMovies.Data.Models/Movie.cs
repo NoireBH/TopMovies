@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static TopMovies.Common.EntityValidationConstants;
 using static TopMovies.Common.EntityValidationConstants.Movie;
 
 namespace TopMovies.Data.Models
@@ -10,7 +11,7 @@ namespace TopMovies.Data.Models
 			UserReviews = new HashSet<UserReview>();
 			ActorsMovies = new HashSet<ActorMovie>();
 			MovieGenres = new HashSet<MovieGenre>();
-			MovieMovieCharacters = new HashSet<MovieMovieCharacter>();
+			MovieCharacters = new HashSet<MovieCharacter>();
 			Photos = new List<Photo>();
 		}
 
@@ -46,7 +47,7 @@ namespace TopMovies.Data.Models
 
 		public virtual ICollection<ActorMovie> ActorsMovies { get; set; }
 
-		public virtual ICollection<MovieMovieCharacter> MovieMovieCharacters { get; set; }
+		public virtual ICollection<MovieCharacter> MovieCharacters { get; set; }
 
 	}
 }

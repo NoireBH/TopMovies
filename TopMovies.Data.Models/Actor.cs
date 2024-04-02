@@ -9,7 +9,7 @@ namespace TopMovies.Data.Models
         public Actor()
         {
             ActorsMovies = new HashSet<ActorMovie>();
-			ActorMovieCharacters = new HashSet<ActorMovieCharacter>();
+			MovieCharacters = new HashSet<MovieCharacter>();
 		}
 
         [Key]
@@ -30,7 +30,6 @@ namespace TopMovies.Data.Models
         public DateTime DateOfBirth { get; set; }
 
         public virtual ICollection<ActorMovie> ActorsMovies { get; set;}
-
-        public virtual ICollection<ActorMovieCharacter> ActorMovieCharacters { get; set; }
+		public virtual ICollection<MovieCharacter> MovieCharacters { get; set; }
     }
 }
