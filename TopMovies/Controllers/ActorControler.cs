@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Web.Controllers
@@ -21,7 +22,7 @@ namespace TopMovies.Web.Controllers
 		{
 			var actorExists = await actorService.ExistsByIdAsync(id);
 
-			MovieDetailsViewModel movie;
+			ActorDetailsViewModel actor;
 
 			if (!actorExists)
 			{
@@ -30,7 +31,7 @@ namespace TopMovies.Web.Controllers
 
 			try
 			{
-				movie = await actorService.GetMovieDetailsByIdAsync(id);
+				actor = await actorService.GetAllMovieActorsByMovieIdAsync(id);
 			}
 			catch (Exception)
 			{
@@ -40,6 +41,6 @@ namespace TopMovies.Web.Controllers
 
 			}
 
-			return View(movie);
+			return View(actor);
 		}
 	}

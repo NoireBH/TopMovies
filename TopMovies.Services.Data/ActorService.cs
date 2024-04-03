@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Actors;
 
 namespace TopMovies.Services.Data
@@ -8,12 +9,24 @@ namespace TopMovies.Services.Data
 	public class ActorService : IActorService
 	{
 		private readonly TopMoviesDbContext context;
-		private readonly IMovieCharacterService movieCharacterService;
 
-		public ActorService(TopMoviesDbContext context, IMovieCharacterService movieCharacterService)
+		public ActorService(TopMoviesDbContext context)
 		{
 			this.context = context;
-			this.movieCharacterService = movieCharacterService;
+		}
+
+		public async Task<bool> ExistsByIdAsync(int id)
+		{
+			return await context.Actors.AnyAsync(m => m.Id == id);
+		}
+
+		public async Task<ActorDetailsViewModel> GetActorByIdAsync(int id)
+		{
+			var actor = await context.Actors
+				.To<ActorDetailsViewModel>()
+				.FirstOrDefaultAsync();
+
+			return actor!;
 		}
 
 		public async Task<ActorViewModel[]> GetAllMovieActorsByMovieIdAsync(string id)
