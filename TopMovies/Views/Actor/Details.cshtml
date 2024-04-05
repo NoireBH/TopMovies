@@ -1,0 +1,42 @@
+﻿@model ActorDetailsViewModel
+@inject IActorService actorService
+
+@{
+
+	var actor = await actorService.GetActorByIdAsync(Model.Id);
+
+}
+
+
+<div class="container-fluid p-0">
+	@*
+	Main Details
+	*@
+	<section class="container-fluid details-main-content mb-2">
+		<header class="row mb-1 pe-2">
+			<div class="col-4">
+				<h1>@Model.Name</h1>
+			</div>			
+		</header>
+		<main class="container-fluid no-padding">
+			<div class="row bg-dark g-0">
+				<div class="col-6">
+					<img src="@Model.ImageUrl" class="img-fluid" style="max-width:100%" />
+				</div>
+				<div class="col-6" style="display:flex;flex-direction:column;justify-content:center">
+					<div class="d-flex flex-col justify-content-center">
+						<a src="" class="text-center">
+							<i class="fa-solid fa-image details-photos" style="color: #1056b1;font-size:8vw"></i>
+							<p style="font-weight:bolder;font-size:3vw">Photos</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="p-2">
+
+			
+
+		</footer>
+	</section>
+</div>

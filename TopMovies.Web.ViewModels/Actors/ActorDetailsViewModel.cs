@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TopMovies.Data.Models;
+using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.MovieCharacters;
 using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Web.ViewModels.Actors
 {
-	public class ActorDetailsViewModel
+	public class ActorDetailsViewModel : IMapFrom<Actor>
 	{
         public ActorDetailsViewModel()
         {

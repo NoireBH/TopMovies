@@ -71,20 +71,26 @@
 		<h1 class="text-center mb-5">Movie Cast:</h1>
 
 		<div class="d-flex flex-row justify-content-around  text-center">
-				@foreach (var mac in movieActorsAndTheirCharacters)
-				{
+			@foreach (var mac in movieActorsAndTheirCharacters)
+			{
 				<div class="actor-img-container">
 					<img src="@mac.ActorImageUrl" class="img-fluid rounded-circle">
 					<div class="d-flex flex-column actor-character-names">
-						<h4>@mac.ActorName</h4>
-						<p>@mac.MovieCharacterName</p>
+						<h4>
+							<a  asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
+								@mac.ActorName
+							</a>
+						</h4>
+						<p>
+							<a  asp-controller="MovieCharacter" asp-action="Details" asp-route-id="@mac.MovieCharacterId">
+								@mac.MovieCharacterName
+							</a>
+						</p>
 					</div>
 				</div>
-						
-					
-				}
-			</div>
-		
+			}
+		</div>
+
 
 	</section>
 	@*
