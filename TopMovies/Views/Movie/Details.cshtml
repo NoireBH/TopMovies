@@ -76,13 +76,13 @@
 				<div class="actor-img-container">
 					<img src="@mac.ActorImageUrl" class="img-fluid rounded-circle">
 					<div class="d-flex flex-column actor-character-names">
-						<h4>
-							<a  asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
+						<h4 class="actor-links">
+							<a class="text-dark"  asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
 								@mac.ActorName
 							</a>
-						</h4>
+						</h4 class="actor-links">
 						<p>
-							<a  asp-controller="MovieCharacter" asp-action="Details" asp-route-id="@mac.MovieCharacterId">
+							<a class="text-dark" asp-controller="MovieCharacter" asp-action="Details" asp-route-id="@mac.MovieCharacterId">
 								@mac.MovieCharacterName
 							</a>
 						</p>

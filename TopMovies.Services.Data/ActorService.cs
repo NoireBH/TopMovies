@@ -23,6 +23,7 @@ namespace TopMovies.Services.Data
 		public async Task<ActorDetailsViewModel> GetActorByIdAsync(int id)
 		{
 			var actor = await context.Actors
+				.Where(a => a.Id == id)
 				.To<ActorDetailsViewModel>()
 				.FirstOrDefaultAsync();
 

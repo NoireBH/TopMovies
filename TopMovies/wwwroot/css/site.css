@@ -114,6 +114,10 @@ a{
     max-width: 120px;
 }
 
+.actor-links:hover {
+    color: yellow;
+}
+
 .rounded-circle {
     border: 1px solid;
     border-radius: 50%;
