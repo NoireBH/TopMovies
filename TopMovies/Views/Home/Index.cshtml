@@ -1,9 +1,9 @@
 ﻿@model FeaturedMoviesViewModel[]
 
 
-<div class="text-center">
+<div class="text-center carousel-container">
 	<h1 class="display-4">Featured Movies for today:</h1>
-	<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+	<div id="carousel-featured-movies" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
 			@for (int i = 0; i < Model.Length; i++)
 			{
@@ -11,21 +11,23 @@
 
 				<div class="carousel-item @(i == 0 ? "active" : string.Empty)">
 					<a asp-controller="Movie" asp-action="Details"
-					   asp-route-id="@featuredMovie.Id">
-						<img class="d-block w-100" style="height:800px" alt="@featuredMovie.Name"
+					   asp-route-id="@featuredMovie.Id" class="d-flex justify-content-center">
+						<img class="d-block img-responsive" style="height:500px" alt="@featuredMovie.Name"
 							 src="@featuredMovie.ImageUrl">
 					</a>
 				</div>
 
 			}
 		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+		<button class="carousel-control-prev" type="button" data-bs-target="#carousel-featured-movies" data-bs-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+		<button class="carousel-control-next" type="button" data-bs-target="#carousel-featured-movies" data-bs-slide="next">
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
 </div>
+
+
