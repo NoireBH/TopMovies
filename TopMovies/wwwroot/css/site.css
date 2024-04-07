@@ -74,6 +74,9 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style-position: inside;
+}
 
 
 @media only screen and (max-width: 992px) {
@@ -150,4 +153,13 @@ a {
 
 .privacy-policy:hover {
     text-decoration: underline !important;
+}
+
+.answer-section div {
+    margin-bottom: 3rem;
+}
+
+ul li span {
+    position: relative;
+    left: -12px;
 }
