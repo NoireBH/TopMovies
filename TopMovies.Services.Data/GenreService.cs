@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Services.Mapping;
+using TopMovies.Web.ViewModels.Genres;
 using TopMovies.Web.ViewModels.MoviesGenres;
 
 namespace TopMovies.Services.Data
@@ -14,14 +16,11 @@ namespace TopMovies.Services.Data
             this.context = context;
         }
 
-        public async Task<MovieGenreViewModel[]> GetAllGenresAsync()
+        public async Task<GenreViewModel[]> GetAllGenresAsync()
 		{
 			var genres = await context.Genres
-				.Select(g => new MovieGenreViewModel()
-			{
-				GenreId = g.Id,
-				GenreGenreName = g.Name,
-			}).ToArrayAsync();
+			.To<GenreViewModel>()	
+			.ToArrayAsync();
 
 			return genres;
 		}
