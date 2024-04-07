@@ -52,6 +52,11 @@ namespace TopMovies.Services.Data
             return movieActorsAndCharacters!;
 		}
 
+		public async Task<int> GetMovieCountAsync()
+		{
+			return await context.Movies.CountAsync();
+		}
+
 		public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
             var movie = await context.Movies

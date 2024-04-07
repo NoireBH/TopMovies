@@ -163,3 +163,7 @@ ul li span {
     position: relative;
     left: -12px;
 }
+
+.q-and-a-container section div p, .q-and-a-container section div a, .q-and-a-container section div ul li span {
+    font-size: 18px;
+}

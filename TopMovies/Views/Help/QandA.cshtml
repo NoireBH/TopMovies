@@ -1,4 +1,13 @@
-﻿
+﻿@model GenreViewModel[]
+@inject IGenreService genreService;
+@inject IMovieService movieservice;
+
+@{
+	GenreViewModel[] genres = await genreService.GetAllGenresAsync();
+	int movieCount = await movieservice.GetMovieCountAsync();
+}
+
+
 <div class="q-and-a-container">
 	<section class="question-section flex-column text-center mb-3">
 		<h1>Q&A section</h1>
@@ -8,8 +17,8 @@
 			<a href="#how-to-rate">How do I submit my rating?</a>
 			<a href="#how-to-submit-review">How do I submit a review?</a>
 			<a href="#what-kind-of-genres-are-there">What kind of genres are there?</a>
-			<a>How many movies do you currently have on TopMovies?</a>
-			<a>How do I contact you if I have more questions?</a>
+			<a href="#movie-count">How many movies do you currently have on TopMovies?</a>
+			<a href="#contacts">How do I contact you if I have more questions?</a>
 		</div>
 	</section>
 	<section class="answer-section">
@@ -45,6 +54,20 @@
 		<div class="text-center">
 			<h1 id="what-kind-of-genres-are-there">What kind of genres are there?</h1>
 			<p>We currently have these genres :</p>
+			<ul>
+				@foreach (var genre in genres)
+				{
+					<li> <span>@genre.Name</span></li>
+				}
+			</ul>
+		</div>
+		<div class="text-center">
+			<h1 id="movie-count">How many movies do you currently have on TopMovies?</h1>
+			<p>We currently have @movieCount movies! </p>
+		</div>
+		<div class="text-center">
+			<h1 id="contacts">How do I contact you if I have more questions?</h1>
+			<p>You can send us an email at TopMovies@gmail.com.</p>
 		</div>
 	</section>
 </div>
