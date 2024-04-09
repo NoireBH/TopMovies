@@ -41,5 +41,32 @@ namespace TopMovies.Web.Controllers
 
 			return View(movie);
         }
-    }
+
+		[HttpGet]
+		public async Task<IActionResult> Rate(string id)
+		{
+			var movieExists = await movieService.ExistsByIdAsync(id);
+
+			MovieDetailsViewModel movie;
+
+			if (!movieExists)
+			{
+				return Redirect(Request.Headers["Referer"].ToString());
+			}
+
+			try
+			{
+				movie = await movieService.GetMovieDetailsByIdAsync(id);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+
+				return Redirect(Request.Headers["Referer"].ToString());
+
+			}
+
+			return View(movie);
+		}
+	}
 }

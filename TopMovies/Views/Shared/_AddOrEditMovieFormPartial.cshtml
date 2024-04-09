@@ -1,0 +1,48 @@
+﻿@model AddOrEditHouseFormModel
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" class="form-control" placeholder="Name...">
+				<span asp-validation-for="Name" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description"></label>
+				<input asp-for="Description" class="form-control"
+					   placeholder="Description...">
+				<span asp-validation-for="Description" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ReleaseDate"></label>
+				<textarea asp-for="ReleaseDate" rows="4" class="form-control"
+						  placeholder="2014..."></textarea>
+				<span asp-validation-for="ReleaseDate" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ImageUrl"></label>
+				<input asp-for="ImageUrl" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="ImageUrl" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="TrailerUrl"></label>
+				<input asp-for="TrailerUrl" class="form-control" placeholder="Your trailer link goes here...">
+				<span asp-validation-for="TrailerUrl" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MovieGenres"></label>
+				<select asp-for="MovieGenres" class="form-control" multiple>
+					@foreach (var genre in Model.MovieGenres)
+					{
+						<option value="@genre.Id">@genre.Name</option>
+					}
+				</select>
+				<span asp-validation-for="MovieGenres" class="small textdanger"></span>
+			</div>
+			<div class="text-center">
+				<input class="btn btn-primary mt-3" type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>
