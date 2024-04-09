@@ -68,5 +68,17 @@ namespace TopMovies.Web.Controllers
 
 			return View(movie);
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> Add()
+		{
+			
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Add(MovieAddOrEditFormModel model)
+		{
+
+		}
 	}
 }

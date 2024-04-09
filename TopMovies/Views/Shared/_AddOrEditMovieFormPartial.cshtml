@@ -31,14 +31,14 @@
 				<span asp-validation-for="TrailerUrl" class="small textdanger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="MovieGenres"></label>
-				<select asp-for="MovieGenres" class="form-control" multiple>
-					@foreach (var genre in Model.MovieGenres)
+				<label asp-for="Genres"></label>
+				<select asp-for="Genres" class="form-control" multiple>
+					@foreach (var genre in Model.Genres)
 					{
 						<option value="@genre.Id">@genre.Name</option>
 					}
 				</select>
-				<span asp-validation-for="MovieGenres" class="small textdanger"></span>
+				<span asp-validation-for="Genres" class="small textdanger"></span>
 			</div>
 			<div class="text-center">
 				<input class="btn btn-primary mt-3" type="submit" value="Save" />
