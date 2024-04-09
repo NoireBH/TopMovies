@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using TopMovies.Data.Models;
+using static TopMovies.Common.GeneralConstants.AdminUser;
 
 namespace TopMovies.Web.Infrastructure.Extensions
 {
