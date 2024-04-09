@@ -8,6 +8,7 @@ using System.Reflection;
 using TopMovies.Web.ViewModels;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.Infrastructure.Extensions;
+using static TopMovies.Common.GeneralConstants.AdminUser;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -64,6 +65,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.SeedAdministrator(AdminEmail);
 
 app.UseEndpoints(ep =>
 {

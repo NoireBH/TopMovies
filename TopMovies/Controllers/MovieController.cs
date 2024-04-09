@@ -8,10 +8,14 @@ namespace TopMovies.Web.Controllers
     public class MovieController : BaseController
     {
         private readonly IMovieService movieService;
+        private readonly IGenreService genreService;
 
-        public MovieController(IMovieService movieService)
+        public MovieController(
+			IMovieService movieService,
+			IGenreService genreService)
         {
             this.movieService = movieService;
+			this.genreService = genreService;
         }
 
         [HttpGet]
@@ -72,7 +76,7 @@ namespace TopMovies.Web.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Add()
 		{
-			
+			var genres = await genreService.GetAllGenresAsync();
 		}
 
 		[HttpPost]
