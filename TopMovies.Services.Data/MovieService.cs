@@ -22,7 +22,12 @@ namespace TopMovies.Services.Data
             this.context = context;
         }
 
-        public async Task<bool> ExistsByIdAsync(string id)
+		public Task AddMovie(MovieAddOrEditFormModel movie)
+		{
+			
+		}
+
+		public async Task<bool> ExistsByIdAsync(string id)
         {
             return await context.Movies.AnyAsync(m => m.Id.ToString() == id);
         }

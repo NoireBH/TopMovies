@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using TopMovies.Data.Models;
+using TopMovies.Web.ViewModels.Genres;
 using static TopMovies.Common.EntityValidationConstants.Movie;
 
 namespace TopMovies.Web.ViewModels.Movies
@@ -9,7 +10,7 @@ namespace TopMovies.Web.ViewModels.Movies
         public MovieAddOrEditFormModel()
         {
 			MovieGenres = new HashSet<MovieGenre>();
-			Genres = new HashSet<Genre>();
+			Genres = new HashSet<GenreFormModel>();
 			Id = new Guid();
 
 		}
@@ -35,7 +36,7 @@ namespace TopMovies.Web.ViewModels.Movies
 		[Display(Name = "Trailer link")]
 		public string TrailerUrl { get; set; } = null!;
 
-		public virtual ICollection<Genre> Genres { get; set; } = null!;
+		public virtual ICollection<GenreFormModel> Genres { get; set; } = null!;
 
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; } = null!;
 	}

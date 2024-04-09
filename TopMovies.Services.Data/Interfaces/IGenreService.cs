@@ -10,7 +10,7 @@ namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IGenreService
 	{
-		Task<GenreViewModel[]> GetAllGenresAsync();
+		Task<GenreFormModel[]> GetAllGenresAsync();
 
 		Task<MovieGenreViewModel[]> GetMovieGenresByMovieIdAsync(string id);
 	}

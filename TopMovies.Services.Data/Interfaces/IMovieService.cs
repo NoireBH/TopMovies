@@ -13,11 +13,14 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync();
 
 		Task<bool> ExistsByIdAsync(string  id);
+		Task<bool> ExistsByNameAndReleaseDate(string name, string year, string month, string day);
 
 		Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id);
 
 		Task<MovieActorsAndCharactersViewModel[]> GetMovieActorsAndCharactersByMovieIdAsync(string id);
 
 		Task<int> GetMovieCountAsync();
+
+		Task AddMovie(MovieAddOrEditFormModel movie);
 	}
 }

@@ -1,9 +1,9 @@
-﻿@model GenreViewModel[]
+﻿@model GenreFormModel[]
 @inject IGenreService genreService;
 @inject IMovieService movieservice;
 
 @{
-	GenreViewModel[] genres = await genreService.GetAllGenresAsync();
+	GenreFormModel[] genres = await genreService.GetAllGenresAsync();
 	int movieCount = await movieservice.GetMovieCountAsync();
 }
 

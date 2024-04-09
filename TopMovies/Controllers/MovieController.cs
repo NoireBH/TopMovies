@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.Movies;
+using static TopMovies.Common.NotificationMessagesConstants;
 
 namespace TopMovies.Web.Controllers
 {
@@ -76,13 +78,31 @@ namespace TopMovies.Web.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Add()
 		{
-			var genres = await genreService.GetAllGenresAsync();
+			bool isAdmin =  User.IsAdmin();
+
+			if (!isAdmin)
+			{
+				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
+				return BadRequest();
+			}
+
+			return View(new MovieAddOrEditFormModel
+			{
+				Genres = await genreService.GetAllGenresAsync()
+			});
+
+			
 		}
 
 		[HttpPost]
 		public async Task<IActionResult> Add(MovieAddOrEditFormModel model)
 		{
+			if (!ModelState.IsValid)
+			{
+				model.Genres = await genreService.GetAllGenresAsync();
 
+				return View(model);
+			}
 		}
 	}
 }

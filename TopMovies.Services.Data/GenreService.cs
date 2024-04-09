@@ -16,10 +16,10 @@ namespace TopMovies.Services.Data
             this.context = context;
         }
 
-        public async Task<GenreViewModel[]> GetAllGenresAsync()
+        public async Task<GenreFormModel[]> GetAllGenresAsync()
 		{
 			var genres = await context.Genres
-			.To<GenreViewModel>()	
+			.To<GenreFormModel>()	
 			.ToArrayAsync();
 
 			return genres;

@@ -8,7 +8,7 @@ using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.Genres
 {
-	public class GenreViewModel : IMapFrom<Genre>
+	public class GenreFormModel : IMapFrom<Genre>
 	{
 		public int Id { get; set; }
 
