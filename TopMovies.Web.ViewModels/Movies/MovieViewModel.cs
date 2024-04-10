@@ -16,8 +16,8 @@ namespace TopMovies.Web.ViewModels.Movies
 
 		public void CreateMappings(IProfileExpression configuration)
 		{
-			configuration.CreateMap<Movie, MovieDetailsViewModel>()
-			   .ForMember(m => m.ReleaseDateYear, cfg => cfg
+			configuration.CreateMap<Movie, MovieViewModel>()
+			   .ForMember(m => m.YearOfRelease, cfg => cfg
 				   .MapFrom(m => m.ReleaseDate.Year));
 		}
 	}
