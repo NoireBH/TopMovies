@@ -202,8 +202,9 @@ ul li span {
 }
 
 
-.all-movies-img-container  {
+.all-movies-img-container {
     max-width: 400px;
+    transition: all 0.3s ease-in;
 }
 
 .all-movies-img-container a img {
@@ -211,6 +212,10 @@ ul li span {
     width: 100%;
     height:auto;
 }
+
+    .all-movies-img-container:hover {
+        transform: scale(0.8) rotate(5deg);
+    }
 
 .user-reviews-section {
 }

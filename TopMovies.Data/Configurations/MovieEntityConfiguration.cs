@@ -94,7 +94,7 @@ namespace TopMovies.Data.Configurations
                 Id = Guid.Parse("FEA8731C-71A3-4980-B1EE-AA44500953A6"),
                 Name = "Five Nights at Freddy's",
                 Description = "A troubled security guard begins working at Freddy Fazbear's Pizza. During his first night on the job, he realizes that the night shift won't be so easy to get through. Pretty soon he will unveil what actually happened at Freddy's.",
-                ReleaseDate = new DateTime(1994, 5, 21),
+                ReleaseDate = new DateTime(2024, 5, 21),
 				TrailerUrl = "https://www.youtube.com/embed/0VH9WCFV6XQ",
 				Rating = 5.5,
                 ImageUrl = "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg"

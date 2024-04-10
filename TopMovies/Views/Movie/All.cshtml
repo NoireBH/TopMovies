@@ -19,11 +19,11 @@
 					<h4>@movie.YearOfRelease</h4>
 				</div>
 				<div class="text-center">
-					@if (User.IsAdmin())
+					@if (User.IsAdmin())//not working!!!
 					{
-						<a asp-area="" asp-controller="House" asp-action="Edit" asp-route-id="@movie.Id"
+						<a asp-area="" asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.Id"
 						   class="btn btn-warning">Edit</a>
-						<a asp-area="" asp-controller="House" asp-action="Delete" asp-route-id="@movie.Id"
+						<a asp-area="" asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.Id"
 						   class="btn btn-danger">Delete</a>
 					}
 				</div>
