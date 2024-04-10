@@ -96,13 +96,29 @@ namespace TopMovies.Web.Controllers
 
 		[HttpPost]
 		public async Task<IActionResult> Add(MovieAddOrEditFormModel model)
-		{
+		{			
+
 			if (!ModelState.IsValid)
 			{
 				model.Genres = await genreService.GetAllGenresAsync();
 
 				return View(model);
 			}
+
+			try
+			{
+				await movieService.AddMovieAsync(model);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+				model.Genres = await genreService.GetAllGenresAsync();
+				return View(model);
+
+			}
+
+			return RedirectToAction("All", "Movie");
+
 		}
 	}
 }
