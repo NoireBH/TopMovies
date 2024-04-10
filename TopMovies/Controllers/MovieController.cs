@@ -75,6 +75,16 @@ namespace TopMovies.Web.Controllers
 			return View(movie);
 		}
 
+		[AllowAnonymous]
+		[Authorize(Roles = "Administrator")]
+		public async Task<IActionResult> All()
+		{
+			var movies = await movieService.GetAllMoviesAsync();
+
+			return View(movies);
+
+		}
+
 		[HttpGet]
 		public async Task<IActionResult> Add()
 		{

@@ -1,5 +1,39 @@
-﻿@model MovieViewModel
+﻿@model MovieViewModel[]
+@inject IMovieService movieService
 
-<div>
+@{
+	var movies = await movieService.GetAllMoviesAsync();
+}
 
+<div class="container-fluid mt-2">
+	<div class="row">
+		@foreach (var movie in movies)
+		{
+
+			<div class="col-md-4 text-center">
+				<div class=" all-movies-img-container">
+					<a asp-area="" asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+						<img class="" src="@movie.ImageUrl" />
+					</a>
+					<h2>@movie.Name</h2>
+					<h4>@movie.YearOfRelease</h4>
+				</div>
+				<div class="text-center">
+					@if (User.IsAdmin())
+					{
+						<a asp-area="" asp-controller="House" asp-action="Edit" asp-route-id="@movie.Id"
+						   class="btn btn-warning">Edit</a>
+						<a asp-area="" asp-controller="House" asp-action="Delete" asp-route-id="@movie.Id"
+						   class="btn btn-danger">Delete</a>
+					}
+				</div>
+			</div>
+
+
+		}
+	</div>
+	
 </div>
+
+
+

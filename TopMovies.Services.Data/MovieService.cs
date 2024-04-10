@@ -49,7 +49,7 @@ namespace TopMovies.Services.Data
 			throw new NotImplementedException();
 		}
 
-		public async Task<MovieViewModel> GetAllMoviesAsync()
+		public async Task<MovieViewModel[]> GetAllMoviesAsync()
 		{
             return await context.Movies
                 .To<MovieViewModel>()
