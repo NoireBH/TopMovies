@@ -176,7 +176,7 @@ ul li span {
     }
 
 .rate-btn:hover {
-    color:yellow !important;
+    color: yellow !important;
 }
 
 .rating-info p, .rating-info a {
@@ -207,11 +207,15 @@ ul li span {
     transition: all 0.3s ease-in;
 }
 
-.all-movies-img-container a img {
-    display: block;
-    width: 100%;
-    height:auto;
-}
+    .all-movies-img-container a {
+        color: black;
+    }
+
+        .all-movies-img-container a img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
 
     .all-movies-img-container:hover {
         transform: scale(0.8) rotate(5deg);

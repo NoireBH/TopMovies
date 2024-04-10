@@ -15,7 +15,11 @@
 					<a asp-area="" asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
 						<img class="" src="@movie.ImageUrl" />
 					</a>
-					<h2>@movie.Name</h2>
+					<h2>
+						<a asp-area="" asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+							@movie.Name
+						</a>						
+					</h2>
 					<h4>@movie.YearOfRelease</h4>
 				</div>
 				<div class="text-center">
@@ -32,7 +36,7 @@
 
 		}
 	</div>
-	
+
 </div>
 
 
