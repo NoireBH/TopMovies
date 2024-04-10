@@ -10,6 +10,8 @@ namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IMovieService
 	{
+		Task<MovieViewModel> GetAllMoviesAsync();
+
 		Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync();
 
 		Task<bool> ExistsByIdAsync(string  id);

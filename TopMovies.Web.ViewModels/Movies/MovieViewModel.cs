@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TopMovies.Data.Models;
+using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-	public class MovieViewModel
+	public class MovieViewModel : IMapFrom<Movie>
 	{
 		public Guid Id { get; set; }
 

@@ -44,7 +44,19 @@ namespace TopMovies.Services.Data
             return await context.Movies.AnyAsync(m => m.Id.ToString() == id);
         }
 
-        public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
+		public Task<bool> ExistsByNameAndReleaseDate(string name, string year, string month, string day)
+		{
+			throw new NotImplementedException();
+		}
+
+		public async Task<MovieViewModel> GetAllMoviesAsync()
+		{
+            return await context.Movies
+                .To<MovieViewModel>()
+                .ToArrayAsync();
+		}
+
+		public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()
         {
             Movie[] allMovies = await context.Movies.AsNoTracking().OrderBy(_ => Guid.NewGuid()).Take(3).ToArrayAsync();
 
