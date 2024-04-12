@@ -75,8 +75,7 @@ namespace TopMovies.Web.Controllers
 			return View(movie);
 		}
 
-		[AllowAnonymous]
-		[Authorize(Roles = "Administrator")]
+		[AllowAnonymous]		
 		public async Task<IActionResult> All()
 		{
 			var movies = await movieService.GetAllMoviesAsync();
@@ -93,7 +92,6 @@ namespace TopMovies.Web.Controllers
 			if (!isAdmin)
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
-				return BadRequest();
 			}
 
 			return View(new MovieAddOrEditFormModel
