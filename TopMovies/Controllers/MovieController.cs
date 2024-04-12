@@ -92,6 +92,7 @@ namespace TopMovies.Web.Controllers
 			if (!isAdmin)
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
+				return Redirect(Request.Headers["Referer"].ToString());
 			}
 
 			return View(new MovieAddOrEditFormModel
