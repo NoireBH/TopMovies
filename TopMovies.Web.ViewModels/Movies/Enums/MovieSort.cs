@@ -13,6 +13,6 @@ namespace TopMovies.Web.ViewModels.Movies.Enums
 		NameAscending = 2,
 		NameDescending = 3,
 		RatingAscending = 4,
-		RatingDescending = 5,
+		RatingDescending = 5
 	}
 }

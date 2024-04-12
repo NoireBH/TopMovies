@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TopMovies.Common
+﻿namespace TopMovies.Common
 {
 	public class GeneralConstants
 	{
 		public class Page
 		{
 			public const int DefaultPage = 1;
-			public const int DefaultHousesPerPage = 6;
+			public const int DefaultMoviesPerPage = 6;
 		}
 
 		public class AdminUser
