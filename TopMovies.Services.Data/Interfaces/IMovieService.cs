@@ -24,5 +24,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<int> GetMovieCountAsync();
 
 		Task AddMovieAsync(MovieAddOrEditFormModel movie);
+
+		Task DeleteAsync(string id);
 	}
 }

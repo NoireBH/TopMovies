@@ -33,7 +33,7 @@ namespace TopMovies.Web.ViewModels.Movies
 		public string ImageUrl { get; set; } = null!;
 
 		[Required]
-		[Display(Name = "Trailer link")]
+		[Display(Name = "Youtube trailer link")]
 		public string TrailerUrl { get; set; } = null!;
 
 		public virtual ICollection<GenreFormModel> Genres { get; set; } = null!;

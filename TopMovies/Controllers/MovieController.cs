@@ -57,6 +57,7 @@ namespace TopMovies.Web.Controllers
 
 			if (!movieExists)
 			{
+				TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
 				return Redirect(Request.Headers["Referer"].ToString());
 			}
 
@@ -117,6 +118,7 @@ namespace TopMovies.Web.Controllers
 			try
 			{
 				await movieService.AddMovieAsync(model);
+				ModelState.FirstOrDefault(x => x.Key == nameof(model.TrailerUrl)).Value!.RawValue = model.TrailerUrl.Replace("watch?v=", "embed/");
 			}
 			catch (Exception)
 			{

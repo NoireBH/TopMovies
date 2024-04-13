@@ -39,6 +39,15 @@ namespace TopMovies.Services.Data
             await context.SaveChangesAsync();
 		}
 
+		public async Task DeleteAsync(string houseId)
+		{
+			var house = await context.Movies.FirstOrDefaultAsync(h => h.Id.ToString() == houseId);
+
+			context.Movies.Remove(house!);
+			await context.SaveChangesAsync();
+
+		}
+
 		public async Task<bool> ExistsByIdAsync(string id)
         {
             return await context.Movies.AnyAsync(m => m.Id.ToString() == id);
