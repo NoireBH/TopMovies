@@ -7,46 +7,46 @@ using static TopMovies.Common.NotificationMessagesConstants;
 
 namespace TopMovies.Web.Controllers
 {
-    public class MovieController : BaseController
-    {
-        private readonly IMovieService movieService;
-        private readonly IGenreService genreService;
+	public class MovieController : BaseController
+	{
+		private readonly IMovieService movieService;
+		private readonly IGenreService genreService;
 
-        public MovieController(
+		public MovieController(
 			IMovieService movieService,
 			IGenreService genreService)
-        {
-            this.movieService = movieService;
+		{
+			this.movieService = movieService;
 			this.genreService = genreService;
-        }
+		}
 
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<IActionResult> Details(string id)
-        {
-            var movieExists = await movieService.ExistsByIdAsync(id);
+		[HttpGet]
+		[AllowAnonymous]
+		public async Task<IActionResult> Details(string id)
+		{
+			var movieExists = await movieService.ExistsByIdAsync(id);
 
-            MovieDetailsViewModel movie;
+			MovieDetailsViewModel movie;
 
-            if (!movieExists)
-            {
-				return Redirect(Request.Headers["Referer"].ToString());
+			if (!movieExists)
+			{
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
 			try
 			{
-				 movie = await movieService.GetMovieDetailsByIdAsync(id);
+				movie = await movieService.GetMovieDetailsByIdAsync(id);
 			}
 			catch (Exception)
 			{
 				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-				return Redirect(Request.Headers["Referer"].ToString());
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 
 			}
 
 			return View(movie);
-        }
+		}
 
 		[HttpGet]
 		public async Task<IActionResult> Rate(string id)
@@ -58,7 +58,7 @@ namespace TopMovies.Web.Controllers
 			if (!movieExists)
 			{
 				TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
-				return Redirect(Request.Headers["Referer"].ToString());
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
 			try
@@ -69,14 +69,14 @@ namespace TopMovies.Web.Controllers
 			{
 				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-				return Redirect(Request.Headers["Referer"].ToString());
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 
 			}
 
 			return View(movie);
 		}
 
-		[AllowAnonymous]		
+		[AllowAnonymous]
 		public async Task<IActionResult> All()
 		{
 			var movies = await movieService.GetAllMoviesAsync();
@@ -88,12 +88,12 @@ namespace TopMovies.Web.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Add()
 		{
-			bool isAdmin =  User.IsAdmin();
+			bool isAdmin = User.IsAdmin();
 
 			if (!isAdmin)
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
-				return Redirect(Request.Headers["Referer"].ToString());
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
 			return View(new MovieAddOrEditFormModel
@@ -101,12 +101,12 @@ namespace TopMovies.Web.Controllers
 				Genres = await genreService.GetAllGenresAsync()
 			});
 
-			
+
 		}
 
 		[HttpPost]
 		public async Task<IActionResult> Add(MovieAddOrEditFormModel model)
-		{			
+		{
 
 			if (!ModelState.IsValid)
 			{
@@ -130,6 +130,32 @@ namespace TopMovies.Web.Controllers
 
 			return RedirectToAction("All", "Movie");
 
+		}
+
+		public async Task<IActionResult> Delete(string id)
+		{
+			if (!User.IsAdmin())
+			{
+				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie!";
+				return Redirect(HttpContext.Request.Headers["Referer"]);
+			}
+
+			try
+			{
+				if (!await movieService.ExistsByIdAsync(id))
+				{
+					TempData[ErrorMessage] = "A movie with that id does not exist!";
+					return Redirect(HttpContext.Request.Headers["Referer"]);
+				}
+
+				await movieService.DeleteAsync(id);
+			}
+			catch (Exception)
+			{
+				TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
+			}
+
+			return RedirectToAction(nameof(All));
 		}
 	}
 }

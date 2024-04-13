@@ -41,9 +41,9 @@ namespace TopMovies.Services.Data
 
 		public async Task DeleteAsync(string houseId)
 		{
-			var house = await context.Movies.FirstOrDefaultAsync(h => h.Id.ToString() == houseId);
+			var movie = await context.Movies.FirstOrDefaultAsync(h => h.Id.ToString() == houseId);
 
-			context.Movies.Remove(house!);
+			context.Movies.Remove(movie!);
 			await context.SaveChangesAsync();
 
 		}
