@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ using TopMovies.Web.ViewModels.Movies;
 
 namespace TopMovies.Web.ViewModels.Actors
 {
-	public class ActorDetailsViewModel : IMapFrom<Actor>
+	public class ActorDetailsViewModel : IMapFrom<Actor>, IHaveCustomMappings
 	{
         public ActorDetailsViewModel()
         {
@@ -29,5 +30,11 @@ namespace TopMovies.Web.ViewModels.Actors
 
 		public IEnumerable<ActorMoviesViewModel> Movies { get; set; } = null!;
 
+		public void CreateMappings(IProfileExpression configuration)
+		{
+			configuration.CreateMap<Actor, ActorDetailsViewModel>()
+			   .ForMember(m => m.DateOfBirth, cfg => cfg
+				   .MapFrom(m => m.DateOfBirth.ToString("yyyy-MM-dd")));
+		}
 	}
 }
