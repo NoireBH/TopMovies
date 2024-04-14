@@ -34,7 +34,7 @@ namespace TopMovies.Services.Data
                 TrailerUrl = movie.TrailerUrl
             };
 
-            await context.AddAsync(newMovie);
+            await context.Movies.AddAsync(newMovie);
             await context.SaveChangesAsync();
 		}
 
@@ -65,9 +65,13 @@ namespace TopMovies.Services.Data
             return await context.Movies.AnyAsync(m => m.Id.ToString() == id);
         }
 
-		public Task<bool> ExistsByNameAndReleaseDate(string name, string year, string month, string day)
+		public async Task<bool> ExistsByNameAndReleaseDate(string name, int year, int month, int day)
 		{
-			throw new NotImplementedException();
+			return await context.Movies
+                .AnyAsync(m => m.Name == name && 
+                m.ReleaseDate.Year == year && 
+                m.ReleaseDate.Month == month &&
+                m.ReleaseDate.Day == day);
 		}
 
 		public async Task<MovieViewModel[]> GetAllMoviesAsync()

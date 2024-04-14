@@ -9,6 +9,7 @@ using TopMovies.Web.ViewModels;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.Infrastructure.Extensions;
 using static TopMovies.Common.GeneralConstants.AdminUser;
+using Microsoft.AspNetCore.Mvc;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,11 @@ builder.Services.AddDbContext<TopMoviesDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddScoped<IMovieService,MovieService>();
+
+builder.Services.AddMvc((options) =>
+{
+	options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+});
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {

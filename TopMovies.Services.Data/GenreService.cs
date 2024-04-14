@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
+using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Genres;
+using TopMovies.Web.ViewModels.Movies;
 using TopMovies.Web.ViewModels.MoviesGenres;
 
 namespace TopMovies.Services.Data
@@ -16,7 +18,18 @@ namespace TopMovies.Services.Data
             this.context = context;
         }
 
-        public async Task<GenreFormModel[]> GetAllGenresAsync()
+		public async Task AddGenreAsync(GenreAddOrEditFormModel movie)
+		{
+			Genre newGenre = new Genre()
+			{
+				Name = movie.Name
+			};
+
+			await context.Genres.AddAsync(newGenre);
+			await context.SaveChangesAsync();
+		}
+
+		public async Task<GenreFormModel[]> GetAllGenresAsync()
 		{
 			var genres = await context.Genres
 			.To<GenreFormModel>()	

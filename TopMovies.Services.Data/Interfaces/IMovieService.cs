@@ -15,7 +15,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync();
 
 		Task<bool> ExistsByIdAsync(string  id);
-		Task<bool> ExistsByNameAndReleaseDate(string name, string year, string month, string day);
+		Task<bool> ExistsByNameAndReleaseDate(string name, int year, int month, int day);
 
 		Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id);
 

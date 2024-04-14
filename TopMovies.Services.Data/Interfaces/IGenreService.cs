@@ -13,5 +13,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<GenreFormModel[]> GetAllGenresAsync();
 
 		Task<MovieGenreViewModel[]> GetMovieGenresByMovieIdAsync(string id);
+
+		Task AddGenreAsync(GenreAddOrEditFormModel model);
 	}
 }
