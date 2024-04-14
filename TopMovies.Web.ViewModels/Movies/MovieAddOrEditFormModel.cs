@@ -9,10 +9,7 @@ namespace TopMovies.Web.ViewModels.Movies
 	{
         public MovieAddOrEditFormModel()
         {
-			MovieGenres = new HashSet<MovieGenre>();
-			Genres = new HashSet<GenreFormModel>();
 			Id = new Guid();
-
 		}
 
 		public Guid Id { get; set; }
@@ -35,9 +32,5 @@ namespace TopMovies.Web.ViewModels.Movies
 		[Required]
 		[Display(Name = "Youtube trailer link")]
 		public string TrailerUrl { get; set; } = null!;
-
-		public virtual ICollection<GenreFormModel> Genres { get; set; } = null!;
-
-		public virtual ICollection<MovieGenre> MovieGenres { get; set; } = null!;
 	}
 }

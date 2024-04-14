@@ -8,13 +8,13 @@ using TopMovies.Web.ViewModels.MovieCharacters;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-	public class MovieDetailsViewModel : IMapFrom<Movie>, IHaveCustomMappings
+    public class MovieDetailsViewModel : IMapFrom<Movie>
     {
         public MovieDetailsViewModel()
         {
             UserReviews = new HashSet<UserReviewViewModel>();
-			Actors = new HashSet<ActorViewModel>();
-			Characters = new HashSet<MovieCharacterViewModel>();
+            Actors = new HashSet<ActorViewModel>();
+            Characters = new HashSet<MovieCharacterViewModel>();
             MovieGenres = new HashSet<MovieGenreViewModel>();
         }
 
@@ -24,7 +24,7 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public string Description { get; set; } = null!;
 
-        public int ReleaseDateYear { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         public double Rating { get; set; }
 
@@ -32,19 +32,12 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public string TrailerUrl { get; set; } = null!;
 
-		public virtual ICollection<MovieGenreViewModel> MovieGenres { get; set; }
+        public virtual ICollection<MovieGenreViewModel> MovieGenres { get; set; }
 
         public virtual IEnumerable<UserReviewViewModel> UserReviews { get; set; }
 
         public virtual IEnumerable<ActorViewModel> Actors { get; set; }
 
-		public virtual IEnumerable<MovieCharacterViewModel> Characters { get; set; }
-
-		public void CreateMappings(IProfileExpression configuration)
-        {
-            configuration.CreateMap<Movie, MovieDetailsViewModel>()
-                .ForMember(m => m.ReleaseDateYear, cfg => cfg
-                    .MapFrom(m => m.ReleaseDate.Year));
-        }
+        public virtual IEnumerable<MovieCharacterViewModel> Characters { get; set; }
     }
 }

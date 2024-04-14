@@ -15,7 +15,7 @@
 	<section class="container-fluid details-main-content mb-2">
 		<header class="row mb-1 pe-2">
 			<div class="col-4">
-				<h1>@Model.Name (@Model.ReleaseDateYear)</h1>
+				<h1>@Model.Name (@Model.ReleaseDate.Year)</h1>
 			</div>
 			<div class="col-5 offset-3">
 				<div class="d-flex justify-content-end rating-info">
@@ -53,10 +53,19 @@
 		*@
 		<footer class="p-2">
 
-			@for (int i = 0; i < movieGenres.Length; i++)
+			@if (movieGenres.Length > 0)
 			{
-				<div class="genreButton me-1 mb-1">@movieGenres[i].GenreGenreName</div>
+				@for (int i = 0; i < movieGenres.Length; i++)
+				{
+					<div class="genreButton me-1 mb-1">@movieGenres[i].GenreGenreName</div>
+				}
 			}
+			else
+			{
+				<p>There are currently no genres for this movie!</p>
+			}
+
+			
 
 			<div>
 				<p>@Model.Description</p>
@@ -71,26 +80,36 @@
 		<h1 class="text-center mb-5">Movie Cast:</h1>
 
 		<div class="d-flex flex-row flex-wrap justify-content-around  text-center">
-			@foreach (var mac in movieActorsAndTheirCharacters)
+
+			@if (movieActorsAndTheirCharacters.Length > 0)
 			{
-				<div class="actor-img-container">
-					<a asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
-						<img src="@mac.ActorImageUrl" class="img-fluid rounded-circle">
-					</a>
-					<div class="d-flex flex-column actor-character-names">
-						<h4>
-							<a class="text-dark" asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
-								@mac.ActorName
-							</a>
-						</h4>
-						<p>
-							<a class="text-dark" asp-controller="MovieCharacter" asp-action="Details" asp-route-id="@mac.MovieCharacterId">
-								@mac.MovieCharacterName
-							</a>
-						</p>
+				@foreach (var mac in movieActorsAndTheirCharacters)
+				{
+					<div class="actor-img-container">
+						<a asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
+							<img src="@mac.ActorImageUrl" class="img-fluid rounded-circle">
+						</a>
+						<div class="d-flex flex-column actor-character-names">
+							<h4>
+								<a class="text-dark" asp-controller="Actor" asp-action="Details" asp-route-id="@mac.ActorId">
+									@mac.ActorName
+								</a>
+							</h4>
+							<p>
+								<a class="text-dark" asp-controller="MovieCharacter" asp-action="Details" asp-route-id="@mac.MovieCharacterId">
+									@mac.MovieCharacterName
+								</a>
+							</p>
+						</div>
 					</div>
-				</div>
+				}
 			}
+			else
+			{
+				<h2 class="text-center">There is currently no information about the actors of this movie!</h2>
+			}
+
+			
 		</div>
 
 

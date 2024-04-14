@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using TopMovies.Controllers;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.Movies;
@@ -20,7 +22,6 @@ namespace TopMovies.Web.Controllers
 			this.genreService = genreService;
 		}
 
-		[HttpGet]
 		[AllowAnonymous]
 		public async Task<IActionResult> Details(string id)
 		{
@@ -48,7 +49,6 @@ namespace TopMovies.Web.Controllers
 			return View(movie);
 		}
 
-		[HttpGet]
 		public async Task<IActionResult> Rate(string id)
 		{
 			var movieExists = await movieService.ExistsByIdAsync(id);
@@ -85,7 +85,6 @@ namespace TopMovies.Web.Controllers
 
 		}
 
-		[HttpGet]
 		public async Task<IActionResult> Add()
 		{
 			bool isAdmin = User.IsAdmin();
@@ -96,10 +95,7 @@ namespace TopMovies.Web.Controllers
 				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
-			return View(new MovieAddOrEditFormModel
-			{
-				Genres = await genreService.GetAllGenresAsync()
-			});
+			return View();
 
 
 		}
@@ -110,8 +106,6 @@ namespace TopMovies.Web.Controllers
 
 			if (!ModelState.IsValid)
 			{
-				model.Genres = await genreService.GetAllGenresAsync();
-
 				return View(model);
 			}
 
@@ -123,7 +117,6 @@ namespace TopMovies.Web.Controllers
 			catch (Exception)
 			{
 				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
-				model.Genres = await genreService.GetAllGenresAsync();
 				return View(model);
 
 			}
@@ -156,6 +149,68 @@ namespace TopMovies.Web.Controllers
 			}
 
 			return RedirectToAction(nameof(All));
+		}
+
+
+		public async Task<IActionResult> Edit(string id)
+		{
+			if (!User.IsAdmin())
+			{
+				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie!";
+				return Redirect(HttpContext.Request.Headers["Referer"]);
+			}
+
+			if (!await movieService.ExistsByIdAsync(id))
+			{
+				return BadRequest();
+			}
+
+			var movie = await movieService.GetMovieDetailsByIdAsync(id);
+
+			var houseModel = new MovieAddOrEditFormModel()
+			{
+				Id = movie.Id,
+				Name = movie.Name,
+				Description = movie.Description,
+				ImageUrl = movie.ImageUrl,
+				ReleaseDate = movie.ReleaseDate,
+
+			};
+
+			return View(houseModel);
+
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Edit(MovieAddOrEditFormModel model)
+		{			
+
+			if (!User.IsAdmin())
+			{
+				TempData[ErrorMessage] = "You must be an agent and the owner of this house to be able to edit!";
+				return Redirect(HttpContext.Request.Headers["Referer"]);
+			}
+
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+
+			try
+			{
+				await movieService.EditMovie(model);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError
+					(string.Empty, "Unexpected error has occured, while trying to edit house details, please try again later...");
+				return View(model);
+
+			}
+
+			return RedirectToAction(nameof(Details), new { id = model.Id });
 		}
 	}
 }

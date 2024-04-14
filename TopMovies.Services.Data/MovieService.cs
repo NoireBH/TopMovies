@@ -31,8 +31,7 @@ namespace TopMovies.Services.Data
                 Description = movie.Description,
                 ReleaseDate = movie.ReleaseDate,
                 ImageUrl = movie.ImageUrl,
-                TrailerUrl = movie.TrailerUrl,
-                MovieGenres = movie.MovieGenres
+                TrailerUrl = movie.TrailerUrl
             };
 
             await context.AddAsync(newMovie);
@@ -47,6 +46,19 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 
 		}
+
+		public async Task EditMovie(MovieAddOrEditFormModel model)
+		{
+			var movie = await context.Movies.FirstAsync(h => h.Id.ToString() == model.Id.ToString());
+
+			movie.Name = model.Name;
+			movie.Description = model.Description;
+			movie.ImageUrl = model.ImageUrl;
+			movie.TrailerUrl = model.TrailerUrl;
+			movie.ReleaseDate = model.ReleaseDate;
+
+			await context.SaveChangesAsync();
+		}	
 
 		public async Task<bool> ExistsByIdAsync(string id)
         {
