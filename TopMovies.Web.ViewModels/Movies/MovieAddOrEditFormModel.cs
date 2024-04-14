@@ -31,7 +31,7 @@ namespace TopMovies.Web.ViewModels.Movies
 
 		[Required]
 		[Display(Name = "Youtube trailer link")]
-		[RegularExpression("youtube", ErrorMessage = "trailer link must be a youtube link!")]
+		[RegularExpression(YoutubeLinkRegex, ErrorMessage = "trailer link must be a youtube link!")]
 		public string TrailerUrl { get; set; } = null!;
 	}
 }

@@ -174,6 +174,7 @@ namespace TopMovies.Web.Controllers
 				Description = movie.Description,
 				ImageUrl = movie.ImageUrl,
 				ReleaseDate = movie.ReleaseDate,
+				TrailerUrl = movie.TrailerUrl
 
 			};
 

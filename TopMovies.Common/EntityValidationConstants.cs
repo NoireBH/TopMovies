@@ -19,7 +19,10 @@ namespace TopMovies.Common
             public const string RatingMin = "1";
             public const string RatingMax = "10";
 
-        }
+            public const string YoutubeLinkRegex = "^((?:https?:)?\\/\\/)?((?:www|m)\\.)?((?:youtube(-nocookie)?\\.com|youtu.be))(\\/(?:[\\w\\-]+\\?v=|embed\\/|live\\/|v\\/)?)([\\w\\-]+)(\\S+)?$";
+
+
+		}
 
         public class Genre
         {

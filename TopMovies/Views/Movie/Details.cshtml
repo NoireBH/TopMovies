@@ -59,7 +59,7 @@
 
 			@if (User.IsAdmin())
 			{
-				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="Add">Add a genre</a>
+				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="AddToMovie">Add a genre</a>
 			}			
 
 			<div>
@@ -103,6 +103,13 @@
 			{
 				<h2 class="text-center">There is currently no information about the actors of this movie!</h2>
 			}
+
+			<div class="actor-img-container">
+				<a asp-controller="Actor" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">
+					<img src="~/images//addActor.png" class="img-fluid rounded-circle">
+				</a>
+				<a class="genre-add-button me-1 mb-1" asp-controller="Actor" asp-action="Add">Add an actor</a>
+			</div>
 
 			
 		</div>
