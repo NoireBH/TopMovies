@@ -50,7 +50,7 @@ html {
     background: yellow;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     vertical-align: middle;
-    max-width: 100px;
+    max-width: 400px;
     padding: 4px 8px;
     text-align: center;
     font-weight: bolder;
@@ -222,4 +222,39 @@ ul li span {
     }
 
 .user-reviews-section {
+}
+
+.genre-add-button {
+    display: inline-block;
+    color: black;
+    border: 1px solid #CCC;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    max-width: 400px;
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.actor-movies-img-container {
+    max-width: 320px;
+}
+
+
+    .actor-movies-img-container > a > img {
+        width: 320px;
+        height: auto;
+        object-fit: cover;
+        border: none;
+    }
+
+
+        .actor-movies-img-container > a > img:hover {
+            filter: brightness(80%);
+        }
+
+.actor-movies-names a:hover {
+    color: gray !important;
 }

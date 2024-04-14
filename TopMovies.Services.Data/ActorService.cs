@@ -45,5 +45,15 @@ namespace TopMovies.Services.Data
 
 			return actors;
 		}
+
+		public async Task<ActorMoviesViewModel[]> GetAllOfTheActorsMoviesByIdAsync(int id)
+		{
+			var actorsMovies = await context.ActorMovies
+				.Where(a => a.ActorId == id)
+				.To<ActorMoviesViewModel>()
+				.ToArrayAsync();
+
+			return actorsMovies;
+		}
 	}
 }

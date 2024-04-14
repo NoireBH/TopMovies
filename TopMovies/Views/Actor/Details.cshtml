@@ -4,7 +4,7 @@
 @{
 
 	var actor = await actorService.GetActorByIdAsync(Model.Id);
-
+	var moviesOfActor = await actorService.GetAllOfTheActorsMoviesByIdAsync(Model.Id);
 }
 
 
@@ -12,8 +12,8 @@
 	@*
 	Main Details
 	*@
-	<section class="container-fluid details-main-content mb-2">
-		<header class="row mb-2 pe-2">
+	<section class="container-fluid details-main-content">
+		<header class="row pe-2 mb-2">
 			<div class="col-12 text-center">
 				<h1>@Model.Name</h1>
 			</div>			
@@ -23,18 +23,43 @@
 				<div class="col-6">
 					<img src="@Model.ImageUrl" class="img-fluid" style="max-width:100%" />
 				</div>
-				<div class="col-6" style="display:flex;flex-direction:column;justify-content:center">
-					<div class="d-flex flex-col justify-content-center">
-						<a src="" class="text-center">
-							<i class="fa-solid fa-image details-photos" style="color: #1056b1;font-size:8vw"></i>
-							<p style="font-weight:bolder;font-size:3vw">Photos</p>
-						</a>
-					</div>
+				<div class=" col-6">
+					<p>@Model.Description</p>
 				</div>
 			</div>
 		</main>
-		<footer class="p-2">			
-			<p>@Model.Description</p>
-		</footer>
+	</section>
+	<section class="mb-3">
+		<h1 class="text-center mb-5">Movies where @Model.Name has been in:</h1>
+
+		<div class="d-flex flex-row flex-wrap justify-content-around  text-center">
+
+			@if (moviesOfActor.Length > 0)
+			{
+				@foreach (var moa in moviesOfActor)
+				{
+					<div class="actor-movies-img-container">
+						<a asp-controller="Movie" asp-action="Details" asp-route-id="@moa.MovieId">
+							<img src="@moa.MovieImageUrl" class="img-fluid">
+						</a>
+						<div class="d-flex flex-column actor-movies-names text-center">
+							<h4>
+								<a class="text-dark" asp-controller="Movie" asp-action="Details" asp-route-id="@moa.MovieId">
+									@moa.MovieName
+								</a>
+							</h4>
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<h2 class="text-center">There is currently no information about the actors of this movie!</h2>
+			}
+
+
+		</div>
+
+
 	</section>
 </div>

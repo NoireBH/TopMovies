@@ -9,5 +9,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<ActorDetailsViewModel> GetActorByIdAsync(int id);
 
 		Task<bool> ExistsByIdAsync(int id);
+
+		Task<ActorMoviesViewModel[]> GetAllOfTheActorsMoviesByIdAsync(int id);
 	}
 }

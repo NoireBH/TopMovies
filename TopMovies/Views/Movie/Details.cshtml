@@ -35,17 +35,9 @@
 				<div class="col-3">
 					<img src="@Model.ImageUrl" class="img-fluid" style="max-width:100%" />
 				</div>
-				<div class="col-7">
+				<div class="col-9">
 					<iframe class="" src="@Model.TrailerUrl"></iframe>
-				</div>
-				<div class="col-2" style="display:flex;flex-direction:column;justify-content:center">
-					<div class="d-flex flex-col justify-content-center">
-						<a src="" class="text-center">
-							<i class="fa-solid fa-image details-photos" style="color: #1056b1;font-size:8vw"></i>
-							<p style="font-weight:bolder;font-size:3vw">Photos</p>
-						</a>
-					</div>
-				</div>
+				</div>				
 			</div>
 		</main>
 		@*
@@ -65,7 +57,10 @@
 				<p>There are currently no genres for this movie!</p>
 			}
 
-			
+			@if (User.IsAdmin())
+			{
+				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="Add">Add a genre</a>
+			}			
 
 			<div>
 				<p>@Model.Description</p>

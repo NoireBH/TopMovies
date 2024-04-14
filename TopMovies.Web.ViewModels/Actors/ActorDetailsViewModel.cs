@@ -14,8 +14,7 @@ namespace TopMovies.Web.ViewModels.Actors
 	{
         public ActorDetailsViewModel()
         {
-			MoviesKnownFor = new HashSet<MovieViewModel>();
-			MovieCharactersKnownFor = new HashSet<MovieCharacterViewModel>();
+			Movies = new HashSet<ActorMoviesViewModel>();
 		}
 
         public int Id { get; set; }
@@ -28,8 +27,7 @@ namespace TopMovies.Web.ViewModels.Actors
 
 		public string DateOfBirth { get; set; } = null!;
 
-		public IEnumerable<MovieViewModel> MoviesKnownFor { get; set; } = null!;
+		public IEnumerable<ActorMoviesViewModel> Movies { get; set; } = null!;
 
-		public IEnumerable<MovieCharacterViewModel> MovieCharactersKnownFor { get; set; } = null!;
 	}
 }
