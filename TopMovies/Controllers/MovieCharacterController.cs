@@ -19,7 +19,7 @@ namespace TopMovies.Web.Controllers
 		[AllowAnonymous]
 		public async Task<IActionResult> Details(int id)
 		{
-			var actorExists = await movieCharacterService.ExistsByIdAsync(id);
+			var actorExists = await 
 
 			ActorDetailsViewModel actor;
 

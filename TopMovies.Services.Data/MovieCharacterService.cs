@@ -18,7 +18,7 @@ namespace TopMovies.Services.Data
 
 		public async Task<bool> ExistsByIdAsync(int id)
 		{
-			return await context.Actors.AnyAsync(m => m.Id == id);
+			return await context.MovieCharacters.AnyAsync(m => m.Id == id);
 		}
 
 		public async Task<ActorDetailsViewModel> GetMovieCharacterByIdAsync(int id)
@@ -45,6 +45,11 @@ namespace TopMovies.Services.Data
 				.ToArrayAsync();
 
 			return movieCharacters;
+		}
+
+		public async Task<bool> ExistsByName(string name)
+		{
+			return await context.MovieCharacters.AnyAsync(m => m.Name == name);
 		}
 	}
 }

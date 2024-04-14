@@ -33,8 +33,6 @@ namespace TopMovies.Data
 
 		public DbSet<Genre> Genres { get; set; } = null!;
 
-		public DbSet<Photo> Photos { get; set; } = null!;
-
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
