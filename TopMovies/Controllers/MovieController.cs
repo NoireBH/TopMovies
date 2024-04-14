@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using TopMovies.Controllers;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.Movies;
@@ -86,7 +84,7 @@ namespace TopMovies.Web.Controllers
 		}
 
 		public async Task<IActionResult> Add()
-		{
+		{			
 			bool isAdmin = User.IsAdmin();
 
 			if (!isAdmin)
@@ -103,6 +101,15 @@ namespace TopMovies.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(MovieAddOrEditFormModel model)
 		{
+			bool movieExists = await movieService
+				.ExistsByNameAndReleaseDate
+				(model.Name, model.ReleaseDate.Year, model.ReleaseDate.Month, model.ReleaseDate.Day);
+
+			if (movieExists)
+			{
+				TempData[ErrorMessage] = "The movie you're trying to add already exists!";
+				return View(model);
+			}
 
 			if (!ModelState.IsValid)
 			{

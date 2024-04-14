@@ -24,7 +24,7 @@ namespace TopMovies.Web.Controllers
 
 			if (!isAdmin)
 			{
-				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
+				TempData[ErrorMessage] = "You need to be an admin to add a genre!";
 				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
@@ -34,6 +34,21 @@ namespace TopMovies.Web.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(GenreAddOrEditFormModel model)
 		{
+			bool isAdmin = User.IsAdmin();
+
+			if (!isAdmin)
+			{
+				TempData[ErrorMessage] = "You need to be an admin to add a genre!";
+				return View(model);
+			}
+
+			bool genreExists = await genreService.ExistsByName(model.Name);
+
+			if (genreExists)
+			{
+				TempData[ErrorMessage] = "The genre already exists!";
+				return View(model);
+			}
 
 			if (!ModelState.IsValid)
 			{

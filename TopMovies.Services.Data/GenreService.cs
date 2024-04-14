@@ -29,6 +29,11 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 		}
 
+		public async Task<bool> ExistsByName(string name)
+		{
+			return await context.Genres.AnyAsync(m => m.Name == name);
+		}
+
 		public async Task<GenreFormModel[]> GetAllGenresAsync()
 		{
 			var genres = await context.Genres
