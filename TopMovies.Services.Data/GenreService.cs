@@ -70,11 +70,11 @@ namespace TopMovies.Services.Data
 		public async Task<MovieGenreViewModel[]> GetMovieGenresByMovieIdAsync(string id)
 		{
 			var movieGenres = await context.MovieGenres
-				.Where(x => x.MovieId.ToString() == id)
-				.Select(x => new MovieGenreViewModel()
+				.Where(mg => mg.MovieId.ToString() == id)
+				.Select(mg => new MovieGenreViewModel()
 				{
-					GenreId = x.GenreId,
-					GenreGenreName = x.Genre.Name
+					GenreId = mg.GenreId,
+					GenreGenreName = mg.Genre.Name
 				})
 				.ToArrayAsync();
 
@@ -90,11 +90,16 @@ namespace TopMovies.Services.Data
 		{
 			var movieGenre = await context.MovieGenres
 				.FirstOrDefaultAsync
-				(h => h.GenreId == genreId && h.MovieId.ToString() == movieId);
+				(mg => mg.GenreId == genreId && mg.MovieId.ToString() == movieId);
 
 			context.MovieGenres.Remove(movieGenre!);
 			await context.SaveChangesAsync();
 
+		}
+
+		public async Task<bool> ExistsByGenreIdAndMovieIdAsync(int genreId, string movieId)
+		{
+			return await context.MovieGenres.AnyAsync(mg => mg.GenreId == genreId && mg.MovieId.ToString() == movieId);
 		}
 	}
 }

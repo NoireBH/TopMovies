@@ -38,7 +38,10 @@
 				@for (int i = 0; i < movieGenres.Length; i++)
 				{
 					<a class="admin-genreButton me-1 mb-1"
-					asp-controller="Genre" asp-action="RemoveFromMovie" asp-route-id="@movieGenres[i].GenreId">
+					   asp-controller="Genre" asp-action="RemoveFromMovie" 
+					   asp-route-genreid="@movieGenres[i].GenreId" 
+					   asp-route-movieid="@Model.Id.ToString()"
+					   onclick="return confirm('are you sure you want to delete this genre?')">
 					@movieGenres[i].GenreGenreName</a>
 				}
 			}

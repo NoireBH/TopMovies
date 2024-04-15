@@ -138,7 +138,7 @@ namespace TopMovies.Web.Controllers
 
 		}
 
-		public async Task<IActionResult> RemoveFromMovie(int id)
+		public async Task<IActionResult> RemoveFromMovie(int genreId, string movieId)
 		{
 			if (!User.IsAdmin())
 			{
@@ -146,22 +146,22 @@ namespace TopMovies.Web.Controllers
 				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
-			try
+			if (!await genreService.ExistsByGenreIdAndMovieIdAsync(genreId, movieId))
 			{
-				if (!await genreService.ExistsByIdAsync(id))
-				{
-					TempData[ErrorMessage] = "The movie doesn't have that genre,please try again.";
-					return Redirect(HttpContext.Request.Headers["Referer"]);
-				}
+				TempData[ErrorMessage] = "The movie doesn't have the genre you're trying to delete,please try again.";
+				return RedirectToAction("Details", "Movie", new { id = movieId });
+			}
 
-				await movieService.DeleteAsync(id);
+			try
+			{				
+				await genreService.DeleteGenreFromMovieByGenreAndMovieIdAsync(genreId, movieId);
 			}
 			catch (Exception)
 			{
 				TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
 			}
 
-			return RedirectToAction(nameof(All));
+			return RedirectToAction("Details", "Movie", new { id = movieId });
 		}
 	}
 }
