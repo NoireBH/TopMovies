@@ -42,7 +42,7 @@ namespace TopMovies.Web.Controllers
 				return View(model);
 			}
 
-			bool genreExists = await genreService.ExistsByName(model.Name);
+			bool genreExists = await genreService.ExistsByNameAsync(model.Name);
 
 			if (genreExists)
 			{
@@ -70,46 +70,55 @@ namespace TopMovies.Web.Controllers
 
 		}
 
-        public async Task<IActionResult> AddToMovie()
+        public async Task<IActionResult> AddToMovie(string id)
         {
             bool isAdmin = User.IsAdmin();
 
             if (!isAdmin)
             {
                 TempData[ErrorMessage] = "You need to be an admin to add a genre!";
-                return Redirect(HttpContext.Request.Headers["Referer"]);
+				return Unauthorized();
             }
 
-            return View();
-        }
+			var movieGenreModel = new MovieGenreAddOrEditFormModel
+			{
+				MovieId = id,
+				Genres = await genreService.GetAllGenresAsync()
+			};
+
+			return View(movieGenreModel);
+		}
 
         [HttpPost]
-        public async Task<IActionResult> AddToMovie(GenreAddOrEditFormModel model)
+        public async Task<IActionResult> AddToMovie(MovieGenreAddOrEditFormModel model)
         {
             bool isAdmin = User.IsAdmin();
 
             if (!isAdmin)
             {
                 TempData[ErrorMessage] = "You need to be an admin to add a genre!";
-                return View(model);
-            }
+				return Unauthorized();
+			}
 
-            bool genreExists = await genreService.ExistsByName(model.Name);
+            bool genreExists = await genreService.ExistsByIdAsync(model.GenreId);
 
-            if (genreExists)
+            if (!genreExists)
             {
-                TempData[ErrorMessage] = "The genre already exists!";
-                return View(model);
+				model.Genres = await genreService.GetAllGenresAsync();
+				TempData[ErrorMessage] = "The genre you're trying to add doesn't exists!";
+				return BadRequest();
             }
 
             if (!ModelState.IsValid)
             {
-                return View(model);
+				model.Genres = await genreService.GetAllGenresAsync();
+
+				return View(model);
             }
 
             try
             {
-                await genreService.AddGenreAsync(model);
+                await genreService.AddGenreToMovieAsync(model, model.MovieId);
             }
             catch (Exception)
             {

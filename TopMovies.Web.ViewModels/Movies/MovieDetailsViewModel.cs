@@ -26,8 +26,6 @@ namespace TopMovies.Web.ViewModels.Movies
 
         public DateTime ReleaseDate { get; set; }
 
-        public double Rating { get; set; }
-
         public string ImageUrl { get; set; } = null!;
 
         public string TrailerUrl { get; set; } = null!;

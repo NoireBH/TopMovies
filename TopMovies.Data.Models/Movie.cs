@@ -28,13 +28,8 @@ namespace TopMovies.Data.Models
 
 		public DateTime ReleaseDate { get; set; }
 
-		[Range(typeof(double), RatingMin, RatingMax)]
-		public double Rating { get; set; }
-
 		[Required]
 		public string ImageUrl { get; set; } = null!;
-
-		public bool IsActive { get; set; }
 
 		[Required]
 		public string TrailerUrl { get; set; } = null!;

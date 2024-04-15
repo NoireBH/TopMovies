@@ -14,20 +14,8 @@
 	*@
 	<section class="container-fluid details-main-content mb-2">
 		<header class="row mb-1 pe-2">
-			<div class="col-4">
+			<div class="col-12 text-center">
 				<h1>@Model.Name (@Model.ReleaseDate.Year)</h1>
-			</div>
-			<div class="col-5 offset-3">
-				<div class="d-flex justify-content-end rating-info">
-					<div class="d-flex flex-column justify-content-center">
-						<h4 class="me-5">Rating</h4>
-						<p><i class="fa-solid fa-star me-1" style="color: #FFD43B;"></i>@Model.Rating/10</p>
-					</div>
-					<div class="d-flex flex-column text-light">
-						<h4>Your Rating</h4>
-						<a class="text-center rate-btn text-light" asp-controller="Movie" asp-action="Rate"><i class="fa-regular fa-star me-1" style="color: #FFD43B;"></i>Rate</a>
-					</div>
-				</div>
 			</div>
 		</header>
 		<main class="container-fluid no-padding">
@@ -59,7 +47,7 @@
 
 			@if (User.IsAdmin())
 			{
-				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="AddToMovie">Add a genre</a>
+				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">Add a genre</a>
 			}			
 
 			<div>

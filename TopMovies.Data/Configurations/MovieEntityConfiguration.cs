@@ -30,7 +30,6 @@ namespace TopMovies.Data.Configurations
 				Description = "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
 				ReleaseDate = new DateTime(1994, 9, 10),
 				TrailerUrl = "https://www.youtube.com/embed/NmzuHjWmXOc",
-				Rating = 9.3,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg",
 				
 			};
@@ -44,7 +43,6 @@ namespace TopMovies.Data.Configurations
 				Description = "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
 				ReleaseDate = new DateTime(1972, 3, 14),
 				TrailerUrl = "https://www.youtube.com/embed/sY1S34973zA",
-				Rating = 9.2,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY1982_.jpg"
 			};
 
@@ -57,7 +55,6 @@ namespace TopMovies.Data.Configurations
 				Description = "Two strangers awaken in a room with no recollection of how they got there, and soon discover they're pawns in a deadly game perpetrated by a notorious serial killer.",
 				ReleaseDate = new DateTime(2004, 1, 19),
 				TrailerUrl = "https://www.youtube.com/embed/S-1QgOMQ-ls",
-				Rating = 7.6,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BM2M1MzI1MWYtYmM2ZC00OWY3LTk0ZGMtNmRkNzU1NzEzMWE5XkEyXkFqcGdeQXVyODUwOTkwODk@._V1_FMjpg_UX1000_.jpg"
 			};
 
@@ -70,7 +67,6 @@ namespace TopMovies.Data.Configurations
 				Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
 				ReleaseDate = new DateTime(2008, 7, 14),
 				TrailerUrl = "https://www.youtube.com/embed/EXeTwQWrcwY",
-				Rating = 9.0,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UY2048_.jpg"
 			};
 
@@ -83,7 +79,6 @@ namespace TopMovies.Data.Configurations
 				Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
 				ReleaseDate = new DateTime(1994, 5, 21),
 				TrailerUrl = "https://www.youtube.com/embed/s7EdQ4FqbhY",
-				Rating = 8.9,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1055_.jpg"
 			};
 
@@ -96,7 +91,6 @@ namespace TopMovies.Data.Configurations
                 Description = "A troubled security guard begins working at Freddy Fazbear's Pizza. During his first night on the job, he realizes that the night shift won't be so easy to get through. Pretty soon he will unveil what actually happened at Freddy's.",
                 ReleaseDate = new DateTime(2024, 5, 21),
 				TrailerUrl = "https://www.youtube.com/embed/0VH9WCFV6XQ",
-				Rating = 5.5,
                 ImageUrl = "https://m.media-amazon.com/images/M/MV5BNmNlZWI4MDQtMzFlYS00NzJmLTkwZjItZWVmNmJjZGYxNDA1XkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_FMjpg_UX1000_.jpg"
             };
 
@@ -109,7 +103,6 @@ namespace TopMovies.Data.Configurations
                 Description = "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.\r\n\r\n",
                 ReleaseDate = new DateTime(2017, 9, 5),
 				TrailerUrl = "https://www.youtube.com/embed/FnCdOQsX5kc",
-				Rating = 7.3,
 				ImageUrl = "https://m.media-amazon.com/images/M/MV5BZDVkZmI0YzAtNzdjYi00ZjhhLWE1ODEtMWMzMWMzNDA0NmQ4XkEyXkFqcGdeQXVyNzYzODM3Mzg@._V1_.jpg"
             };
 
@@ -122,7 +115,6 @@ namespace TopMovies.Data.Configurations
                 Description = "A mysterious Hollywood action film stuntman gets in trouble with gangsters when he tries to help his neighbor's husband rob a pawn shop while serving as his getaway driver.\r\n\r\n",
                 ReleaseDate = new DateTime(2011, 5, 20),
 				TrailerUrl = "https://www.youtube.com/embed/KBiOF3y1W0Y",
-				Rating = 7.8,
                 ImageUrl = "https://m.media-amazon.com/images/M/MV5BZjY5ZjQyMjMtMmEwOC00Nzc2LTllYTItMmU2MzJjNTg1NjY0XkEyXkFqcGdeQXVyNjQ1MTMzMDQ@._V1_FMjpg_UX1000_.jpg"
             };
 
@@ -135,7 +127,6 @@ namespace TopMovies.Data.Configurations
                 Description = "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.\r\n\r\n",
                 ReleaseDate = new DateTime(2023, 7, 9),
 				TrailerUrl = "https://www.youtube.com/embed/pBk4NYhWNMM",
-				Rating = 6.9,
                 ImageUrl = "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg"
             };
 
@@ -148,7 +139,6 @@ namespace TopMovies.Data.Configurations
                 Description = "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.",
                 ReleaseDate = new DateTime(2017, 10, 3),
 				TrailerUrl = "https://www.youtube.com/embed/gCcx85zbxz4",
-				Rating = 8.0,
                 ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_FMjpg_UX1000_.jpg"
             };
 

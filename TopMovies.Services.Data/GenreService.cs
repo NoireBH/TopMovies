@@ -4,7 +4,6 @@ using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Genres;
-using TopMovies.Web.ViewModels.Movies;
 using TopMovies.Web.ViewModels.MoviesGenres;
 
 namespace TopMovies.Services.Data
@@ -29,9 +28,34 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 		}
 
-		public async Task<bool> ExistsByName(string name)
+		public async Task AddGenreToMovieAsync(MovieGenreAddOrEditFormModel model, string movieId)
+		{
+			//var genre = await context.Genres
+			//	.Where(g => g.Id == model.GenreId)
+			//	.FirstOrDefaultAsync();
+
+			//var movie = await context.Movies
+			//	.Where(m => m.Id.ToString() == movieId)
+			//	.FirstOrDefaultAsync();
+
+			var movieGenre = new MovieGenre()
+			{
+				GenreId = model.GenreId,
+				MovieId = new Guid(model.MovieId)
+			};
+
+			await context.MovieGenres.AddAsync(movieGenre);
+			await context.SaveChangesAsync();
+		}
+
+		public async Task<bool> ExistsByNameAsync(string name)
 		{
 			return await context.Genres.AnyAsync(m => m.Name == name);
+		}
+
+		public async Task<bool> ExistsByIdAsync(int id)
+		{
+			return await context.Genres.AnyAsync(m => m.Id == id);
 		}
 
 		public async Task<GenreFormModel[]> GetAllGenresAsync()
@@ -55,6 +79,11 @@ namespace TopMovies.Services.Data
 				.ToArrayAsync();
 
 			return movieGenres;
+		}
+
+		public async Task<bool> MovieGenreExistsByGenreAndMovieId(int genreId, string movieId)
+		{
+			return await context.MovieGenres.AnyAsync(m => m.GenreId == genreId && m.MovieId.ToString() == movieId);
 		}
 	}
 }

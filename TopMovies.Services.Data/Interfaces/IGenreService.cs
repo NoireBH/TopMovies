@@ -16,6 +16,12 @@ namespace TopMovies.Services.Data.Interfaces
 
 		Task AddGenreAsync(GenreAddOrEditFormModel model);
 
-		Task<bool> ExistsByName(string name);
+		Task AddGenreToMovieAsync(MovieGenreAddOrEditFormModel model, string movieId);
+
+		Task<bool> ExistsByNameAsync(string name);
+
+		Task<bool> ExistsByIdAsync(int id);
+
+		Task<bool> MovieGenreExistsByGenreAndMovieId(int genreId, string movieId);
 	}
 }
