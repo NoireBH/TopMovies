@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Actor/AddActorAndRoleToMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JcQWRkQWN0b3JBbmRSb2xlVG9Nb3ZpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Actor/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0b3JcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditGenreFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRHZW5yZUZvcm1QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditMovieActorAndRoleFormModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRNb3ZpZUFjdG9yQW5kUm9sZUZvcm1Nb2RlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditMovieFormPartial.cshtml]

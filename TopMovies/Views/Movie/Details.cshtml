@@ -13,9 +13,17 @@
 	Main Details
 	*@
 	<section class="container-fluid details-main-content mb-2">
-		<header class="row mb-1 pe-2">
+		<header class="row mb-3 pe-2">
 			<div class="col-12 text-center">
 				<h1>@Model.Name (@Model.ReleaseDate.Year)</h1>
+				@if (User.IsAdmin())
+				{
+					<a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id.ToString()"
+					   class="btn btn-warning me-1">Edit</a>
+					<a asp-controller="Movie" asp-action="Delete" asp-route-id="@Model.Id.ToString()"
+					   class="btn btn-danger"
+					   onclick="return confirm('are you sure you want to delete this movie?')">Delete</a>
+				}
 			</div>
 		</header>
 		<main class="container-fluid no-padding">
@@ -25,7 +33,7 @@
 				</div>
 				<div class="col-9">
 					<iframe class="" src="@Model.TrailerUrl"></iframe>
-				</div>				
+				</div>
 			</div>
 		</main>
 		@*
@@ -38,11 +46,12 @@
 				@for (int i = 0; i < movieGenres.Length; i++)
 				{
 					<a class="admin-genreButton me-1 mb-1"
-					   asp-controller="Genre" asp-action="RemoveFromMovie" 
-					   asp-route-genreid="@movieGenres[i].GenreId" 
+					   asp-controller="Genre" asp-action="RemoveFromMovie"
+					   asp-route-genreid="@movieGenres[i].GenreId"
 					   asp-route-movieid="@Model.Id.ToString()"
 					   onclick="return confirm('are you sure you want to delete this genre?')">
-					@movieGenres[i].GenreGenreName</a>
+						@movieGenres[i].GenreGenreName
+					</a>
 				}
 			}
 			else if (movieGenres.Length > 0 && !User.IsAdmin())
@@ -60,7 +69,7 @@
 			@if (User.IsAdmin())
 			{
 				<a class="genre-add-button me-1 mb-1" asp-controller="Genre" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">Add a genre</a>
-			}			
+			}
 
 			<div>
 				<p>@Model.Description</p>
@@ -107,13 +116,16 @@
 			@if (User.IsAdmin())
 			{
 				<div class="actor-img-container">
-					<a asp-controller="Actor" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">
+					<a asp-controller="Actor" asp-action="AddActorAndRoleToMovie" asp-route-id="@Model.Id.ToString()">
 						<img src="~/images//addActor.png" class="img-fluid rounded-circle">
 					</a>
-					<a class="genre-add-button me-1 mb-1" asp-controller="Actor" asp-action="AddToMovie">Add an actor</a>
+					<a class="genre-add-button me-1 mb-1"
+					   asp-controller="Actor" asp-action="AddActorAndRoleToMovie" asp-route-id="@Model.Id.ToString()">
+						Add an Actor and role
+					</a>
 				</div>
 			}
-						
+
 		</div>
 
 
@@ -144,9 +156,9 @@
 				</header>
 			</main>
 		</div>
-		
-	</section>
-	
 
-	
+	</section>
+
+
+
 </div>

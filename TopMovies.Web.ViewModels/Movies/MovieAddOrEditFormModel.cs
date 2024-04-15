@@ -15,13 +15,14 @@ namespace TopMovies.Web.ViewModels.Movies
 		public Guid Id { get; set; }
 
         [Required]
-		[MaxLength(NameMaxLength)]
+		[StringLength(NameMaxLength, MinimumLength = NameMinLength)]
 		public string Name { get; set; } = null!;
 
 		[Required]
-		[MaxLength(DescriptionMaxLength)]
+		[StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
 		public string Description { get; set; } = null!;
 
+		[Required]
 		[Display(Name = "Release date")]
 		public DateTime ReleaseDate { get; set; }
 

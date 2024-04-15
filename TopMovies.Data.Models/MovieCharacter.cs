@@ -6,10 +6,6 @@ namespace TopMovies.Data.Models
 {
 	public class MovieCharacter
 	{
-		public MovieCharacter()
-		{
-			Quotes = new HashSet<Quote>();
-		}
 
 		[Key]
 		public int Id { get; set; }
@@ -34,8 +30,6 @@ namespace TopMovies.Data.Models
 		
 		[ForeignKey(nameof(MovieId))]
 		public Movie Movie { get; set; } = null!;
-
-		public virtual ICollection<Quote> Quotes { get; set; }
 
 	}
 }

@@ -1,0 +1,52 @@
+﻿@model MovieActorAndRoleAddOrEditFormModel
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="ActorName"></label>
+				<input asp-for="ActorName" class="form-control" placeholder="Name...">
+				<span asp-validation-for="ActorName" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ActorDescription"></label>
+				<input asp-for="ActorDescription" class="form-control"
+					   placeholder="Description...">
+				<span asp-validation-for="ActorDescription" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ActorDateOfBirth"></label>
+				<input asp-for="ActorDateOfBirth" class="form-control" type="date" value="@DateTime.Today.ToString("yyyy-MM-dd")">
+				<span asp-validation-for="ActorDateOfBirth" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ActorImageUrl"></label>
+				<input asp-for="ActorImageUrl" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="ActorImageUrl" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MovieCharacterName"></label>
+				<input asp-for="MovieCharacterName" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="MovieCharacterName" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MovieCharacterImageUrl"></label>
+				<input asp-for="MovieCharacterImageUrl" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="MovieCharacterImageUrl" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MovieCharacterAge"></label>
+				<input asp-for="MovieCharacterAge" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="MovieCharacterAge" class="small textdanger"></span>
+			</div>
+			<div class="form-group d-none">
+				<label asp-for="MovieId"></label>
+				<input asp-for="MovieId" class="form-control" placeholder="Your image url for the movie goes here...">
+				<span asp-validation-for="MovieId" class="small textdanger"></span>
+			</div>
+			<div class="text-center">
+				<input class="btn btn-primary mt-3" type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>

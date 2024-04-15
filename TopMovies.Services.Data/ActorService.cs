@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TopMovies.Data;
+using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Actors;
@@ -15,9 +16,50 @@ namespace TopMovies.Services.Data
 			this.context = context;
 		}
 
+		public async Task AddActorAndRoleToMovie(MovieActorAndRoleAddOrEditFormModel model, string movieId)
+		{
+			var actor = new Actor()
+			{
+				Name = model.ActorName,
+				Description = model.ActorDescription,
+				ImageUrl = model.ActorImageUrl,
+				DateOfBirth = model.ActorDateOfBirth				
+			};
+
+			await context.Actors.AddAsync(actor);
+			await context.SaveChangesAsync();
+
+			var actorMovie = new ActorMovie()
+			{
+				Actor = actor,
+				MovieId = new Guid(movieId)
+			};
+
+			await context.ActorMovies.AddAsync(actorMovie);
+			await context.SaveChangesAsync();
+
+			var movieCharacter = new MovieCharacter()
+			{
+				Name = model.MovieCharacterName,
+				ImageUrl = model.MovieCharacterImageUrl,
+				Age = model.MovieCharacterAge,
+				ActorId = actor.Id,
+				MovieId = new Guid(movieId)
+			};			
+			
+			await context.MovieCharacters.AddAsync(movieCharacter);
+
+			await context.SaveChangesAsync();
+		}
+
 		public async Task<bool> ExistsByIdAsync(int id)
 		{
 			return await context.Actors.AnyAsync(m => m.Id == id);
+		}
+
+		public async Task<bool> ExistsByActorAndMovieCharacterNames(string actorName, string movieCharacterName)
+		{
+			return await context.MovieCharacters.AnyAsync(mc => mc.Name == movieCharacterName && mc.Actor.Name == actorName);
 		}
 
 		public async Task<ActorDetailsViewModel> GetActorByIdAsync(int id)

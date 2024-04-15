@@ -1,4 +1,5 @@
 ﻿using TopMovies.Web.ViewModels.Actors;
+using TopMovies.Web.ViewModels.Genres;
 
 namespace TopMovies.Services.Data.Interfaces
 {
@@ -11,5 +12,9 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<bool> ExistsByIdAsync(int id);
 
 		Task<ActorMoviesViewModel[]> GetAllOfTheActorsMoviesByIdAsync(int id);
+
+		Task AddActorAndRoleToMovie(MovieActorAndRoleAddOrEditFormModel model, string movieId);
+
+		Task<bool> ExistsByActorAndMovieCharacterNames(string actorName, string movieCharacterName);
 	}
 }

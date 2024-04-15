@@ -29,7 +29,7 @@ namespace TopMovies.Web.Controllers
 
 			if (!movieExists)
 			{
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				return NotFound();
 			}
 
 			try
@@ -40,39 +40,39 @@ namespace TopMovies.Web.Controllers
 			{
 				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				return StatusCode(500);
 
 			}
 
 			return View(movie);
 		}
 
-		public async Task<IActionResult> Rate(string id)
-		{
-			var movieExists = await movieService.ExistsByIdAsync(id);
+		//public async Task<IActionResult> Rate(string id)
+		//{
+		//	var movieExists = await movieService.ExistsByIdAsync(id);
 
-			MovieDetailsViewModel movie;
+		//	MovieDetailsViewModel movie;
 
-			if (!movieExists)
-			{
-				TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
-			}
+		//	if (!movieExists)
+		//	{
+		//		TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
+		//		return NotFound();
+		//	}
 
-			try
-			{
-				movie = await movieService.GetMovieDetailsByIdAsync(id);
-			}
-			catch (Exception)
-			{
-				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+		//	try
+		//	{
+		//		movie = await movieService.GetMovieDetailsByIdAsync(id);
+		//	}
+		//	catch (Exception)
+		//	{
+		//		ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+		//		return Redirect(HttpContext.Request.Headers["Referer"]);
 
-			}
+		//	}
 
-			return View(movie);
-		}
+		//	return View(movie);
+		//}
 
 		[AllowAnonymous]
 		public async Task<IActionResult> All()
@@ -90,7 +90,7 @@ namespace TopMovies.Web.Controllers
 			if (!isAdmin)
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to add a movie!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				return Unauthorized();
 			}
 
 			return View();

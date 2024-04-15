@@ -24,8 +24,6 @@ namespace TopMovies.Data
 
 		public DbSet<MovieCharacter> MovieCharacters { get; set; } = null!;
 
-		public DbSet<Quote> Quotes { get; set; } = null!;
-
 		public DbSet<MovieGenre> MovieGenres { get; set; } = null!;
 
 
