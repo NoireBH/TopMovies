@@ -85,5 +85,16 @@ namespace TopMovies.Services.Data
 		{
 			return await context.MovieGenres.AnyAsync(m => m.GenreId == genreId && m.MovieId.ToString() == movieId);
 		}
+
+		public async Task DeleteGenreFromMovieByGenreAndMovieIdAsync(int genreId, string movieId)
+		{
+			var movieGenre = await context.MovieGenres
+				.FirstOrDefaultAsync
+				(h => h.GenreId == genreId && h.MovieId.ToString() == movieId);
+
+			context.MovieGenres.Remove(movieGenre!);
+			await context.SaveChangesAsync();
+
+		}
 	}
 }

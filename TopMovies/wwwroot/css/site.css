@@ -56,6 +56,34 @@ html {
     font-weight: bolder;
 }
 
+.admin-genreButton {
+    display: inline-block;
+    color: black;
+    border: 1px solid #CCC;
+    border-radius: 16px;
+    background: yellow;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    max-width: 400px;
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.admin-genreButton:hover {
+    display: inline-block;
+    color: black;
+    border: 1px solid #CCC;
+    border-radius: 16px;
+    background: red;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    vertical-align: middle;
+    max-width: 400px;
+    padding: 4px 8px;
+    text-align: center;
+    font-weight: bolder;
+}
+
 .details-main-content {
     background: rgb(31,31,31);
     color: white;

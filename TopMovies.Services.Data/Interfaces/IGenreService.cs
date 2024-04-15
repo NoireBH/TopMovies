@@ -23,5 +23,8 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<bool> ExistsByIdAsync(int id);
 
 		Task<bool> MovieGenreExistsByGenreAndMovieId(int genreId, string movieId);
+
+		Task DeleteGenreFromMovieByGenreAndMovieIdAsync(int genreId, string movieId);
+
 	}
 }

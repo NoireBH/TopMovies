@@ -33,7 +33,16 @@
 		*@
 		<footer class="p-2">
 
-			@if (movieGenres.Length > 0)
+			@if (movieGenres.Length > 0 && User.IsAdmin())
+			{
+				@for (int i = 0; i < movieGenres.Length; i++)
+				{
+					<a class="admin-genreButton me-1 mb-1"
+					asp-controller="Genre" asp-action="RemoveFromMovie" asp-route-id="@movieGenres[i].GenreId">
+					@movieGenres[i].GenreGenreName</a>
+				}
+			}
+			else if (movieGenres.Length > 0 && !User.IsAdmin())
 			{
 				@for (int i = 0; i < movieGenres.Length; i++)
 				{
@@ -92,14 +101,16 @@
 				<h2 class="text-center">There is currently no information about the actors of this movie!</h2>
 			}
 
-			<div class="actor-img-container">
-				<a asp-controller="Actor" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">
-					<img src="~/images//addActor.png" class="img-fluid rounded-circle">
-				</a>
-				<a class="genre-add-button me-1 mb-1" asp-controller="Actor" asp-action="Add">Add an actor</a>
-			</div>
-
-			
+			@if (User.IsAdmin())
+			{
+				<div class="actor-img-container">
+					<a asp-controller="Actor" asp-action="AddToMovie" asp-route-id="@Model.Id.ToString()">
+						<img src="~/images//addActor.png" class="img-fluid rounded-circle">
+					</a>
+					<a class="genre-add-button me-1 mb-1" asp-controller="Actor" asp-action="AddToMovie">Add an actor</a>
+				</div>
+			}
+						
 		</div>
 
 

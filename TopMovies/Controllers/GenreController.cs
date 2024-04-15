@@ -101,6 +101,7 @@ namespace TopMovies.Web.Controllers
 			}
 
             bool genreExists = await genreService.ExistsByIdAsync(model.GenreId);
+			bool movieHasGenre = await genreService.MovieGenreExistsByGenreAndMovieId(model.GenreId, model.MovieId);
 
             if (!genreExists)
             {
@@ -109,7 +110,13 @@ namespace TopMovies.Web.Controllers
 				return BadRequest();
             }
 
-            if (!ModelState.IsValid)
+			if (movieHasGenre)
+			{
+				TempData[ErrorMessage] = "The movie already has that genre!";
+				return RedirectToAction("Details", "Movie", new {id = model.MovieId});
+			}
+
+			if (!ModelState.IsValid)
             {
 				model.Genres = await genreService.GetAllGenresAsync();
 
@@ -127,8 +134,34 @@ namespace TopMovies.Web.Controllers
 
             }
 
-            return RedirectToAction("All", "Movie");
+			return RedirectToAction("Details", "Movie", new { id = model.MovieId });
 
-        }
-    }
+		}
+
+		public async Task<IActionResult> RemoveFromMovie(int id)
+		{
+			if (!User.IsAdmin())
+			{
+				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie genre!";
+				return Redirect(HttpContext.Request.Headers["Referer"]);
+			}
+
+			try
+			{
+				if (!await genreService.ExistsByIdAsync(id))
+				{
+					TempData[ErrorMessage] = "The movie doesn't have that genre,please try again.";
+					return Redirect(HttpContext.Request.Headers["Referer"]);
+				}
+
+				await movieService.DeleteAsync(id);
+			}
+			catch (Exception)
+			{
+				TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
+			}
+
+			return RedirectToAction(nameof(All));
+		}
+	}
 }

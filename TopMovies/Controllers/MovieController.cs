@@ -163,7 +163,7 @@ namespace TopMovies.Web.Controllers
 		{
 			if (!User.IsAdmin())
 			{
-				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie!";
+				TempData[ErrorMessage] = "You have to be an admin in order to edit a movie!";
 				return Redirect(HttpContext.Request.Headers["Referer"]);
 			}
 
