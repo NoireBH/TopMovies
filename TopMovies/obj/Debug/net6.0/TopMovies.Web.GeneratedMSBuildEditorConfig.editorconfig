@@ -48,16 +48,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Genre/AddToMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcQWRkVG9Nb3ZpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Help/QandA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVscFxRYW5kQS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/my documents/Projects/TopMovies/TopMovies/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/my documents/Projects/TopMovies/TopMovies/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Home/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvcjQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Movie/Add.cshtml]
@@ -86,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditMovieFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRNb3ZpZUZvcm1QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditMovieGenreFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRNb3ZpZUdlbnJlRm9ybVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_LoginPartial.cshtml]

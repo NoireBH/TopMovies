@@ -28,4 +28,8 @@
     <ProjectReference Include="..\TopMovies.Web.ViewModels\TopMovies.Web.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Home\Error\" />
+  </ItemGroup>
+
 </Project>

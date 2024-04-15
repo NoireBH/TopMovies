@@ -6,9 +6,11 @@ namespace TopMovies.Services.Data.Interfaces
 	{
 		Task<MovieCharacterViewModel[]> GetAllMovieCharactersByMovieIdAsync(string id);
 
+		Task<MovieCharacterDetailsViewModel> GetMovieCharacterByIdAsync(int id);
+
 		Task<bool> ExistsByIdAsync(int id);
 
-		Task<bool> ExistsByName(string name);
+		Task<bool> ExistsByNameAsync(string name);
 
 	}
 }

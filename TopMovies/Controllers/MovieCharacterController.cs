@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.ViewModels.Actors;
+using TopMovies.Web.ViewModels.MovieCharacters;
 
 namespace TopMovies.Web.Controllers
 {
@@ -19,18 +20,18 @@ namespace TopMovies.Web.Controllers
 		[AllowAnonymous]
 		public async Task<IActionResult> Details(int id)
 		{
-			var actorExists = await 
+			var movieCharacterExists = await movieCharacterService.ExistsByIdAsync(id);
 
-			ActorDetailsViewModel actor;
+			MovieCharacterDetailsViewModel movieCharacter;
 
-			if (!actorExists)
+			if (!movieCharacterExists)
 			{
 				return Redirect(Request.Headers["Referer"].ToString());
 			}
 
 			try
 			{
-				actor = await movieCharacterService.GetActorByIdAsync(id);
+				movieCharacter = await movieCharacterService.GetMovieCharacterByIdAsync(id);
 			}
 			catch (Exception)
 			{
@@ -40,7 +41,7 @@ namespace TopMovies.Web.Controllers
 
 			}
 
-			return View(actor);
+			return View(movieCharacterExists);
 		}
 	}
 }

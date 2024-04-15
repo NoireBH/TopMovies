@@ -21,11 +21,11 @@ namespace TopMovies.Services.Data
 			return await context.MovieCharacters.AnyAsync(m => m.Id == id);
 		}
 
-		public async Task<ActorDetailsViewModel> GetMovieCharacterByIdAsync(int id)
+		public async Task<MovieCharacterDetailsViewModel> GetMovieCharacterByIdAsync(int id)
 		{
-			var actor = await context.Actors
+			var actor = await context.MovieCharacters
 				.Where(a => a.Id == id)
-				.To<ActorDetailsViewModel>()
+				.To<MovieCharacterDetailsViewModel>()
 				.FirstOrDefaultAsync();
 
 			return actor!;
@@ -47,7 +47,7 @@ namespace TopMovies.Services.Data
 			return movieCharacters;
 		}
 
-		public async Task<bool> ExistsByName(string name)
+		public async Task<bool> ExistsByNameAsync(string name)
 		{
 			return await context.MovieCharacters.AnyAsync(m => m.Name == name);
 		}

@@ -1340,48 +1340,6 @@ namespace TopMovies.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ImageURl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("MovieId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("Photos");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImageURl = "https://m.media-amazon.com/images/M/MV5BMTM0NjUxMDk5MF5BMl5BanBnXkFtZTcwNDMxNDY3Mw@@._V1_FMjpg_UX1800_.jpg",
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImageURl = "https://m.media-amazon.com/images/M/MV5BMTM0NjUxMDk5MF5BMl5BanBnXkFtZTcwNDMxNDY3Mw@@._V1_FMjpg_UX1800_.jpg",
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImageURl = "https://m.media-amazon.com/images/M/MV5BMTM0NjUxMDk5MF5BMl5BanBnXkFtZTcwNDMxNDY3Mw@@._V1_FMjpg_UX1800_.jpg",
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
-                        });
-                });
-
             modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
                 {
                     b.Property<int>("Id")
@@ -1549,17 +1507,6 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("TopMovies.Data.Models.Photo", b =>
-                {
-                    b.HasOne("TopMovies.Data.Models.Movie", "Movie")
-                        .WithMany("Photos")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Movie");
-                });
-
             modelBuilder.Entity("TopMovies.Data.Models.Quote", b =>
                 {
                     b.HasOne("TopMovies.Data.Models.MovieCharacter", "MovieCharacter")
@@ -1614,8 +1561,6 @@ namespace TopMovies.Data.Migrations
                     b.Navigation("MovieCharacters");
 
                     b.Navigation("MovieGenres");
-
-                    b.Navigation("Photos");
 
                     b.Navigation("UserReviews");
                 });
