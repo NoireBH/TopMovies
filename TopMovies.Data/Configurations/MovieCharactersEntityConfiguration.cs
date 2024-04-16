@@ -103,7 +103,7 @@ namespace TopMovies.Data.Configurations
 			{
 				Id = 7,
 				Name = "Bruce Wayne, Batman",
-				ImageUrl = "https://m.media-amazon.com/images/M/MV5BYmMyZTNiZjItMjZkOC00NDRkLTg5YTEtZDFjODBlODliYjYxXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
+				ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTQyODI2MDczOF5BMl5BanBnXkFtZTcwNDczMTk2Mw@@._V1_FMjpg_UY2048_.jpg",
 				MovieId = Guid.Parse("075AF806-FB6F-476D-804F-BAECBD15BDD3"),
 				ActorId = 7
 			};

@@ -16,14 +16,14 @@ namespace TopMovies.Services.Data
 			this.context = context;
 		}
 
-		public async Task AddActorAndRoleToMovie(MovieActorAndRoleAddOrEditFormModel model, string movieId)
+		public async Task AddActorAndRoleToMovieAsync(MovieActorAndRoleAddOrEditFormModel model, string movieId)
 		{
 			var actor = new Actor()
 			{
 				Name = model.ActorName,
 				Description = model.ActorDescription,
 				ImageUrl = model.ActorImageUrl,
-				DateOfBirth = model.ActorDateOfBirth				
+				DateOfBirth = model.ActorDateOfBirth
 			};
 
 			await context.Actors.AddAsync(actor);
@@ -45,13 +45,30 @@ namespace TopMovies.Services.Data
 				Age = model.MovieCharacterAge,
 				ActorId = actor.Id,
 				MovieId = new Guid(movieId)
-			};			
-			
+			};
+
 			await context.MovieCharacters.AddAsync(movieCharacter);
 
 			await context.SaveChangesAsync();
 		}
 
+		public async Task DeleteActorAndRoleFromMovieByTheirIdsAsync(string movieId, int actorId)
+		{
+
+			var movieCharacter = await context.MovieCharacters
+				.Where(mc => mc.MovieId.ToString() == movieId && mc.ActorId == actorId)
+				.FirstOrDefaultAsync();
+
+			context.MovieCharacters.Remove(movieCharacter!);
+
+			var actorMovie = await context.ActorMovies
+				.Where(mc => mc.MovieId.ToString() == movieId && mc.ActorId == actorId)
+				.FirstOrDefaultAsync();
+
+			context.ActorMovies.Remove(actorMovie!);
+
+			await context.SaveChangesAsync();
+		}
 		public async Task<bool> ExistsByIdAsync(int id)
 		{
 			return await context.Actors.AnyAsync(m => m.Id == id);
@@ -96,6 +113,42 @@ namespace TopMovies.Services.Data
 				.ToArrayAsync();
 
 			return actorsMovies;
+		}
+
+		public async Task<bool> ExistsByActorAndMovieIdAsync(int actorId, string movieId)
+		{
+			return await context.ActorMovies.AnyAsync(am => am.MovieId.ToString() == movieId && am.ActorId == actorId);
+		}
+
+		public async Task EditActorAndRoleFromMovieByTheirIdsAsync(MovieActorAndRoleAddOrEditFormModel model, int actorId)
+		{
+			var actor = await context.Actors
+				.Where(a => a.Id == actorId)
+				.FirstOrDefaultAsync();
+
+			actor!.Name = model.ActorName;
+			actor.Description = model.ActorDescription;
+			actor.ImageUrl = model.ActorImageUrl;
+			actor.DateOfBirth = model.ActorDateOfBirth;
+
+			var movieCharacter = await context.MovieCharacters
+				.Where(mc => mc.MovieId.ToString() == model.MovieId && mc.ActorId == actorId)
+				.FirstOrDefaultAsync();
+
+			movieCharacter!.Age = model.MovieCharacterAge;
+			movieCharacter.ImageUrl = model.MovieCharacterImageUrl;
+
+			await context.SaveChangesAsync();			
+		}
+
+		public async Task<MovieActorAndRoleAddOrEditFormModel> GetActorAndTheirRoleByMovieIdAsync(string movieId, int actorId)
+		{
+			var actorAndRole = await context.MovieCharacters
+				.Where(mc => mc.MovieId.ToString() == movieId && mc.ActorId == actorId)
+				.To<MovieActorAndRoleAddOrEditFormModel>()
+				.FirstOrDefaultAsync();
+
+			return actorAndRole!;
 		}
 	}
 }

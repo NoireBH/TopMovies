@@ -119,7 +119,6 @@ namespace TopMovies.Web.Controllers
 			try
 			{
 				await movieService.AddMovieAsync(model);
-				ModelState.FirstOrDefault(x => x.Key == nameof(model.TrailerUrl)).Value!.RawValue = model.TrailerUrl.Replace("watch?v=", "embed/");
 			}
 			catch (Exception)
 			{

@@ -1,0 +1,58 @@
+﻿@model MovieCharacterDetailsViewModel
+@inject IMovieCharacterService movieCharacterService
+
+@{
+
+	var movieCharacter = await movieCharacterService.GetMovieCharacterByIdAsync(Model.Id);
+}
+
+
+<div class="container-fluid p-0">
+	@*
+	Main Details
+	*@
+	<section class="container-fluid">
+		<header class="row pe-2 mb-2">
+			<div class="col-12 text-center">
+				<h1>@Model.Name</h1>
+				@if(Model.Age == 0){
+					<h3>Age : Uknown</h3>
+				}
+				else
+				{
+					<h3>Age : @Model.Age</h3>
+				}
+			</div>			
+		</header>
+		<main class="container-fluid no-padding">
+			<div class="row g-0">
+				<div class="col-12 text-center">
+					<img src="@Model.ImageUrl" class="movie-character-img-container" />
+				</div>
+			</div>
+		</main>
+	</section>
+	<section class="character-movies-section">
+		<div class="container-fluid mt-2">
+			<div class="row text-center">
+					<div class="col-md-12 text-center mb-2">
+					<h2 class="text-center">Movie that features @Model.Name :</h2>
+					<div class="container-fluid d-flex justify-content-center">
+						<div class=" all-movies-img-container">
+							<a asp-area="" asp-controller="Movie" asp-action="Details" asp-route-id="@movieCharacter.MovieId">
+								<img class="" src="@movieCharacter.Movie.ImageUrl" />
+							</a>
+							<h2>
+								<a asp-area="" asp-controller="Movie" asp-action="Details" asp-route-id="@movieCharacter.MovieId">
+									@movieCharacter.Movie.Name
+								</a>
+							</h2>
+						</div>
+					</div>
+						
+					</div>		
+			</div>
+
+		</div>
+	</section>
+</div>

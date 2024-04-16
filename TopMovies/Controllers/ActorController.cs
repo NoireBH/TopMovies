@@ -70,13 +70,13 @@ namespace TopMovies.Web.Controllers
 
 			if (!isAdmin)
 			{
-				TempData[ErrorMessage] = "You need to be an admin to add a genre!";
+				TempData[ErrorMessage] = "You need to be an admin to add a actor and their role!";
 				return Unauthorized();
 			}
 
-			bool actorExists = await actorService.ExistsByActorAndMovieCharacterNames(model.ActorName, model.MovieCharacterName);
+			bool actorAndRoleExist = await actorService.ExistsByActorAndMovieCharacterNames(model.ActorName, model.MovieCharacterName);
 
-			if (actorExists)
+			if (actorAndRoleExist)
 			{
 				TempData[ErrorMessage] = "The actor and they're role already exist!";
 				return BadRequest();
@@ -89,7 +89,7 @@ namespace TopMovies.Web.Controllers
 
 			try
 			{
-				await actorService.AddActorAndRoleToMovie(model, model.MovieId);
+				await actorService.AddActorAndRoleToMovieAsync(model, model.MovieId);
 			}
 			catch (Exception)
 			{
@@ -102,30 +102,104 @@ namespace TopMovies.Web.Controllers
 
 		}
 
-		//public async Task<IActionResult> RemoveFromMovie(int genreId, string movieId)
-		//{
-		//	if (!User.IsAdmin())
-		//	{
-		//		TempData[ErrorMessage] = "You have to be an admin in order to delete a movie genre!";
-		//		return Redirect(HttpContext.Request.Headers["Referer"]);
-		//	}
+		public async Task<IActionResult> RemoveActorAndRoleFromMovie(string movieId, int actorId)
+		{
+			if (!User.IsAdmin())
+			{
+				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie's actor and their role!";
+				return Unauthorized();
+			}
 
-		//	if (!await genreService.ExistsByGenreIdAndMovieIdAsync(genreId, movieId))
-		//	{
-		//		TempData[ErrorMessage] = "The movie doesn't have the genre you're trying to delete,please try again.";
-		//		return RedirectToAction("Details", "Movie", new { id = movieId });
-		//	}
+			if (!await actorService.ExistsByActorAndMovieIdAsync(actorId, movieId))
+			{
+				TempData[ErrorMessage] = "The actor and their role doesn't exist,please try again.";
+				return RedirectToAction("Details", "Movie", new { id = movieId });
+			}
 
-		//	try
-		//	{
-		//		await genreService.DeleteGenreFromMovieByGenreAndMovieIdAsync(genreId, movieId);
-		//	}
-		//	catch (Exception)
-		//	{
-		//		TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
-		//	}
+			try
+			{
+				await actorService.DeleteActorAndRoleFromMovieByTheirIdsAsync(movieId, actorId);
+			}
+			catch (Exception)
+			{
+				TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
+			}
 
-		//	return RedirectToAction("Details", "Movie", new { id = movieId });
-		//}
+			return RedirectToAction("Details", "Movie", new { id = movieId });
+		}
+
+		public async Task<IActionResult> EditMovieActorAndRole(string movieId, int actorId)
+		{
+			bool isAdmin = User.IsAdmin();
+
+			if (!isAdmin)
+			{
+				TempData[ErrorMessage] = "You need to be an admin to add a actor and their role!";
+				return Unauthorized();
+			}
+
+			bool actorAndRoleExist = await actorService.ExistsByActorAndMovieIdAsync(actorId, movieId);
+
+			if (!actorAndRoleExist)
+			{
+				TempData[ErrorMessage] = "The actor and their role don't exist!";
+				return NotFound();
+			}
+
+			var actorMovieCharacter = await actorService.GetActorAndTheirRoleByMovieIdAsync(movieId, actorId);
+
+			var model = new MovieActorAndRoleAddOrEditFormModel()
+			{
+				MovieId = movieId,
+				ActorName = actorMovieCharacter.ActorName,
+				ActorDescription = actorMovieCharacter.ActorDescription,
+				ActorDateOfBirth = actorMovieCharacter.ActorDateOfBirth,
+				ActorImageUrl = actorMovieCharacter.ActorImageUrl,
+				MovieCharacterName = actorMovieCharacter.MovieCharacterName,
+				MovieCharacterAge = actorMovieCharacter.MovieCharacterAge,
+				MovieCharacterImageUrl = actorMovieCharacter.MovieCharacterImageUrl
+			};
+
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> EditMovieActorAndRole(MovieActorAndRoleAddOrEditFormModel model)
+		{
+			bool isAdmin = User.IsAdmin();
+
+			if (!isAdmin)
+			{
+				TempData[ErrorMessage] = "You need to be an admin to add a actor and their role!";
+				return Unauthorized();
+			}
+
+			bool actorAndRoleExist = await actorService.ExistsByActorAndMovieCharacterNames(model.ActorName, model.MovieCharacterName);
+
+			if (actorAndRoleExist)
+			{
+				TempData[ErrorMessage] = "The actor and they're role already exist!";
+				return BadRequest();
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			try
+			{
+				await actorService.AddActorAndRoleToMovieAsync(model, model.MovieId);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+				return View(model);
+
+			}
+
+			return RedirectToAction("Details", "Movie", new { id = model.MovieId });
+
+		}
 	}
 }

@@ -26,7 +26,7 @@ namespace TopMovies.Web.Controllers
 
 			if (!movieCharacterExists)
 			{
-				return Redirect(Request.Headers["Referer"].ToString());
+				return NotFound();
 			}
 
 			try
@@ -37,11 +37,11 @@ namespace TopMovies.Web.Controllers
 			{
 				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-				return Redirect(Request.Headers["Referer"].ToString());
+				return StatusCode(500);
 
 			}
 
-			return View(movieCharacterExists);
+			return View(movieCharacter);
 		}
 	}
 }

@@ -385,3 +385,11 @@ ul li span {
 .mb-4 {
     margin-bottom: 1.5rem !important;
 }
+
+.movie-character-img-container {
+    max-width: 800px;
+}
+
+.character-movie-img-container {
+    max-width: 400px;
+}

@@ -104,6 +104,19 @@
 									@mac.MovieCharacterName
 								</a>
 							</p>
+							<a asp-controller="Actor" asp-action="EditMovieActorAndRole"
+							   asp-route-movieid="@Model.Id.ToString()"
+							   asp-route-actorid="@mac.ActorId"
+							   class="btn btn-warning">
+								Edit
+							</a>
+							<a asp-controller="Actor" asp-action="RemoveActorAndRoleFromMovie"
+							   asp-route-movieid="@Model.Id.ToString()"
+							   asp-route-actorid="@mac.ActorId"
+							   class="btn btn-danger"
+							   onclick="return confirm('are you sure you want to delete the actor and their role?')">
+								Delete
+							</a>
 						</div>
 					</div>
 				}

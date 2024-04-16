@@ -31,7 +31,7 @@ namespace TopMovies.Services.Data
                 Description = movie.Description,
                 ReleaseDate = movie.ReleaseDate,
                 ImageUrl = movie.ImageUrl,
-                TrailerUrl = movie.TrailerUrl
+                TrailerUrl = movie.TrailerUrl.Replace("watch?v=", "embed")
             };
 
             await context.Movies.AddAsync(newMovie);
@@ -54,7 +54,7 @@ namespace TopMovies.Services.Data
 			movie.Name = model.Name;
 			movie.Description = model.Description;
 			movie.ImageUrl = model.ImageUrl;
-			movie.TrailerUrl = model.TrailerUrl;
+			movie.TrailerUrl = model.TrailerUrl.Replace("watch?v=", "embed");
 			movie.ReleaseDate = model.ReleaseDate;
 
 			await context.SaveChangesAsync();

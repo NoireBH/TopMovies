@@ -11,10 +11,6 @@ namespace TopMovies.Web.ViewModels.MovieCharacters
 {
 	public class MovieCharacterDetailsViewModel : IMapFrom<MovieCharacter>
 	{
-		public MovieCharacterDetailsViewModel()
-		{
-			Movies = new HashSet<ActorMoviesViewModel>();
-		}
 
 		public int Id { get; set; }
 
@@ -24,9 +20,12 @@ namespace TopMovies.Web.ViewModels.MovieCharacters
 
 		public string ImageUrl { get; set; } = null!;
 
-		public int Age { get; set; } 
+		public int Age { get; set; }
 
-		public IEnumerable<ActorMoviesViewModel> Movies { get; set; } = null!;	
+		public string MovieId { get; set; } = null!;
+		public Movie Movie { get; set; } = null!;
+
+		public string ActorId { get; set; } = null!;
 
 	}
 }

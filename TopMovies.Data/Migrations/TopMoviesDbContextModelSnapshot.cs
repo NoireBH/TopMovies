@@ -969,7 +969,7 @@ namespace TopMovies.Data.Migrations
                             Id = 7,
                             ActorId = 7,
                             Age = 0,
-                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYmMyZTNiZjItMjZkOC00NDRkLTg5YTEtZDFjODBlODliYjYxXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTQyODI2MDczOF5BMl5BanBnXkFtZTcwNDczMTk2Mw@@._V1_FMjpg_UY2048_.jpg",
                             MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3"),
                             Name = "Bruce Wayne, Batman"
                         },
