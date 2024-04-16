@@ -12,6 +12,8 @@ namespace TopMovies.Web.ViewModels.Actors
 {
 	public class MovieActorAndRoleAddOrEditFormModel : IMapFrom<ActorMovie>, IMapFrom<MovieCharacter>, IHaveCustomMappings
 	{
+		public int ActorId {  get; set; }
+
 		public string MovieId { get; set; } = null!;
 
 		[Required]

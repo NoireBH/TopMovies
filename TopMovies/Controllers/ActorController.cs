@@ -150,6 +150,7 @@ namespace TopMovies.Web.Controllers
 
 			var model = new MovieActorAndRoleAddOrEditFormModel()
 			{
+				ActorId = actorId,
 				MovieId = movieId,
 				ActorName = actorMovieCharacter.ActorName,
 				ActorDescription = actorMovieCharacter.ActorDescription,
@@ -174,11 +175,11 @@ namespace TopMovies.Web.Controllers
 				return Unauthorized();
 			}
 
-			bool actorAndRoleExist = await actorService.ExistsByActorAndMovieCharacterNames(model.ActorName, model.MovieCharacterName);
+			bool actorAndRoleExist = await actorService.ExistsByActorAndMovieIdAsync(model.ActorId, model.MovieId);
 
-			if (actorAndRoleExist)
+			if (!actorAndRoleExist)
 			{
-				TempData[ErrorMessage] = "The actor and they're role already exist!";
+				TempData[ErrorMessage] = "The actor and they're role don't exist!";
 				return BadRequest();
 			}
 
@@ -189,7 +190,7 @@ namespace TopMovies.Web.Controllers
 
 			try
 			{
-				await actorService.AddActorAndRoleToMovieAsync(model, model.MovieId);
+				await actorService.EditActorAndRoleFromMovieByTheirIdsAsync(model, model.ActorId);
 			}
 			catch (Exception)
 			{
