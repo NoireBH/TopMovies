@@ -112,6 +112,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRNb3ZpZUdlbnJlRm9ybVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_AddOrEditUserReviewFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRPckVkaXRVc2VyUmV2aWV3Rm9ybVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,6 +126,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/UserReview/AddToMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJldmlld1xBZGRUb01vdmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/UserReview/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJldmlld1xBbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/my documents/Projects/TopMovies/TopMovies/Views/UserReview/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJldmlld1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/my documents/Projects/TopMovies/TopMovies/Views/_ViewImports.cshtml]

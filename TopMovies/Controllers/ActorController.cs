@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.Actors;
-using TopMovies.Web.ViewModels.Genres;
 using static TopMovies.Common.NotificationMessagesConstants;
 
 namespace TopMovies.Web.Controllers

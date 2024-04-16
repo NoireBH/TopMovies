@@ -415,3 +415,7 @@ ul li span {
     .add-review-link:hover {
         color: blue;
     }
+
+.review-container {
+    border: 2px solid black;
+}

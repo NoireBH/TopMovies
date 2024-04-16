@@ -1,0 +1,44 @@
+﻿@model UserReviewViewModel[]
+@inject IUserReviewService userReviewService
+
+
+<div class="container-fluid mt-2">
+	<div class="row">
+
+		@if (Model.Length > 0)
+		{
+			@foreach (var review in Model)
+			{
+
+				<div class="col-md-12 text-center mb-2">
+					<div class="text-center review-container">
+						<h2>
+							@review.ApplicationUserUserName
+						</h2>
+						<div class="text-center mb-2">
+							@if (User.Identity.IsAuthenticated && User.GetId().ToLower() == review.ApplicationUserId.ToLower())
+							{
+								<a asp-controller="UserReview" asp-action="Edit" asp-route-id="@review.Id"
+								   class="btn btn-warning">Edit</a>
+								<a asp-controller="UserReview" asp-action="Delete" asp-route-id="@review.Id"
+								   class="btn btn-danger"
+								   onclick="return confirm('are you sure you want to delete this review?')">Delete</a>
+							}
+						</div>
+						<p>@review.Comment</p>						
+					</div>
+
+				</div>
+			}
+		}
+		else
+		{
+			<div class="text-center">
+				<h2>There are currently no reviews for this movie!</h2>
+			</div>
+		}
+
+	</div>
+
+</div>
+

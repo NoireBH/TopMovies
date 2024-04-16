@@ -108,19 +108,23 @@
 									@mac.MovieCharacterName
 								</a>
 							</p>
-							<a asp-controller="Actor" asp-action="EditMovieActorAndRole"
-							   asp-route-movieid="@Model.Id.ToString()"
-							   asp-route-actorid="@mac.ActorId"
-							   class="btn btn-warning">
-								Edit
-							</a>
-							<a asp-controller="Actor" asp-action="RemoveActorAndRoleFromMovie"
-							   asp-route-movieid="@Model.Id.ToString()"
-							   asp-route-actorid="@mac.ActorId"
-							   class="btn btn-danger"
-							   onclick="return confirm('are you sure you want to delete the actor and their role?')">
-								Delete
-							</a>
+							@if (User.IsAdmin())
+							{
+								<a asp-controller="Actor" asp-action="EditMovieActorAndRole"
+								   asp-route-movieid="@Model.Id.ToString()"
+								   asp-route-actorid="@mac.ActorId"
+								   class="btn btn-warning">
+									Edit
+								</a>
+								<a asp-controller="Actor" asp-action="RemoveActorAndRoleFromMovie"
+								   asp-route-movieid="@Model.Id.ToString()"
+								   asp-route-actorid="@mac.ActorId"
+								   class="btn btn-danger"
+								   onclick="return confirm('are you sure you want to delete the actor and their role?')">
+									Delete
+								</a>
+							}
+							
 						</div>
 					</div>
 				}
@@ -153,7 +157,7 @@
 			<header class="row mb-1 pe-2">
 				<div class="col-4">
 					<a class="d-flex align-items-center all-user-reviews-link"
-					   asp-controller="UserReview" asp-action="All">
+					   asp-route-id="@Model.Id.ToString()" asp-controller="UserReview" asp-action="All">
 						<h1>User Reviews</h1>
 						<i class="fa-solid fa-angle-right ms-1" style="color: #000000;"></i>
 					</a>
@@ -162,7 +166,10 @@
 					<div class="d-flex justify-content-end">
 						<div class="d-flex">
 							<a class="d-flex align-items-center add-review-link p-2"
-							   asp-controller="UserReview" asp-action="AddToMovie">
+							   asp-controller="UserReview" 
+							   asp-action="AddToMovie" 
+							   asp-route-movieId="@Model.Id.ToString()"
+							   asp-route-applicationUserId="@User.GetId()">
 								<i class="fa-solid fa-plus me-4"></i>
 								<p class="mb-0">Review</p>
 							</a>
