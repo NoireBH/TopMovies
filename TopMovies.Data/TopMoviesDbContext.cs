@@ -46,7 +46,7 @@ namespace TopMovies.Data
 
 			builder.ApplyConfiguration(new ActorMovieEntityConfiguration());
 			builder.ApplyConfiguration(new MovieGenreEntityConfiguration());
-			//builder.ApplyConfiguration(new UserReviewEntityConfiguration());
+			builder.ApplyConfiguration(new UserReviewEntityConfiguration());
 
 
 

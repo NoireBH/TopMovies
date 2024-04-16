@@ -7,5 +7,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task<UserReviewViewModel> GetLatestUserReviewByMovieIdAsync(string id);
 
 		Task<UserReviewViewModel[]> GetAllUserReviewsByMovieIdAsync(string id);
+
+		Task<bool> MovieHasUserReviewsByIdAsync(string id);
 	}
 }

@@ -15,10 +15,6 @@ namespace TopMovies.Data.Models
 
 		public ApplicationUser ApplicationUser { get; set; } = null!;
 
-
-		[Range(RatingMin, RatingMax)]
-		public int Rating { get; set; }
-
 		[MaxLength(CommentMaxLength)]
 		public string Comment { get; set; } = null!;
 

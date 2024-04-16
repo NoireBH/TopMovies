@@ -70,19 +70,19 @@ html {
     font-weight: bolder;
 }
 
-.admin-genreButton:hover {
-    display: inline-block;
-    color: black;
-    border: 1px solid #CCC;
-    border-radius: 16px;
-    background: red;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    vertical-align: middle;
-    max-width: 400px;
-    padding: 4px 8px;
-    text-align: center;
-    font-weight: bolder;
-}
+    .admin-genreButton:hover {
+        display: inline-block;
+        color: black;
+        border: 1px solid #CCC;
+        border-radius: 16px;
+        background: red;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+        vertical-align: middle;
+        max-width: 400px;
+        padding: 4px 8px;
+        text-align: center;
+        font-weight: bolder;
+    }
 
 .details-main-content {
     background: rgb(31,31,31);
@@ -393,3 +393,25 @@ ul li span {
 .character-movie-img-container {
     max-width: 400px;
 }
+
+.all-user-reviews-link {
+    color: black;
+    font-weight: bolder;
+}
+
+    .all-user-reviews-link:hover {
+        color: yellow;
+    }
+
+.add-review-container {
+}
+
+.add-review-link {
+    color: black;
+    font-weight: bolder;
+    border: 1px solid black;
+}
+
+    .add-review-link:hover {
+        color: blue;
+    }

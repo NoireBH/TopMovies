@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TopMovies.Data;
 
@@ -11,9 +12,10 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    partial class TopMoviesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240416143147_RemoveRatingFromUserReview")]
+    partial class RemoveRatingFromUserReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1338,43 +1340,6 @@ namespace TopMovies.Data.Migrations
                     b.HasIndex("MovieId");
 
                     b.ToTable("UserReviews");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ecd7d309-aa53-44bb-b876-27a6bf213dc5"),
-                            ApplicationUserId = new Guid("2e5c284d-e571-40c1-97b0-18505632fe70"),
-                            Comment = "One of the best movies I've ever seen!",
-                            MovieId = new Guid("2ca61990-fe17-483c-863d-442ee4c0acad")
-                        },
-                        new
-                        {
-                            Id = new Guid("176697c8-9480-447a-9e86-07b70b0a6585"),
-                            ApplicationUserId = new Guid("2e5c284d-e571-40c1-97b0-18505632fe70"),
-                            Comment = "A classic! My only complaint is that the pacing was too slow for my taste.If you have ADHD like me you're gonna have a hard time watching this movie, but i still think it's worth watching!",
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
-                        },
-                        new
-                        {
-                            Id = new Guid("fbd5e0af-4c33-411b-a0b3-88d7863f9d6e"),
-                            ApplicationUserId = new Guid("84a02b87-df1d-4f33-becd-44138f88a11a"),
-                            Comment = "While good it's extremely overrated",
-                            MovieId = new Guid("30da4459-9475-404d-92fb-9124cff7cfa6")
-                        },
-                        new
-                        {
-                            Id = new Guid("8efd4094-5824-434c-9019-eafb5cce9510"),
-                            ApplicationUserId = new Guid("84a02b87-df1d-4f33-becd-44138f88a11a"),
-                            Comment = "Peak fiction, they don't make dark batman movies like this anymore...",
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
-                        },
-                        new
-                        {
-                            Id = new Guid("96475262-852c-442f-b88c-8642835ecb30"),
-                            ApplicationUserId = new Guid("84a02b87-df1d-4f33-becd-44138f88a11a"),
-                            Comment = "Not that great. Didn't remain consistent with Batman Begins and was extremely predictable. The plot and action labors along and never reaches a satisfying conclusion. The best thing about this film is the score.\r\n",
-                            MovieId = new Guid("075af806-fb6f-476d-804f-baecbd15bdd3")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
