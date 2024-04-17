@@ -12,7 +12,7 @@ namespace TopMovies.Web.ViewModels.Movies
 	{
 
         [Required]
-		[Display(Name = "Search for movie name")]
+		[Display(Name = "Search for movie by it's name or description of the plot")]
 		public string SearchTeam { get; set; } = null!;
 
 	}
