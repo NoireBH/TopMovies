@@ -173,7 +173,7 @@ namespace TopMovies.Web.Controllers
 
 			var movie = await movieService.GetMovieDetailsByIdAsync(id);
 
-			var houseModel = new MovieAddOrEditFormModel()
+			var movieModel = new MovieAddOrEditFormModel()
 			{
 				Id = movie.Id,
 				Name = movie.Name,
@@ -184,7 +184,7 @@ namespace TopMovies.Web.Controllers
 
 			};
 
-			return View(houseModel);
+			return View(movieModel);
 
 		}
 

@@ -1,4 +1,5 @@
-﻿using TopMovies.Web.ViewModels.UserReviews;
+﻿using TopMovies.Data.Models;
+using TopMovies.Web.ViewModels.UserReviews;
 
 namespace TopMovies.Services.Data.Interfaces
 {
@@ -12,6 +13,9 @@ namespace TopMovies.Services.Data.Interfaces
 
 		Task<bool> UserHasReviewedMovieByUserIdAsync(string userId, string movieId);
 
-		Task AddReviewToMovie(UserReviewAddOrEditFormModel model);
+		Task AddReviewToMovieAsync(UserReviewAddOrEditFormModel model);
+
+		Task<UserReview> GetCurrentUserReviewByUserAndMovieIdAsync(string userId, string movieId);
+		Task EditReviewAsync(UserReviewAddOrEditFormModel model);
 	}
 }

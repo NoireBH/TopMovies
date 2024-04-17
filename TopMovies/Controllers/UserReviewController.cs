@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data.Interfaces;
-using TopMovies.Web.Infrastructure.Extensions;
-using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.UserReviews;
 using static TopMovies.Common.NotificationMessagesConstants;
 
@@ -55,7 +53,7 @@ namespace TopMovies.Web.Controllers
 				return View(model);
 			}
 
-			 await userReviewService.AddReviewToMovie(model);
+			 await userReviewService.AddReviewToMovieAsync(model);
 
 			return RedirectToAction(nameof(All), new { id = model.MovieId });
 
@@ -69,6 +67,63 @@ namespace TopMovies.Web.Controllers
 
 			return View(reviews);
 
+		}
+
+		public async Task<IActionResult> Edit(string movieId, string applicationUserId)
+		{
+			var userHasReview = await userReviewService.UserHasReviewedMovieByUserIdAsync(applicationUserId, movieId);
+
+			if (!userHasReview)
+			{
+				TempData[ErrorMessage] = "You haven't reviewed this movie!";
+				return RedirectToAction(nameof(All), new {id = movieId});
+			}
+
+			var review = await userReviewService.GetCurrentUserReviewByUserAndMovieIdAsync(applicationUserId, movieId);
+
+			var reviewModel = new UserReviewAddOrEditFormModel()
+			{
+				ApplicationUserId = applicationUserId,
+				MovieId = movieId,
+				Comment = review.Comment
+			};
+
+			return View(reviewModel);
+
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Edit(UserReviewAddOrEditFormModel model)
+		{
+
+			var userHasReview = await userReviewService.UserHasReviewedMovieByUserIdAsync(model.ApplicationUserId, model.MovieId);
+
+			if (!userHasReview)
+			{
+				TempData[ErrorMessage] = "You haven't reviewed this movie!";
+				return RedirectToAction(nameof(All), new { id = model.MovieId.ToString() });
+			}
+
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+
+			try
+			{
+				await userReviewService.EditReviewAsync(model);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError
+					(string.Empty, "Unexpected error has occured, while trying to edit house details, please try again later...");
+				return View(model);
+
+			}
+
+			return RedirectToAction(nameof(All), new { id = model.MovieId.ToString() });
 		}
 	}
 }

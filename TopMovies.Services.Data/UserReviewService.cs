@@ -16,7 +16,7 @@ namespace TopMovies.Services.Data
 			this.context = context;
 		}
 
-		public async Task AddReviewToMovie(UserReviewAddOrEditFormModel model)
+		public async Task AddReviewToMovieAsync(UserReviewAddOrEditFormModel model)
 		{
 			var userReview = new UserReview()
 			{
@@ -29,6 +29,17 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 		}
 
+		public async Task EditReviewAsync(UserReviewAddOrEditFormModel model)
+		{
+			var userReview = await context.UserReviews
+				.Where(ur => ur.ApplicationUserId.ToString() == model.ApplicationUserId && ur.MovieId.ToString() == model.MovieId)
+				.FirstOrDefaultAsync();
+
+			userReview!.Comment = model.Comment;
+
+			await context.SaveChangesAsync();
+		}
+
 		public async Task<UserReviewViewModel[]> GetAllUserReviewsByMovieIdAsync(string id)
 		{
 			var userReviews = await context.UserReviews
@@ -37,6 +48,15 @@ namespace TopMovies.Services.Data
 				.ToArrayAsync();
 
 			return userReviews;
+		}
+
+		public async Task<UserReview> GetCurrentUserReviewByUserAndMovieIdAsync(string userId, string movieId)
+		{
+			var userReview = await context.UserReviews
+				.Where(ur => ur.ApplicationUserId.ToString() == userId && ur.MovieId.ToString() == movieId)
+				.FirstOrDefaultAsync();
+
+			return userReview!;
 		}
 
 		public async Task<UserReviewViewModel> GetLatestUserReviewByMovieIdAsync(string id)
