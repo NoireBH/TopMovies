@@ -28,5 +28,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task DeleteAsync(string id);
 
 		Task EditMovie(MovieAddOrEditFormModel model);
+
+		Task<MovieAllViewModel[]> GetMoviesBySearchTerm(string searchTerm);
 	}
 }

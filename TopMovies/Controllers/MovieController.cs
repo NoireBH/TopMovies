@@ -83,6 +83,15 @@ namespace TopMovies.Web.Controllers
 
 		}
 
+		[AllowAnonymous]
+		public async Task<IActionResult> Search(string searchedTerm)
+		{
+			var movies = await movieService.GetMoviesBySearchTerm(searchedTerm);
+
+			return View(movies);
+
+		}
+
 		public async Task<IActionResult> Add()
 		{			
 			bool isAdmin = User.IsAdmin();

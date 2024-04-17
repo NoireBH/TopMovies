@@ -106,6 +106,18 @@ namespace TopMovies.Services.Data
             return movieActorsAndCharacters!;
 		}
 
+		public async Task<MovieAllViewModel[]> GetMoviesBySearchTerm(string searchTerm)
+		{
+            var movies = await context.Movies
+                .Where(m => m.Name.ToLower().Contains(searchTerm.ToLower()) ||
+                        m.Description.ToLower().Contains(searchTerm.ToLower()) ||
+                        m.ActorsMovies.Any(am => am.Actor.Name.ToLower().Contains(searchTerm.ToLower())))
+                .To<MovieAllViewModel>()
+                .ToArrayAsync();
+
+            return movies;
+		}
+
 		public async Task<int> GetMovieCountAsync()
 		{
 			return await context.Movies.CountAsync();
