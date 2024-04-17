@@ -14,7 +14,7 @@ TopMovies is a web application for browsing movies, the user can also review the
 
 For the DataBase I've used MS SQL Server.
 
-* <img src = "https://i.ibb.co/HnrSRnj/Screenshot-1.png" width="800" height="500" ></M>
+<img src = "https://i.ibb.co/HnrSRnj/Screenshot-1.png" width="800" height="500" >
 
 ## **Functionality:**
 * All users can browse movies and search a specific movie by name or by description.
