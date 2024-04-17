@@ -16,57 +16,57 @@ namespace TopMovies.Web.Controllers
 			this.genreService = genreService;
 		}
 
-		public async Task<IActionResult> Add()
-		{
-			bool isAdmin = User.IsAdmin();
+		//public async Task<IActionResult> Add()
+		//{
+		//	bool isAdmin = User.IsAdmin();
 
-			if (!isAdmin)
-			{
-				TempData[ErrorMessage] = "You need to be an admin to add a genre!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
-			}
+		//	if (!isAdmin)
+		//	{
+		//		TempData[ErrorMessage] = "You need to be an admin to add a genre!";
+		//		return Redirect(HttpContext.Request.Headers["Referer"]);
+		//	}
 
-			return View();
-		}
+		//	return View();
+		//}
 
-		[HttpPost]
-		public async Task<IActionResult> Add(GenreAddOrEditFormModel model)
-		{
-			bool isAdmin = User.IsAdmin();
+		//[HttpPost]
+		//public async Task<IActionResult> Add(GenreAddOrEditFormModel model)
+		//{
+		//	bool isAdmin = User.IsAdmin();
 
-			if (!isAdmin)
-			{
-				TempData[ErrorMessage] = "You need to be an admin to add a genre!";
-				return View(model);
-			}
+		//	if (!isAdmin)
+		//	{
+		//		TempData[ErrorMessage] = "You need to be an admin to add a genre!";
+		//		return View(model);
+		//	}
 
-			bool genreExists = await genreService.ExistsByNameAsync(model.Name);
+		//	bool genreExists = await genreService.ExistsByNameAsync(model.Name);
 
-			if (genreExists)
-			{
-				TempData[ErrorMessage] = "The genre already exists!";
-				return View(model);
-			}
+		//	if (genreExists)
+		//	{
+		//		TempData[ErrorMessage] = "The genre already exists!";
+		//		return View(model);
+		//	}
 
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
+		//	if (!ModelState.IsValid)
+		//	{
+		//		return View(model);
+		//	}
 
-			try
-			{
-				await genreService.AddGenreAsync(model);
-			}
-			catch (Exception)
-			{
-				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
-				return View(model);
+		//	try
+		//	{
+		//		await genreService.AddGenreAsync(model);
+		//	}
+		//	catch (Exception)
+		//	{
+		//		ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+		//		return View(model);
 
-			}
+		//	}
 
-			return RedirectToAction("All", "Movie");
+		//	return RedirectToAction("All", "Movie");
 
-		}
+		//}
 
         public async Task<IActionResult> AddToMovie(string id)
         {

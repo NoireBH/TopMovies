@@ -464,3 +464,8 @@ ul li span {
 .my-review-movie-name-link:hover {
     text-decoration: underline;
 }
+
+.movie-img-container{
+    min-width: 500px;
+    max-width: 800px;
+}
