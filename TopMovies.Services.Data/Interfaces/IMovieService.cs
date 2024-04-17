@@ -12,6 +12,8 @@ namespace TopMovies.Services.Data.Interfaces
 	{
 		Task<MovieViewModel[]> GetAllMoviesAsync();
 
+		Task<MovieViewModel[]> GetAllMoviesBySearchAsync(MovieSearchFormModel model);
+
 		Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync();
 
 		Task<bool> ExistsByIdAsync(string  id);

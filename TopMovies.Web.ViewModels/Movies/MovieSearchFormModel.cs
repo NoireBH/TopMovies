@@ -4,16 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TopMovies.Web.ViewModels.Genres;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-	public class MovieSearchViewModel
+	public class MovieSearchFormModel
 	{
-		public string MovieId { get; set; } = null!;
 
-		[Required]
-		public string SearchedTerm { get; set; } = null!;
+        [Required]
+		[Display(Name = "Search Term")]
+		public string SearchTeam { get; set; } = null!;
 
-		public string Genre { get; set; } = null!;
 	}
 }

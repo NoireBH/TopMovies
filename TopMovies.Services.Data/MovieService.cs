@@ -133,5 +133,17 @@ namespace TopMovies.Services.Data
             return movie!;
 
         }
-    }
+
+		public async Task<MovieViewModel[]> GetAllMoviesBySearchAsync(MovieSearchFormModel model)
+		{
+			var movies = await context.Movies
+			.Where(m =>
+                        m.Name.ToLower().Contains(model.SearchTeam.ToLower()) ||
+                        m.Description.ToLower().Contains(model.SearchTeam.ToLower()))
+			.To<MovieViewModel>()
+				.ToArrayAsync();
+
+            return movies;
+		}
+	}
 }

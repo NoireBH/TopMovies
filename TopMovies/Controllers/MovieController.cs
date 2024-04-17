@@ -84,13 +84,57 @@ namespace TopMovies.Web.Controllers
 		}
 
 		[AllowAnonymous]
-		public async Task<IActionResult> Search(string searchedTerm)
+		public async Task<IActionResult> Search()
 		{
-			var movies = await movieService.GetMoviesBySearchTerm(searchedTerm);
+			//var search = new MovieSearchFormModel
+			//{
+			//	Genres = await genreService.GetAllGenresAsync()
+			//};
 
-			return View(movies);
+			return View();
 
 		}
+
+		[AllowAnonymous]
+		[HttpPost]
+		public async Task<IActionResult> Search(MovieSearchFormModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				//model.Genres = await genreService.GetAllGenresAsync();
+
+				return View(model);
+			}
+
+			MovieViewModel[] movies;
+
+			try
+			{
+				 movies = await movieService.GetAllMoviesBySearchAsync(model);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+				return View(model);
+
+			}
+
+			TempData.Put("MoviesResult", movies);
+
+			return RedirectToAction(nameof(SearchResult));
+
+		}
+
+		[AllowAnonymous]
+		public async Task<IActionResult> SearchResult()
+		{
+			var movies = TempData.Get<MovieViewModel[]>("MoviesResult");
+			TempData.Put("MoviesResult", movies); //temporary fix...
+
+			return View(movies);
+		}
+
+
 
 		public async Task<IActionResult> Add()
 		{			
