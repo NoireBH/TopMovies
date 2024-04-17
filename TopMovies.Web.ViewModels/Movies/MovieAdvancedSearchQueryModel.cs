@@ -9,7 +9,7 @@ namespace TopMovies.Web.ViewModels.Movies
         public MovieAdvancedSearchQueryModel()
         {
 			CurrentPage = DefaultPage;
-			MoviesPerPage = DefaultMoviesPerPage;
+			MoviesPerPage = DefaultItemsPerPage;
 			Genres = new HashSet<string>();
 			Movies = new HashSet<MovieViewModel>();
 		}

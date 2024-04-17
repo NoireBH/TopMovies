@@ -1,19 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TopMovies.Data;
 using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Services.Mapping;
 using TopMovies.Web.ViewModels.Home;
 using TopMovies.Web.ViewModels.Movies;
+using TopMovies.Web.ViewModels.Page;
 
 namespace TopMovies.Services.Data
 {
-    public class MovieService : IMovieService
+	public class MovieService : IMovieService
     {
         private readonly TopMoviesDbContext context;
 
@@ -74,11 +70,25 @@ namespace TopMovies.Services.Data
                 m.ReleaseDate.Day == day);
 		}
 
-		public async Task<MovieViewModel[]> GetAllMoviesAsync()
+		public async Task<MoviesFilteredViewModel> GetAllMoviesAsync(MoviePageViewModel model)
 		{
-            return await context.Movies
-                .To<MovieViewModel>()
+			var moviesQuery =  context.Movies
+				.AsQueryable();
+
+
+			var movies =  await moviesQuery
+				.Skip((model.CurrentPage - 1) * model.ItemsPerPage)
+				.Take(model.ItemsPerPage)
+				.To<MovieViewModel>()
                 .ToArrayAsync();
+
+            int totalItems = moviesQuery.Count();
+
+			return new MoviesFilteredViewModel()
+			{
+				TotalMoviesCount = totalItems,
+				Movies = movies
+			};
 		}
 
 		public async Task<FeaturedMoviesViewModel[]> GetFeaturedMoviesAsync()

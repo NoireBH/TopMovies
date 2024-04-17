@@ -14,8 +14,6 @@ namespace TopMovies.Web.ViewModels.Movies
 
 		public string YearOfRelease { get; set; } = null!;
 
-		public int TotalMoviesCount { get; set; }
-
 		public void CreateMappings(IProfileExpression configuration)
 		{
 			configuration.CreateMap<Movie, MovieViewModel>()

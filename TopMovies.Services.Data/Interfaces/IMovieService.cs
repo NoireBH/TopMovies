@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TopMovies.Web.ViewModels.Home;
 using TopMovies.Web.ViewModels.Movies;
+using TopMovies.Web.ViewModels.Page;
 
 namespace TopMovies.Services.Data.Interfaces
 {
 	public interface IMovieService
 	{
-		Task<MovieViewModel[]> GetAllMoviesAsync();
+		Task<MoviesFilteredViewModel> GetAllMoviesAsync(MoviePageViewModel model);
 
 		Task<MovieViewModel[]> GetAllMoviesBySearchAsync(MovieSearchFormModel model);
 

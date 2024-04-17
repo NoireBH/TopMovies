@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TopMovies.Services.Data.Interfaces;
 using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.Movies;
+using TopMovies.Web.ViewModels.Page;
 using static TopMovies.Common.NotificationMessagesConstants;
 
 namespace TopMovies.Web.Controllers
@@ -75,11 +76,14 @@ namespace TopMovies.Web.Controllers
 		//}
 
 		[AllowAnonymous]
-		public async Task<IActionResult> All()
+		public async Task<IActionResult> All([FromQuery]MoviePageViewModel model)
 		{
-			var movies = await movieService.GetAllMoviesAsync();
+			var movieFilterResult = await movieService.GetAllMoviesAsync(model);
 
-			return View(movies);
+			model.TotalItemsCount = movieFilterResult.TotalMoviesCount;
+			model.Movies = movieFilterResult.Movies;
+
+			return View(model);
 
 		}
 
