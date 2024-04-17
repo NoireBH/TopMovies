@@ -29,6 +29,17 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 		}
 
+		public async Task DeleteByUserAndMovieIdAsync(string userId, string movieId)
+		{
+			var userReview = await context.UserReviews
+				.Where(ur => ur.ApplicationUserId.ToString() == userId && ur.MovieId.ToString() == movieId)
+				.FirstOrDefaultAsync();
+
+			context.UserReviews.Remove(userReview!);
+			await context.SaveChangesAsync();
+
+		}
+
 		public async Task EditReviewAsync(UserReviewAddOrEditFormModel model)
 		{
 			var userReview = await context.UserReviews

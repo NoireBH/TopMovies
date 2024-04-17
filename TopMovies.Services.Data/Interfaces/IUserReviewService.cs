@@ -17,5 +17,7 @@ namespace TopMovies.Services.Data.Interfaces
 
 		Task<UserReview> GetCurrentUserReviewByUserAndMovieIdAsync(string userId, string movieId);
 		Task EditReviewAsync(UserReviewAddOrEditFormModel model);
+
+		Task DeleteByUserAndMovieIdAsync(string userId, string movieId);
 	}
 }

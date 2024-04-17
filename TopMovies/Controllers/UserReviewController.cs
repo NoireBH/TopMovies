@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TopMovies.Services.Data;
 using TopMovies.Services.Data.Interfaces;
+using TopMovies.Web.Infrastructure.Extensions;
 using TopMovies.Web.ViewModels.UserReviews;
 using static TopMovies.Common.NotificationMessagesConstants;
 
@@ -124,6 +126,28 @@ namespace TopMovies.Web.Controllers
 			}
 
 			return RedirectToAction(nameof(All), new { id = model.MovieId.ToString() });
+		}
+
+		public async Task<IActionResult> Delete(string applicationUserId, string movieId)
+		{
+			var userHasReview = await userReviewService.UserHasReviewedMovieByUserIdAsync(applicationUserId, movieId);
+
+			if (!userHasReview)
+			{
+				TempData[ErrorMessage] = "You dont have a review to delete!";
+				return RedirectToAction(nameof(All), new { id = movieId });
+			}
+
+			try
+			{
+				await userReviewService.DeleteByUserAndMovieIdAsync(applicationUserId, movieId);
+			}
+			catch (Exception)
+			{
+				TempData[ErrorMessage] = "Something went wrong! Please try again or contact support.";
+			}
+
+			return RedirectToAction(nameof(All), new { id = movieId });
 		}
 	}
 }
