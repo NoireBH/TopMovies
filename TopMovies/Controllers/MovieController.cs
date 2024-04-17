@@ -123,6 +123,14 @@ namespace TopMovies.Web.Controllers
 
 			}
 
+			if (movies.Length == 1)
+			{
+				var movieId = movies.FirstOrDefault()!.Id.ToString();
+				var movie = await movieService.GetMovieDetailsByIdAsync(movieId);
+
+				return RedirectToAction(nameof(Details), new {id = movie.Id});
+			}
+
 			TempData.Put("MoviesResult", movies);
 
 			return RedirectToAction(nameof(SearchResult));

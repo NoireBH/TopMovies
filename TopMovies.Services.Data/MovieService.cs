@@ -136,7 +136,7 @@ namespace TopMovies.Services.Data
 		public async Task<MovieDetailsViewModel> GetMovieDetailsByIdAsync(string id)
         {
             var movie = await context.Movies
-                .Where(m => m.Id.ToString() == id)
+                .Where(m => m.Id.ToString().ToLower() == id.ToLower())
                 .To<MovieDetailsViewModel>()
                 .FirstOrDefaultAsync();
 
