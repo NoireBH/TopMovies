@@ -31,9 +31,9 @@
 			</div>
 		</header>
 		<main class="container-fluid no-padding">
-			<div class="row bg-dark g-0">
+			<div class="row bg-dark g-0 movie-details-container">
 				<div class="col-3">
-					<img src="@Model.ImageUrl" class="img-fluid" style="max-width:100%" />
+					<img src="@Model.ImageUrl" class="img-fluid movie-details-container" style="max-width:100%" />
 				</div>
 				<div class="col-9">
 					<iframe class="" src="@Model.TrailerUrl"></iframe>
@@ -87,7 +87,7 @@
 	<section class="mb-5">
 		<h1 class="text-center mb-5">Movie Cast:</h1>
 
-		<div class="d-flex flex-row flex-wrap justify-content-around  text-center">
+		<div class="d-flex flex-row flex-wrap justify-content-around mb-3 text-center">
 
 			@if (movieActorsAndTheirCharacters.Length > 0)
 			{
@@ -132,10 +132,12 @@
 			else
 			{
 				<h2 class="text-center">There is currently no information about the actors of this movie!</h2>
-			}
+			}			
 
-			@if (User.IsAdmin())
-			{
+		</div>
+		@if (User.IsAdmin())
+		{
+			<div class="container-fluid d-flex justify-content-center">
 				<div class="actor-img-container">
 					<a asp-controller="Actor" asp-action="AddActorAndRoleToMovie" asp-route-id="@Model.Id.ToString()">
 						<img src="~/images//addActor.png" class="img-fluid rounded-circle">
@@ -145,9 +147,9 @@
 						Add an Actor and role
 					</a>
 				</div>
-			}
-
-		</div>
+			</div>
+			
+		}
 	</section>
 	@*
 	User Reviews

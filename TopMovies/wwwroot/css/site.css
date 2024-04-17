@@ -465,7 +465,6 @@ ul li span {
     text-decoration: underline;
 }
 
-.movie-img-container{
-    min-width: 500px;
-    max-width: 800px;
+.movie-details-container{
+    /*min-height: 500px;*/
 }

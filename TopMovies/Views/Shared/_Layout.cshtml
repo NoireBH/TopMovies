@@ -37,7 +37,7 @@
 				</a>
 				<div class="layout-nav d-flex justify-content-center pb-2 d-flex gap-2">
 					<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="All">All Movies</a>
-					@if (User.Identity.IsAuthenticated)
+					@if (User.Identity!.IsAuthenticated)
 					{
 						<a class="text-light advanced-search-btn" asp-controller="UserReview" asp-action="Mine">My Reviews</a>
 					}
