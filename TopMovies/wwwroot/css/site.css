@@ -26,6 +26,9 @@ html {
     min-height: 100%;
 }
 
+.layout-nav {
+}
+
 
 .site-logo {
     display: inline-block;
@@ -431,4 +434,12 @@ ul li span {
 
 .review-container {
     border: 2px solid black;
+}
+
+.my-review-movie-name-link {
+    color: black;
+}
+
+.my-review-movie-name-link:hover {
+    text-decoration: underline;
 }

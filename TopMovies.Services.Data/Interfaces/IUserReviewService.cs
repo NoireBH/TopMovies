@@ -7,7 +7,7 @@ namespace TopMovies.Services.Data.Interfaces
 	{
 		Task<UserReviewViewModel> GetLatestUserReviewByMovieIdAsync(string id);
 
-		Task<UserReviewViewModel[]> GetAllUserReviewsByMovieIdAsync(string id);
+		Task<UserReviewViewModel[]> GetAllMovieReviewsByMovieIdAsync(string id);
 
 		Task<bool> MovieHasUserReviewsByIdAsync(string id);
 
@@ -16,6 +16,7 @@ namespace TopMovies.Services.Data.Interfaces
 		Task AddReviewToMovieAsync(UserReviewAddOrEditFormModel model);
 
 		Task<UserReview> GetCurrentUserReviewByUserAndMovieIdAsync(string userId, string movieId);
+		Task<UserReviewMineViewModel[]> GetAllReviewsOfUserByIdAsync(string userId);
 		Task EditReviewAsync(UserReviewAddOrEditFormModel model);
 
 		Task DeleteByUserAndMovieIdAsync(string userId, string movieId);

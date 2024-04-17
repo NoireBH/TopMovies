@@ -35,13 +35,20 @@
 					</div>					
 				</div>				
 			</nav>
-			<div class="container-fluid text-center pb-2 d-flex flex-column">
+			<div class="container-fluid d-flex flex-column text-center">
 				<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="AdvancedSearch">Advanced Search</a>
-				<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="All">All Movies</a>
-				@if (User.IsAdmin())
-				{
-					<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="Add">Add Movie</a>
-				}				
+				<div class="layout-nav d-flex justify-content-center pb-2 d-flex gap-2">
+					<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="All">All Movies</a>
+					@if (User.Identity.IsAuthenticated)
+					{
+						<a class="text-light advanced-search-btn" asp-controller="UserReview" asp-action="Mine">My Reviews</a>
+					}
+					@if (User.IsAdmin())
+					{
+						<a class="text-light advanced-search-btn" asp-controller="Movie" asp-action="Add">Add Movie</a>
+					}
+				</div>
+							
 			</div>
 		</div>
 	</header>

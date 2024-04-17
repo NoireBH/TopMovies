@@ -65,7 +65,7 @@ namespace TopMovies.Web.Controllers
 		public async Task<IActionResult> All(string id)
 		{
 
-			var reviews = await userReviewService.GetAllUserReviewsByMovieIdAsync(id);
+			var reviews = await userReviewService.GetAllMovieReviewsByMovieIdAsync(id);
 
 			return View(reviews);
 
@@ -148,6 +148,15 @@ namespace TopMovies.Web.Controllers
 			}
 
 			return RedirectToAction(nameof(All), new { id = movieId });
+		}
+
+		public async Task<IActionResult> Mine()
+		{
+			string? userId = User.GetId();
+
+			var reviews = await userReviewService.GetAllReviewsOfUserByIdAsync(userId!);
+
+			return View(reviews);
 		}
 	}
 }

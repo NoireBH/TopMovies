@@ -51,7 +51,7 @@ namespace TopMovies.Services.Data
 			await context.SaveChangesAsync();
 		}
 
-		public async Task<UserReviewViewModel[]> GetAllUserReviewsByMovieIdAsync(string id)
+		public async Task<UserReviewViewModel[]> GetAllMovieReviewsByMovieIdAsync(string id)
 		{
 			var userReviews = await context.UserReviews
 				.Where(a => a.MovieId.ToString() == id)
@@ -59,6 +59,16 @@ namespace TopMovies.Services.Data
 				.ToArrayAsync();
 
 			return userReviews;
+		}
+
+		public async Task<UserReviewMineViewModel[]> GetAllReviewsOfUserByIdAsync(string userId)
+		{
+			var myReviews = await context.UserReviews
+				.Where(r => r.ApplicationUserId.ToString() == userId)
+				.To<UserReviewMineViewModel>()
+				.ToArrayAsync();
+
+			return myReviews;
 		}
 
 		public async Task<UserReview> GetCurrentUserReviewByUserAndMovieIdAsync(string userId, string movieId)
