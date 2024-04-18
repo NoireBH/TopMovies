@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32.SafeHandles;
 using TopMovies.Data;
 using TopMovies.Data.Models;
 using TopMovies.Services.Data.Interfaces;
@@ -37,7 +38,8 @@ namespace TopMovies.Services.Data
 		public async Task DeleteAsync(string movieId)
 		{
 			var movie = await context.Movies.FirstOrDefaultAsync(h => h.Id.ToString() == movieId);
-
+			var movieCharacters = context.MovieCharacters.Where(mc => mc.MovieId.ToString() == movieId);
+			context.MovieCharacters.RemoveRange(movieCharacters);
 			context.Movies.Remove(movie!);
 			await context.SaveChangesAsync();
 
