@@ -7,6 +7,7 @@ using TopMovies.Web.ViewModels.Actors;
 using TopMovies.Web.ViewModels.Movies;
 using System.Reflection;
 using TopMovies.Web.ViewModels;
+using AutoMapper;
 
 namespace TopMovies.Services.Data.Tests
 {
@@ -24,9 +25,11 @@ namespace TopMovies.Services.Data.Tests
 				.Options;
 			context = new TopMoviesDbContext(dbOptions);
 			service = new MovieService(context);
+
 			AutoMapperConfig.RegisterMappings(
-				typeof(ActorDetailsViewModel).GetTypeInfo().Assembly,
-				typeof(ErrorViewModel).GetTypeInfo().Assembly);
+			typeof(ActorDetailsViewModel).GetTypeInfo().Assembly,
+			typeof(ErrorViewModel).GetTypeInfo().Assembly);
+
 			Seed();
 		}
 
@@ -154,13 +157,33 @@ namespace TopMovies.Services.Data.Tests
 
 		[Test]
 		public async Task GetMoviesBySearchTermShouldReturnCorrectMovies()
-		{
-
+		{			
 			string term = "god";
 
 			var movies = await service.GetMoviesBySearchTerm(term);
 
 			Assert.That(movies.Count(), Is.EqualTo(1));
+		}
+
+		[Test]
+		public async Task GetMoviesCountShouldReturnCorrectly()
+		{
+
+			var movieCount = await service.GetMovieCountAsync();
+
+			Assert.That(movieCount, Is.EqualTo(3));
+		}
+
+		[Test]
+		public async Task GetMovieDetailsByIdAsyncShouldReturnCorrectly()
+		{
+			string movieId = "2CA61990-FE17-483C-863D-442EE4C0ACAD";
+
+			var movie = await service.GetMovieDetailsByIdAsync(movieId);
+
+			Assert.That(movie.Name, Is.EqualTo("The Shawshank Redemption"));
+			Assert.That(movie.ImageUrl, Is.EqualTo("https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1200_.jpg"));
+			Assert.That(movie.Description, Is.EqualTo("Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion."));
 		}
 
 		private void Seed()

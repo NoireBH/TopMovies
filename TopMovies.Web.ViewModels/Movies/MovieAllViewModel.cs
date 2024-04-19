@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using TopMovies.Data.Models;
+using TopMovies.Services.Mapping;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-	public class MovieAllViewModel
+	public class MovieAllViewModel : IMapFrom<Movie>
 	{
 		public Guid Id { get; set; }
 
