@@ -83,7 +83,7 @@ namespace TopMovies.Services.Data
 
 		public async Task<bool> MovieGenreExistsByGenreAndMovieId(int genreId, string movieId)
 		{
-			return await context.MovieGenres.AnyAsync(m => m.GenreId == genreId && m.MovieId.ToString() == movieId);
+			return await context.MovieGenres.AnyAsync(mg => mg.GenreId == genreId && mg.MovieId.ToString() == movieId);
 		}
 
 		public async Task DeleteGenreFromMovieByGenreAndMovieIdAsync(int genreId, string movieId)
@@ -95,11 +95,6 @@ namespace TopMovies.Services.Data
 			context.MovieGenres.Remove(movieGenre!);
 			await context.SaveChangesAsync();
 
-		}
-
-		public async Task<bool> ExistsByGenreIdAndMovieIdAsync(int genreId, string movieId)
-		{
-			return await context.MovieGenres.AnyAsync(mg => mg.GenreId == genreId && mg.MovieId.ToString() == movieId);
 		}
 	}
 }

@@ -144,7 +144,7 @@ namespace TopMovies.Web.Controllers
 				return Unauthorized();
 			}
 
-			if (!await genreService.ExistsByGenreIdAndMovieIdAsync(genreId, movieId))
+			if (!await genreService.MovieGenreExistsByGenreAndMovieId(genreId, movieId))
 			{
 				TempData[ErrorMessage] = "The movie doesn't have the genre you're trying to delete,please try again.";
 				return RedirectToAction("Details", "Movie", new { id = movieId });
