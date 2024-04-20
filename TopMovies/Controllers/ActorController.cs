@@ -145,7 +145,7 @@ namespace TopMovies.Web.Controllers
 				return NotFound();
 			}
 
-			var actorMovieCharacter = await actorService.GetActorAndTheirRoleByMovieIdAsync(movieId, actorId);
+			var actorMovieCharacter = await actorService.GetActorAndTheirRoleByMovieAndActorAsync(movieId, actorId);
 
 			var model = new MovieActorAndRoleAddOrEditFormModel()
 			{

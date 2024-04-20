@@ -17,7 +17,7 @@ namespace TopMovies.Services.Data.Tests
 		private TopMoviesDbContext context;
 		private IMovieService service;
 
-		[OneTimeSetUp]
+		[SetUp]
 		public void OneTimeSetUp()
 		{
 			dbOptions = new DbContextOptionsBuilder<TopMoviesDbContext>()
@@ -33,10 +33,8 @@ namespace TopMovies.Services.Data.Tests
 			Seed();
 		}
 
-		[OneTimeTearDown]
+		[TearDown]
 		public void TearDownDb() => context.Dispose();
-
-		//AUTOMAPPER DOESNT WORK IN TESTS DONT KNOW HOW TO FIX!!!!!!!
 
 		[Test]
 		public async Task AddMovieAsyncShouldAddMovieToDb()
@@ -175,7 +173,7 @@ namespace TopMovies.Services.Data.Tests
 		}
 
 		[Test]
-		public async Task GetMovieDetailsByIdAsyncShouldReturnCorrectly()
+		public async Task GetMovieDetailsByIdAsyncShouldReturnCorrectMovie()
 		{
 			string movieId = "2CA61990-FE17-483C-863D-442EE4C0ACAD";
 

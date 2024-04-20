@@ -5,7 +5,7 @@ namespace TopMovies.Services.Data.Interfaces
 	public interface IActorService
 	{
 		Task<ActorViewModel[]> GetAllMovieActorsByMovieIdAsync(string id);
-		Task<MovieActorAndRoleAddOrEditFormModel> GetActorAndTheirRoleByMovieIdAsync(string movieId, int actorId);
+		Task<MovieActorAndRoleAddOrEditFormModel> GetActorAndTheirRoleByMovieAndActorAsync(string movieId, int actorId);
 
 		Task<ActorDetailsViewModel> GetActorByIdAsync(int id);
 

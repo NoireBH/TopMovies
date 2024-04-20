@@ -69,6 +69,7 @@ namespace TopMovies.Services.Data
 
 			await context.SaveChangesAsync();
 		}
+
 		public async Task<bool> ExistsByIdAsync(int id)
 		{
 			return await context.Actors.AnyAsync(m => m.Id == id);
@@ -135,13 +136,14 @@ namespace TopMovies.Services.Data
 				.Where(mc => mc.MovieId.ToString() == model.MovieId && mc.ActorId == actorId)
 				.FirstOrDefaultAsync();
 
+			movieCharacter!.Name = model.MovieCharacterName;
 			movieCharacter!.Age = model.MovieCharacterAge;
 			movieCharacter.ImageUrl = model.MovieCharacterImageUrl;
 
 			await context.SaveChangesAsync();			
 		}
 
-		public async Task<MovieActorAndRoleAddOrEditFormModel> GetActorAndTheirRoleByMovieIdAsync(string movieId, int actorId)
+		public async Task<MovieActorAndRoleAddOrEditFormModel> GetActorAndTheirRoleByMovieAndActorAsync(string movieId, int actorId)
 		{
 			var actorAndRole = await context.MovieCharacters
 				.Where(mc => mc.MovieId.ToString() == movieId && mc.ActorId == actorId)
