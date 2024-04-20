@@ -16,10 +16,10 @@ namespace TopMovies.Services.Data.Tests
 		private IActorService service;
 
 		[SetUp]
-		public void OneTimeSetUp()
+		public void SetUp()
 		{
 			dbOptions = new DbContextOptionsBuilder<TopMoviesDbContext>()
-				.UseInMemoryDatabase("HouseRentingInMemory" + Guid.NewGuid())
+				.UseInMemoryDatabase("TopMoviesInMemory" + Guid.NewGuid())
 				.Options;
 			context = new TopMoviesDbContext(dbOptions);
 			service = new ActorService(context);

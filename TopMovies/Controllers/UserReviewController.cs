@@ -25,13 +25,13 @@ namespace TopMovies.Web.Controllers
 			if (userHasReview)
 			{
 				TempData[ErrorMessage] = "You already have a review! Try editing or deleting it instead";
-				return RedirectToAction("All", "UserReview");
+				return RedirectToAction("Mine", "UserReview");
 			}
 
 			var model = new UserReviewAddOrEditFormModel()
 			{
 				MovieId = movieId,
-				ApplicationUserId = applicationUserId,			
+				ApplicationUserId = applicationUserId,
 			};
 
 			return View(model);
@@ -47,7 +47,7 @@ namespace TopMovies.Web.Controllers
 			if (userHasReview)
 			{
 				TempData[ErrorMessage] = "You already have a review! Try editing or deleting it instead";
-				return RedirectToAction(nameof(All), new { id = model.MovieId });
+				return RedirectToAction("Mine", "UserReview");
 			}
 
 			if (!ModelState.IsValid)
@@ -55,7 +55,7 @@ namespace TopMovies.Web.Controllers
 				return View(model);
 			}
 
-			 await userReviewService.AddReviewToMovieAsync(model);
+			await userReviewService.AddReviewToMovieAsync(model);
 
 			return RedirectToAction(nameof(All), new { id = model.MovieId });
 
@@ -78,7 +78,7 @@ namespace TopMovies.Web.Controllers
 			if (!userHasReview)
 			{
 				TempData[ErrorMessage] = "You haven't reviewed this movie!";
-				return RedirectToAction(nameof(All), new {id = movieId});
+				return RedirectToAction("Mine", "UserReview");
 			}
 
 			var review = await userReviewService.GetCurrentUserReviewByUserAndMovieIdAsync(applicationUserId, movieId);
@@ -103,7 +103,7 @@ namespace TopMovies.Web.Controllers
 			if (!userHasReview)
 			{
 				TempData[ErrorMessage] = "You haven't reviewed this movie!";
-				return RedirectToAction(nameof(All), new { id = model.MovieId.ToString() });
+				return RedirectToAction("Mine", "UserReview");
 			}
 
 
@@ -120,7 +120,7 @@ namespace TopMovies.Web.Controllers
 			catch (Exception)
 			{
 				ModelState.AddModelError
-					(string.Empty, "Unexpected error has occured, while trying to edit house details, please try again later...");
+					(string.Empty, "Unexpected error has occured, please try again later...");
 				return View(model);
 
 			}
@@ -153,8 +153,18 @@ namespace TopMovies.Web.Controllers
 		public async Task<IActionResult> Mine()
 		{
 			string? userId = User.GetId();
+			UserReviewMineViewModel[]? reviews = null;
 
-			var reviews = await userReviewService.GetAllReviewsOfUserByIdAsync(userId!);
+			try
+			{
+				reviews = await userReviewService.GetAllReviewsOfUserByIdAsync(userId!);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError
+					(string.Empty, "Unexpected error has occured, please try again later...");
+			}
+
 
 			return View(reviews);
 		}

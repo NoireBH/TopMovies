@@ -160,7 +160,6 @@ namespace TopMovies.Web.Controllers
 
 			return View();
 
-
 		}
 
 		[HttpPost]
@@ -201,7 +200,7 @@ namespace TopMovies.Web.Controllers
 			if (!User.IsAdmin())
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to delete a movie!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				return Unauthorized();
 			}
 
 			try
@@ -209,7 +208,7 @@ namespace TopMovies.Web.Controllers
 				if (!await movieService.ExistsByIdAsync(id))
 				{
 					TempData[ErrorMessage] = "A movie with that id does not exist!";
-					return Redirect(HttpContext.Request.Headers["Referer"]);
+					return RedirectToAction(nameof(All));
 				}
 
 				await movieService.DeleteAsync(id);
@@ -228,7 +227,7 @@ namespace TopMovies.Web.Controllers
 			if (!User.IsAdmin())
 			{
 				TempData[ErrorMessage] = "You have to be an admin in order to edit a movie!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				return Unauthorized();
 			}
 
 			if (!await movieService.ExistsByIdAsync(id))
@@ -259,8 +258,8 @@ namespace TopMovies.Web.Controllers
 
 			if (!User.IsAdmin())
 			{
-				TempData[ErrorMessage] = "You must be an agent and the owner of this house to be able to edit!";
-				return Redirect(HttpContext.Request.Headers["Referer"]);
+				TempData[ErrorMessage] = "You must be an admin  to be able to edit a movie!";
+				return Unauthorized();
 			}
 
 
@@ -277,7 +276,7 @@ namespace TopMovies.Web.Controllers
 			catch (Exception)
 			{
 				ModelState.AddModelError
-					(string.Empty, "Unexpected error has occured, while trying to edit house details, please try again later...");
+					(string.Empty, "Unexpected error has occured, while trying to edit movie details, please try again later...");
 				return View(model);
 
 			}
