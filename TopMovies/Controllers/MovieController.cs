@@ -131,6 +131,12 @@ namespace TopMovies.Web.Controllers
 				return RedirectToAction(nameof(Details), new {id = movie.Id});
 			}
 
+			if (movies.Length == 0)
+			{
+				TempData[ErrorMessage] = "There are no movies with that name or description that correspond to your search!";
+				return RedirectToAction(nameof(Search));
+			}
+
 			TempData.Put("MoviesResult", movies);
 
 			return RedirectToAction(nameof(SearchResult));
