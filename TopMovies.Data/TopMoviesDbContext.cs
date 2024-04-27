@@ -38,7 +38,7 @@ namespace TopMovies.Data
 			builder.Entity<ActorMovie>().HasKey(x => new { x.MovieId, x.ActorId });
 			builder.Entity<MovieGenre>().HasKey(x => new { x.GenreId, x.MovieId });
 
-			//builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+			builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 			builder.ApplyConfiguration(new MovieEntityConfiguration());
 			builder.ApplyConfiguration(new ActorEntityConfiguration());
 			builder.ApplyConfiguration(new GenreEntityConfiguration());

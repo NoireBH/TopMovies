@@ -77,7 +77,7 @@ namespace TopMovies.Web.Controllers
 
 			if (actorAndRoleExist)
 			{
-				TempData[ErrorMessage] = "The actor and they're role already exist!";
+				TempData[ErrorMessage] = "The actor and their role already exist!";
 				return BadRequest();
 			}
 
