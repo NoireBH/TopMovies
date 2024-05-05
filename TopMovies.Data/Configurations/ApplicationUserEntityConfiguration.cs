@@ -12,7 +12,7 @@ namespace TopMovies.Data.Configurations
 			builder.HasData(SeedUsers());
 		}
 
-		private async Task<ApplicationUser[]> SeedUsers()
+		private  ApplicationUser[] SeedUsers()
 		{
 
 			var users = new HashSet<ApplicationUser>();
@@ -31,7 +31,8 @@ namespace TopMovies.Data.Configurations
 				Email = "FirstUser@abv.bg",
 				NormalizedEmail = "FIRSTUSER@ABV.BG",
 				EmailConfirmed = true,
-			};
+				SecurityStamp = "BF648745-8661-43F4-8173-9EA6EB66931F"
+            };
 
 			passwordHasher = new PasswordHasher<ApplicationUser>();
 			hashed = passwordHasher.HashPassword(user, password);
@@ -47,7 +48,8 @@ namespace TopMovies.Data.Configurations
 				Email = "SecondUser@abv.bg",
 				NormalizedEmail = "SECONDUSER@ABV.BG",
 				EmailConfirmed = true,
-			};
+                SecurityStamp = "96476EAD-3160-42A5-9116-294DF4E849D2"
+            };
 
 			passwordHasher = new PasswordHasher<ApplicationUser>();
 			hashed = passwordHasher.HashPassword(user, password);
@@ -58,12 +60,13 @@ namespace TopMovies.Data.Configurations
 			user = new ApplicationUser()
 			{
 				Id = new Guid("129D8177-95E3-404F-872E-EB94FE803BD1"),
-				UserName = "thirdUser",
-				NormalizedUserName = "THIRDUSER",
-				Email = "ThirdUser@abv.bg",
-				NormalizedEmail = "THIRDUSER@ABV.BG",
+				UserName = "admin",
+				NormalizedUserName = "ADMIN",
+				Email = "admin_topmovies@gmail.com",
+				NormalizedEmail = "ADMIN_TOPMOVIES@GMAIL.COM",
 				EmailConfirmed = true,
-			};
+                SecurityStamp = "DE313F5D-BCF1-43F0-8115-8FC46B08522C"
+            };
 
 			passwordHasher = new PasswordHasher<ApplicationUser>();
 			hashed = passwordHasher.HashPassword(user, password);

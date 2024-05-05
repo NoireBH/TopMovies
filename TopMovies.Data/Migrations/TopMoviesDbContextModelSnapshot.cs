@@ -644,6 +644,56 @@ namespace TopMovies.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("e11f771c-1b10-41eb-81bc-0683dd00b080"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "024c8b3e-69c7-424e-9594-4faf292aee88",
+                            Email = "FirstUser@abv.bg",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "FIRSTUSER@ABV.BG",
+                            NormalizedUserName = "FIRSTUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEUaaBMY+VmM+iJcrN1fA+bvYgewA3Qq/2RdZdCywFb0mGiUf4konVMmcL4dhZnndQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "BF648745-8661-43F4-8173-9EA6EB66931F",
+                            TwoFactorEnabled = false,
+                            UserName = "firstUser"
+                        },
+                        new
+                        {
+                            Id = new Guid("2110c067-48d9-441a-a1eb-c723466b60c0"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d08beac8-cbd6-41f8-bac9-03de5d8b9641",
+                            Email = "SecondUser@abv.bg",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "SECONDUSER@ABV.BG",
+                            NormalizedUserName = "SECONDUSER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDlKixfsR4l/6RjlLaHRYn/2EQ3oiPimfW1XHLHTPvspN5y20d3QulG0Nzm9FEsU1Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "96476EAD-3160-42A5-9116-294DF4E849D2",
+                            TwoFactorEnabled = false,
+                            UserName = "secondtUser"
+                        },
+                        new
+                        {
+                            Id = new Guid("129d8177-95e3-404f-872e-eb94fe803bd1"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e66b716c-fe6b-4836-a268-10987a23b4f0",
+                            Email = "admin_topmovies@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN_TOPMOVIES@GMAIL.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJdBk6FDDt4o6+l84PXPoVJHTohzgYnMWwZT3+KluFDm5CgFnP5lQbV3Qnyz2hZ2AQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "DE313F5D-BCF1-43F0-8115-8FC46B08522C",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("TopMovies.Data.Models.Genre", b =>
