@@ -1,6 +1,5 @@
 ﻿using TopMovies.Services.Mapping;
 using TopMovies.Data.Models;
-using AutoMapper;
 using TopMovies.Web.ViewModels.MoviesGenres;
 using TopMovies.Web.ViewModels.UserReviews;
 using TopMovies.Web.ViewModels.Actors;
@@ -8,7 +7,7 @@ using TopMovies.Web.ViewModels.MovieCharacters;
 
 namespace TopMovies.Web.ViewModels.Movies
 {
-    public class MovieDetailsViewModel : IMapFrom<Movie>
+	public class MovieDetailsViewModel : IMapFrom<Movie>
     {
         public MovieDetailsViewModel()
         {

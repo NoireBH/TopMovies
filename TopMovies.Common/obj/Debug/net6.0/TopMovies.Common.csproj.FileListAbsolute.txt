@@ -9,3 +9,4 @@ D:\my documents\Projects\TopMovies\TopMovies.Common\obj\Debug\net6.0\TopMovies.C
 D:\my documents\Projects\TopMovies\TopMovies.Common\obj\Debug\net6.0\refint\TopMovies.Common.dll
 D:\my documents\Projects\TopMovies\TopMovies.Common\obj\Debug\net6.0\TopMovies.Common.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Common\obj\Debug\net6.0\ref\TopMovies.Common.dll
+D:\my documents\Projects\TopMovies\TopMovies.Common\obj\Debug\net6.0\TopMovies.Common.sourcelink.json

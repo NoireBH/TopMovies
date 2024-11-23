@@ -48,32 +48,32 @@ namespace TopMovies.Web.Controllers
 			return View(movie);
 		}
 
-		//public async Task<IActionResult> Rate(string id)
-		//{
-		//	var movieExists = await movieService.ExistsByIdAsync(id);
+		public async Task<IActionResult> Rate(string id)
+		{
+			var movieExists = await movieService.ExistsByIdAsync(id);
 
-		//	MovieDetailsViewModel movie;
+			MovieDetailsViewModel movie;
 
-		//	if (!movieExists)
-		//	{
-		//		TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
-		//		return NotFound();
-		//	}
+			if (!movieExists)
+			{
+				TempData[ErrorMessage] = "The movie you're trying to rate doesn't exist!";
+				return NotFound();
+			}
 
-		//	try
-		//	{
-		//		movie = await movieService.GetMovieDetailsByIdAsync(id);
-		//	}
-		//	catch (Exception)
-		//	{
-		//		ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
+			try
+			{
+				movie = await movieService.GetMovieDetailsByIdAsync(id);
+			}
+			catch (Exception)
+			{
+				ModelState.AddModelError(string.Empty, "Unexpected error has occured, please try again...");
 
-		//		return Redirect(HttpContext.Request.Headers["Referer"]);
+				return Redirect(HttpContext.Request.Headers["Referer"]);
 
-		//	}
+			}
 
-		//	return View(movie);
-		//}
+			return View(movie);
+		}
 
 		[AllowAnonymous]
 		public async Task<IActionResult> All([FromQuery]MoviePageViewModel model)

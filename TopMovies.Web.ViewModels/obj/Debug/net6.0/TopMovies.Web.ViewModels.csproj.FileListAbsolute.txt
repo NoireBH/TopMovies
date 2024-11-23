@@ -16,4 +16,5 @@ D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\Top
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Data.Models.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Services.Mapping.pdb
 D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\bin\Debug\net6.0\TopMovies.Common.pdb
-D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.csproj.CopyComplete
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovies.Web.ViewModels.sourcelink.json
+D:\my documents\Projects\TopMovies\TopMovies.Web.ViewModels\obj\Debug\net6.0\TopMovie.C50AB539.Up2Date

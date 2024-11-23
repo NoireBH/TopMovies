@@ -69,7 +69,6 @@ D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\staticwebassets.de
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\scopedcss\bundle\TopMovies.Web.styles.css
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\scopedcss\projectbundle\TopMovies.Web.bundle.scp.css
-D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\TopMovies.Web.csproj.CopyComplete
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\TopMovies.Web.dll
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\refint\TopMovies.Web.dll
 D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\TopMovies.Web.pdb
@@ -303,3 +302,5 @@ D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\TopMovies.Web.Infr
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\libman.json
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\my documents\Projects\TopMovies\TopMovies\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\TopMovies.Web.sourcelink.json
+D:\my documents\Projects\TopMovies\TopMovies\obj\Debug\net6.0\TopMovie.6D90B02F.Up2Date
