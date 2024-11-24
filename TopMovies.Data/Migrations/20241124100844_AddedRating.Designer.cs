@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TopMovies.Data;
 
@@ -11,9 +12,10 @@ using TopMovies.Data;
 namespace TopMovies.Data.Migrations
 {
     [DbContext(typeof(TopMoviesDbContext))]
-    partial class TopMoviesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241124100844_AddedRating")]
+    partial class AddedRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -184,7 +186,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actors", (string)null);
+                    b.ToTable("Actors");
 
                     b.HasData(
                         new
@@ -425,7 +427,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("ActorId");
 
-                    b.ToTable("ActorMovies", (string)null);
+                    b.ToTable("ActorMovies");
 
                     b.HasData(
                         new
@@ -711,7 +713,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres", (string)null);
+                    b.ToTable("Genres");
 
                     b.HasData(
                         new
@@ -820,7 +822,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies", (string)null);
+                    b.ToTable("Movies");
 
                     b.HasData(
                         new
@@ -957,7 +959,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId1");
 
-                    b.ToTable("MovieCharacters", (string)null);
+                    b.ToTable("MovieCharacters");
 
                     b.HasData(
                         new
@@ -1244,7 +1246,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("MovieGenres", (string)null);
+                    b.ToTable("MovieGenres");
 
                     b.HasData(
                         new
@@ -1390,7 +1392,7 @@ namespace TopMovies.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("UserReviews", (string)null);
+                    b.ToTable("UserReviews");
 
                     b.HasData(
                         new

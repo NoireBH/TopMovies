@@ -35,6 +35,24 @@ namespace TopMovies.Data.Models
 		[Required]
 		public string TrailerUrl { get; set; } = null!;
 
+		[Required]
+		[NotMapped]
+		public double Rating
+		{
+			get
+			{
+				if (UserReviews.Any(ur => ur.MovieId == Id))
+				{
+					return UserReviews.Where(ur => ur.MovieId == Id).Select(r => r.Rating)
+					.Average();
+				}
+
+				return 0;
+
+			}
+		}
+
+
 
 		public virtual ICollection<MovieGenre> MovieGenres { get; set; }
 

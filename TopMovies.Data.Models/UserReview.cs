@@ -18,6 +18,9 @@ namespace TopMovies.Data.Models
 		[MaxLength(CommentMaxLength)]
 		public string Comment { get; set; } = null!;
 
+		[Required]
+		public int Rating { get; set; }
+
 		public Guid MovieId { get; set; }
 
 		public virtual Movie Movie { get; set; } = null!;
