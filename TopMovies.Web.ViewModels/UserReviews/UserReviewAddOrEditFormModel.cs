@@ -10,9 +10,11 @@ namespace TopMovies.Web.ViewModels.UserReviews
 
 		public string MovieId { get; set; } = null!;
 
-		[Required]
 		[StringLength(CommentMaxLength, MinimumLength = CommentMinLength)]
 		public string Comment { get; set; } = null!;
+
+		[Required]
+		public int Rating { get; set; }
 
 	}
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TopMovies.Web.ViewModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f79377a5af45dda607e8c9cdac4386c4794df30")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+def06a114818e4fde6a9be29ac7d3e5682961d94")]
 [assembly: System.Reflection.AssemblyProductAttribute("TopMovies.Web.ViewModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TopMovies.Web.ViewModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

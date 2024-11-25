@@ -3,25 +3,108 @@
 <div class="row">
 	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
 		<form method="post">
+			<div class="form-group text-center">
+				<div>
+					<label asp-for="Rating">Rating</label>
+				</div>
+				<div id="rating" data-selected="0">
+					@for (int i = 1; i <= 10; i++)
+					{
+						<span>
+							<i data-value=@i class="fa-regular  fa-star star"></i>
+						</span>
+					}
+				</div>
+				<div>
+					<button type="submit" asp-controller="UserReviewController" asp-action="Rate" asp-route-id="@Model.MovieId" asp-route-rating="">Rate</button>
+				</div>
+			</div>
 			<div class="form-group">
-				<label asp-for="Comment"></label>
+				<div class="text-center">
+					<label asp-for="Comment">Add a comment(optional)</label>
+				</div>
 				<textarea asp-for="Comment" rows="10" class="form-control"
 						  placeholder="This movie was great because..."></textarea>
 				<span asp-validation-for="Comment" class="small text-danger"></span>
-			</div>			
+			</div>
 			<div class="form-group d-none">
 				<label asp-for="ApplicationUserId"></label>
 				<input asp-for="ApplicationUserId" class="form-control">
-				<span asp-validation-for="ApplicationUserId" class="small textdanger"></span>
+				<span asp-validation-for="ApplicationUserId" class="small text-danger"></span>
 			</div>
 			<div class="form-group d-none">
 				<label asp-for="MovieId"></label>
 				<input asp-for="MovieId" class="form-control">
-				<span asp-validation-for="MovieId" class="small textdanger"></span>
+				<span asp-validation-for="MovieId" class="small text-danger"></span>
 			</div>
+			<input type="hidden" id="ratingValue" name="RatingValue" />
 			<div class="text-center">
 				<input class="btn btn-primary mt-3" type="submit" value="Save" />
 			</div>
 		</form>
 	</div>
 </div>
+
+<style>
+	.star {
+		color: gray; /* Default empty star color */
+		cursor: pointer;
+	}
+
+		.star.hovered, .star.selected {
+			color: gold; /* Filled star color */
+		}
+
+</style>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const stars = document.querySelectorAll('#rating .star');
+		const ratingDiv = document.getElementById('rating');
+
+		stars.forEach(star => {
+			// Highlight stars on hover
+			star.addEventListener('mouseover', function () {
+				const value = 1 * this.getAttribute('data-value');
+				stars.forEach(s => {
+					const starValue = 1 * s.getAttribute('data-value');
+					if (starValue <= value) {
+						s.classList.add('hovered', 'fa-solid');
+						s.classList.remove('fa-regular');
+					} else {
+						s.classList.remove('hovered', 'fa-solid');
+						s.classList.add('fa-regular');
+					}
+				});
+			});
+
+			// Reset stars when not hovered
+			star.addEventListener('mouseout', function () {
+				stars.forEach(s => {
+					s.classList.remove('hovered');
+					if (!s.classList.contains('selected')) {
+						s.classList.remove('fa-solid');
+						s.classList.add('fa-regular');
+					}
+				});
+			});
+
+			// Set selected rating on click
+			star.addEventListener('click', function () {
+				const value = 1 * this.getAttribute('data-value');
+				ratingDiv.setAttribute('data-selected', value);
+				stars.forEach(s => {
+					const starValue = 1 * s.getAttribute('data-value');
+					if (starValue <= value) {
+						s.classList.add('selected', 'fa-solid');
+						s.classList.remove('fa-regular');
+					} else {
+						s.classList.remove('selected', 'fa-solid');
+						s.classList.add('fa-regular');
+					}
+				});
+				console.log(`Rating selected: ${value}`);
+			});
+		});
+	});
+
+</script>
